@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import {GraduationCap, Calendar, MapPin} from "lucide-react"
+import championshipImg from "../../public/scrabble_tournament.png"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function YouthPage() {
@@ -7,27 +10,16 @@ export default function YouthPage() {
     <main className="flex-1">
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/young-students-learning-education.jpg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
+          <img src="/young_people_playing.png" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/70" />
         </div>
         <div className="container-width relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-6">
-              <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                />
-              </svg>
-            </div>
+          <div className="max-w-4xl mx-auto ">
             <h1 className="font-bold text-4xl md:text-6xl mb-6 text-balance text-white">
               Empowering the Next Generation
             </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              WESPA's Youth Program nurtures young talent through coaching, competitions, and scholarships, building a
+            <p className="text-lg text-white/90 mb-8 leading-relaxed">
+              WESPA's Youth Program nurtures young talent through coaching and competitions building a
               vibrant future for competitive Scrabble.
             </p>
             <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90 transition-colors">
@@ -37,8 +29,29 @@ export default function YouthPage() {
         </div>
       </section>
 
+      <section className=" flex flex-col relative gap-5 py-16 px-4">
+        <h1 className="text-center text-gray-600 text-2xl font-semibold ">20th Youth Scrabble Championship</h1>
+        <section className="relative overflow-hidden group rounded-md">
+           <Image
+              src={championshipImg}
+              alt="Image of people playing Scrabble"
+              className="rounded-md w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-white text-center
+                    opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0
+                    transition-all duration-500 ease-in-out rounded-md">
+            <p className="text-lg font-semibold">August 30th – September 1st, 2025</p>
+            <p className="text-base pt-8">Malaysia</p>
+          </div>        
+        </section>
+        <ul className=" pt-3 pb-5 xp-5 flex flex-col gap-1 ">
+          <li className=" flex gap-2 items-center"><MapPin size={20}/><span>Malaysia</span></li>
+          <li className=" flex gap-2 items-center"><Calendar size={20}/><span>30th August - September 1st, 2025</span></li>
+        </ul>
+      </section>
+
       {/* Program Segments */}
-      <section className="section-spacing">
+      {/* <section className="section-spacing">
         <div className="container-width">
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-primary/20 shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -178,67 +191,9 @@ export default function YouthPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Success Stories */}
-      <section className="section-spacing bg-muted/30">
-        <div className="container-width">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-bold text-3xl mb-8 text-center">Success Stories</h2>
-            <div className="space-y-6">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2">Youth Champion to World Competitor</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        "Starting in WESPA's youth program at age 12, I learned not just strategy but discipline and
-                        sportsmanship. Five years later, I competed in my first World Championship. The mentorship and
-                        support were invaluable." - Alex K., Australia
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2">Building Confidence Through Competition</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        "The youth program gave me confidence I never had before. Competing against peers from around
-                        the world showed me that hard work and dedication truly pay off. Now I'm coaching younger
-                        players in my community." - Priya S., India
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* CTA */}
       <section className="section-spacing">

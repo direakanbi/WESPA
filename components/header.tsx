@@ -169,19 +169,19 @@ export function Header() {
                 </button>
                 {aboutOpen && (
                   <div className="pl-4 space-y-2">
-                    <Link href="/about" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/about" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       About Us
                     </Link>
-                    <Link href="/associations" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/associations" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Associations
                     </Link>
-                    <Link href="/committee" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/committee" className="text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Committees
                     </Link>
-                    <Link href="/join" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/join" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Join Us
                     </Link>
-                    <Link href="/credits" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/credits" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Credits
                     </Link>
                   </div>
@@ -211,10 +211,10 @@ export function Header() {
                 </button>
                 {communityOpen && (
                   <div className="pl-4 space-y-2">
-                    <Link href="/youth" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/youth" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Youth Program
                     </Link>
-                    <Link href="/membership" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/membership" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Membership
                     </Link>
                   </div>
