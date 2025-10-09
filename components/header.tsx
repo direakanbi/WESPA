@@ -238,10 +238,10 @@ export function Header() {
                       Tournament Tiers
                     </Link>
                     <Link href="#" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
-                      World Scrabble Championship
+                      World Scrabble Championship (WSC)
                     </Link>
                     <Link href="#" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
-                      World Team Scrabble Championship
+                      World Team Scrabble Championship (WTSC)
                     </Link>
                     <Link href="#" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       WESPA Super-20 Championship
