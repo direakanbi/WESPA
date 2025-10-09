@@ -1,9 +1,24 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import {GraduationCap, Calendar, MapPin} from "lucide-react"
+import {Mail, Calendar, MapPin} from "lucide-react";
+import {FaWhatsapp} from "react-icons/fa";
 import championshipImg from "../../public/scrabble_tournament.png"
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import winner1 from "../../public/youth_winner1.jpg";
+import winner2 from "../../public/youth_winner2.jpg";
+import winner3 from "../../public/youth_winner3.jpg";
+import youth_commitee from "../../public/tariq_pervez.jpg"
+import Link from "next/link";
+
+
+
+
+
+const winners = [
+  {full_name:"Bilal Asher", country:"Pakistan",image:winner1, competition:"2nd HHS Youth International Scrabble Tournament"},
+  {full_name:"Affan Salman", country:"Pakistan",image:winner2, competition:"World Youth Scrabble Championship 2024"},
+  {full_name:"Hivin Dilmith", country:"Sri Lanka",image:winner3, competition:"WESPA Youth Cup 2023"},
+]
 
 export default function YouthPage() {
   return (
@@ -44,11 +59,54 @@ export default function YouthPage() {
             <p className="text-base pt-8">Malaysia</p>
           </div>        
         </section>
-        <ul className=" pt-3 pb-5 xp-5 flex flex-col gap-1 ">
+        <ul className=" pt-3 pb-5 xp-5 flex flex-col gap-2 ">
           <li className=" flex gap-2 items-center"><MapPin size={20}/><span>Malaysia</span></li>
           <li className=" flex gap-2 items-center"><Calendar size={20}/><span>30th August - September 1st, 2025</span></li>
+          <li className=" font-semibold animate-pulse text-blue-500" ><a href="https://scrabble.org.my/wysc2025/">More information</a></li>
         </ul>
       </section>
+
+      <div className=" px-5">
+        <section> <span className=" text-3xl font-semibold ">Winners</span>
+          <div className=" w-20 h-[2px] bg-black/70 rounded-md mt-1 mb-5"/>
+        </section>
+
+        <div className=" flex flex-col gap-18">
+          {
+            winners.map((winner,idx)=>{
+              return(
+                <div key={idx} className=" px-2 flex flex-col gap-4">
+                  <h1 className=" text-lg font-semibold">{winner.competition}</h1>
+                  <Image src={winner.image} alt={winner.competition} className=" w-full" priority/>
+                  <section>
+                    <p><span>Winner: </span>{winner.full_name}</p>
+                    <p><span>Country: </span>{winner.country}</p>
+                  </section>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
+
+      <div className=" mt-16 px-5 py-5 mx-5 rounded-md bg-gray-100 ">
+        <section>
+          <h1 className=" font-semibold text-2xl">WESPA Youth Committe</h1>
+          <div className=" w-24 h-[2px] bg-black/70 rounded-md mt-1 mb-5"/>
+        </section>
+        <section>
+          <Image src={youth_commitee} alt="Youth Committee Head Tariq Pervez" className=" rounded-md"/>
+          <section className=" py-5 px-2 flex flex-col gap-2">
+            <p className=" font-semibold text-2xl ">Tariq Pervez</p>
+            <p className=" font-semibold text-lg ">Chairman, WESPA Youth Committee</p>
+            <section className=" items-center pt-3 flex gap-5">
+              <p className="text-2xl"><a href="https://wa.link/3rb9w3" ><FaWhatsapp /></a></p>
+              <p><a href="mailto:tariqp@gmail.com"><Mail/></a></p>
+            </section>
+          </section>
+        </section>
+      </div>
+
 
       {/* Program Segments */}
       {/* <section className="section-spacing">
