@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-background z-0" />
         <div className="absolute inset-0 scrabble-texture opacity-30 z-0" />
@@ -18,7 +17,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
       <section className="section-spacing">
         <div className="container-width">
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -67,7 +65,6 @@ export default function AboutPage() {
             </Card>
           </div>
 
-          {/* History Timeline */}
           <div className="max-w-4xl mx-auto">
             <h2 className="font-bold text-3xl mb-8 text-center">Our Journey</h2>
             <div className="space-y-8">
@@ -140,7 +137,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Global Impact */}
       <section className="section-spacing bg-muted/30">
         <div className="container-width">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -210,7 +206,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Partner Logos */}
       <section className="section-spacing">
         <div className="container-width">
           <h2 className="font-bold text-3xl mb-8 text-center">Our Partners</h2>
