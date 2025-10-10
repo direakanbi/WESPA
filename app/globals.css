@@ -4,10 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* WESPA Brand Colors - Exact conversions */
-  /* Background: Pure white */
   --background: oklch(1 0 0);
-  /* Text: #111827 (dark gray) */
   --foreground: oklch(0.145 0.015 250);
 
   --card: oklch(1 0 0);
@@ -16,17 +13,13 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0.015 250);
 
-  /* Primary: #46B0E1 (Light Blue) - WESPA brand color */
   --primary: oklch(0.71 0.12 225);
   --primary-foreground: oklch(1 0 0);
 
-  /* Secondary/Hover: #3A95BF (Dark Blue) - WESPA hover color */
   --secondary: oklch(0.62 0.1 225);
   --secondary-foreground: oklch(1 0 0);
 
-  /* Muted: #F5F7FA (Light Gray background) */
   --muted: oklch(0.97 0.005 240);
-  /* Secondary text: #6B7280 */
   --muted-foreground: oklch(0.556 0.015 250);
 
   --accent: oklch(0.97 0.005 240);
@@ -140,7 +133,6 @@
   }
 }
 
-/* Utility classes for consistent spacing */
 .container-width {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }

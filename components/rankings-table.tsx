@@ -7,7 +7,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { TableSkeleton, EmptyState } from "@/components/loading-shimmer"
 import { PlayerModal } from "@/components/player-modal"
 
-// Mock data - will be replaced with API calls
 const mockPlayers = [
   {
     id: 1,
@@ -18,6 +17,21 @@ const mockPlayers = [
     rating: 2180,
     totalPoints: 15420,
     club: "Auckland Scrabble Club",
+    status: "Active",
+    profileImage: "/placeholders/nigel-richards.jpg",
+    bio: "Nigel Richards is widely regarded as the greatest Scrabble player of all time, known for his extraordinary memorization skills and ability to play in multiple languages.",
+    achievements: ["3x World Scrabble Champion", "5x US National Scrabble Champion"],
+    recentGames: [
+      { opponent: "David Eldar", result: "Win", score: "450-380" },
+      { opponent: "Jesse Day", result: "Win", score: "420-350" },
+      { opponent: "Komol Panyasophonlert", result: "Win", score: "480-390" },
+      { opponent: "Austin Shin", result: "Loss", score: "370-410" },
+      { opponent: "Brett Smitheram", result: "Win", score: "430-360" },
+      { opponent: "Lewis Mackay", result: "Win", score: "460-380" },
+      { opponent: "Jiaqi Woo", result: "Win", score: "410-330" },
+      { opponent: "Wellington Jighere", result: "Win", score: "400-320" },
+      { opponent: "Pakorn Nemitrmansuk", result: "Loss", score: "350-400" },
+    ],
   },
   {
     id: 2,
@@ -28,6 +42,21 @@ const mockPlayers = [
     rating: 2095,
     totalPoints: 14230,
     club: "Melbourne Scrabble Association",
+    status: "Active",
+    profileImage: "/placeholders/david-eldar.jpg",
+    bio: "David Eldar is an Australian Scrabble player, a former World Scrabble Champion, renowned for his aggressive playing style and deep vocabulary.",
+    achievements: ["World Scrabble Champion 2017", "Australian National Champion"],
+    recentGames: [
+      { opponent: "Nigel Richards", result: "Loss", score: "380-450" },
+      { opponent: "Jesse Day", result: "Win", score: "410-370" },
+      { opponent: "Komol Panyasophonlert", result: "Win", score: "430-360" },
+      { opponent: "Austin Shin", result: "Win", score: "400-350" },
+      { opponent: "Brett Smitheram", result: "Loss", score: "390-420" },
+      { opponent: "Lewis Mackay", result: "Win", score: "450-330" },
+      { opponent: "Jiaqi Woo", result: "Win", score: "420-300" },
+      { opponent: "Wellington Jighere", result: "Win", score: "380-310" },
+      { opponent: "Pakorn Nemitrmansuk", result: "Win", score: "410-340" },
+    ],
   },
   {
     id: 3,
@@ -38,6 +67,21 @@ const mockPlayers = [
     rating: 2048,
     totalPoints: 13890,
     club: "Berkeley Scrabble Club",
+    status: "Active",
+    profileImage: "/placeholders/jesse-day.jpg",
+    bio: "Jesse Day is a prominent American Scrabble player, consistently ranked among the top players in the world. Known for his tactical play and strong endgame.",
+    achievements: ["North American Scrabble Champion", "Multiple US Open Titles"],
+    recentGames: [
+      { opponent: "Komol Panyasophonlert", result: "Win", score: "420-390" },
+      { opponent: "Nigel Richards", result: "Loss", score: "350-420" },
+      { opponent: "David Eldar", result: "Loss", score: "370-410" },
+      { opponent: "Austin Shin", result: "Win", score: "440-360" },
+      { opponent: "Brett Smitheram", result: "Win", score: "410-380" },
+      { opponent: "Lewis Mackay", result: "Win", score: "430-350" },
+      { opponent: "Jiaqi Woo", result: "Loss", score: "360-400" },
+      { opponent: "Wellington Jighere", result: "Win", score: "400-330" },
+      { opponent: "Pakorn Nemitrmansuk", result: "Win", score: "390-320" },
+    ],
   },
   {
     id: 4,
@@ -48,6 +92,21 @@ const mockPlayers = [
     rating: 2012,
     totalPoints: 13450,
     club: "Bangkok Scrabble Club",
+    status: "Active",
+    profileImage: "/placeholders/komol-panyasophonlert.jpg",
+    bio: "Komol Panyasophonlert is a Thai Scrabble sensation, a formidable opponent with an impressive record in international tournaments.",
+    achievements: ["Thailand National Champion", "King's Cup Champion"],
+    recentGames: [
+      { opponent: "Jesse Day", result: "Loss", score: "390-420" },
+      { opponent: "Nigel Richards", result: "Loss", score: "390-480" },
+      { opponent: "David Eldar", result: "Loss", score: "360-430" },
+      { opponent: "Austin Shin", result: "Win", score: "410-380" },
+      { opponent: "Brett Smitheram", result: "Win", score: "400-370" },
+      { opponent: "Lewis Mackay", result: "Win", score: "420-340" },
+      { opponent: "Jiaqi Woo", result: "Win", score: "380-310" },
+      { opponent: "Wellington Jighere", result: "Loss", score: "350-410" },
+      { opponent: "Pakorn Nemitrmansuk", result: "Win", score: "430-360" },
+    ],
   },
   {
     id: 5,
@@ -58,8 +117,24 @@ const mockPlayers = [
     rating: 1998,
     totalPoints: 13120,
     club: "Portland Scrabble Club",
+    status: "Active",
+    profileImage: "/placeholders/austin-shin.jpg",
+    bio: "Austin Shin is a rising star in the American Scrabble scene, known for his tactical prowess and strategic gameplay. A consistent top finisher in national events.",
+    achievements: ["Oregon State Champion", "Youngest Player to win a major US Tournament"],
+    recentGames: [
+      { opponent: "Nigel Richards", result: "Win", score: "410-370" },
+      { opponent: "David Eldar", result: "Loss", score: "350-400" },
+      { opponent: "Jesse Day", result: "Loss", score: "360-440" },
+      { opponent: "Komol Panyasophonlert", result: "Loss", score: "380-410" },
+      { opponent: "Brett Smitheram", result: "Win", score: "420-350" },
+      { opponent: "Lewis Mackay", result: "Win", score: "390-310" },
+      { opponent: "Jiaqi Woo", result: "Win", score: "410-330" },
+      { opponent: "Wellington Jighere", result: "Win", score: "400-320" },
+      { opponent: "Pakorn Nemitrmansuk", result: "Loss", score: "370-400" },
+    ],
   },
 ]
+
 
 export function RankingsTable() {
   const [loading, setLoading] = useState(false)
