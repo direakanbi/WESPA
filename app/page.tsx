@@ -1,5 +1,10 @@
-import { redirect } from "next/navigation"
+import HomeComponent from '@/components/home/HomeComponent'
+import React from 'react'
 
-export default function HomePage() {
-  redirect("/rankings")
+function page() {
+  return (
+    <HomeComponent/>
+  )
 }
+
+export default page
