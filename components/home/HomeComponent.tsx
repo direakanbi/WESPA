@@ -108,8 +108,8 @@ export default function HomePage() {
             <div className="hidden lg:flex justify-center items-center">
               <div className="w-full max-w-md aspect-square relative">
                 {/* Placeholder for globe - can be replaced with actual globe component */}
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-100 to-blue-200 flex items-center justify-center">
-                  <Globe2 className="w-32 h-32 text-cyan-600 opacity-20" />
+                <div className="w-full h-full rounded-full flex items-center justify-center">
+                  <Globe2 className="w-32 h-32 text-primary opacity-20" />
                 </div>
               </div>
             </div>
@@ -284,7 +284,7 @@ export default function HomePage() {
             <div className="text-center">
               <Link 
                 href="/news" 
-                className="inline-flex items-center px-6 py-3 bg-cyan-400 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-primary  text-white rounded-lg font-medium transition-colors"
               >
                 Get updates
               </Link>
@@ -367,7 +367,7 @@ function MembershipPathwayCard({ icon, title, description }: {
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div className="p-4 bg-cyan-50 rounded-xl">
+        <div className="p-4  rounded-xl">
           {icon}
         </div>
         <h3 className="font-semibold text-xl text-gray-900">{title}</h3>
