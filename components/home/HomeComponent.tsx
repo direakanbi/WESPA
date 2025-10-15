@@ -5,11 +5,12 @@ import Image from 'next/image';
 import logo from "../../public/images/wespa_logo.svg";
 import about_logo from "../../public/images/about_logo.jpg";
 import people_playing from "../../public/images/people_playing.png"
-import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight } from 'lucide-react';
-
-import SliderComponent from '../SliderComponent';
-import { SwiperSlide } from 'swiper/react';
+import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight, Globe } from 'lucide-react';
+import {CiGlobe} from "react-icons/ci"
 import Flags from './Flags';
+
+import { FaGlobeAfrica, FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope } from 'react-icons/fa';
+import {FaEarthOceania} from "react-icons/fa6"
 
 // Types
 interface Player {
@@ -32,6 +33,12 @@ interface BlogPost {
   excerpt: string;
   image: string;
   date: string;
+}
+
+interface CountriesProps {
+  icon:React.ReactNode;
+  country:string;
+  value:number;
 }
 
 export default function HomePage() {
@@ -114,6 +121,16 @@ export default function HomePage() {
     },
   ];
 
+  const continents:CountriesProps[]  = [
+    {value:16, country:"Africa",icon:<FaGlobeAfrica/>},
+    {value:6, country:"Asia",icon:<FaGlobeAsia/>},
+    {value:8, country:"Europe",icon:<FaGlobeEurope/>},
+    {value:12, country:"America",icon:<FaGlobeAmericas/>},
+    {value:10, country:"Antarctica",icon:<FaEarthOceania/>},
+    {value:13, country:"Australia",icon:<CiGlobe/>},
+  ]
+
+
   return (
     <main className="flex-1">
       {/* Hero Section */}
@@ -165,13 +182,12 @@ export default function HomePage() {
 
      
       {/* Scrabble without Borders */}
-
-
-      <section className=" bg-black py-24 px-14 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className=" bg-black py-24 px-5 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className=" flex flex-col gap-5">
           <section  className=' text-white flex flex-col gap-5 '>
-            <p className=' text-4xl '>Scrabble Without Borders</p>
+            <p className=' text-2xl lg:text-4xl '>Scrabble Without Borders</p>
             <article className=" text-sm text-gray-100">With 40 member nations and over 50 annual tournaments, WESPA unites plyers globally, fosters international competition and celebrates the games growth</article>
+            <Link href="/membership" className=" w-fit flex gap-2 items-center "><span>Members</span><ChevronRight/></Link>
           </section>
           <Flags/>
         </div>
@@ -179,35 +195,41 @@ export default function HomePage() {
       </section>
 
 
-      {/* About WESPA Section */}
+      {/* WESPA events across continents */}
       <section className="py-16 md:py-24 ">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center lg:justify-start">
-              <Image src={about_logo} alt="Logo "/>
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
-                About WESPA
-              </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
-                </p>
-                <p>
-                  It supports a wide range of international events, from local tournaments to world championships. WESPA ensures that the spirit of Scrabble thrives and grows as a truly global game.
-                </p>
-              </div>
-              <Link 
-                href="/about" 
-                className="inline-flex items-center px-6 py-3 bg-primary hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors"
+        <div className="flex flex-col justify-center items-center text-center mb-12">
+          <h1 className="text-2xl lg:text-3xl font-semibold text-primary">
+            WESPA Events across Continents
+          </h1>
+          <p className="text-gray-600 text-sm mt-2">
+            Explore WESPA's global footprint of competitive Scrabble.
+          </p>
+        </div>
+
+        <section className="grid grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-gray-200 bg-white">
+          {continents.map((continent, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center justify-center gap-3 py-10 text-center"
+            >
+              <div className="text-5xl text-gray-900">{continent.icon}</div>
+
+              <p className="text-lg md:text-2xl font-semibold text-gray-800">
+                {continent.value}{" "}
+                <span className="text-gray-500 text-base font-normal">Tourneys</span>
+              </p>
+
+              <Link
+                href="#"
+                className="px-4 py-1 text-sm font-medium text-white bg-blue-400 rounded-full"
               >
-                Read More WESPA
+                {continent.country}
               </Link>
             </div>
-          </div>
-        </div>
+          ))}
+        </section>
       </section>
+
 
       {/* Membership Pathways Section - Dark */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-black text-white">

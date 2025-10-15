@@ -33,7 +33,7 @@ function SliderComponent({children,autoplayDelay=4000,slidesPerView=3,className=
         className="mySwiper"
         breakpoints={{
           0: { slidesPerView: 3 },
-          640: { slidesPerView: 5 },
+          640: { slidesPerView: 4 },
           1024: { slidesPerView: slidesPerView },
         }}
       >
