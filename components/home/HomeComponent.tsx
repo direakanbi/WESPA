@@ -1,9 +1,15 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from "../../public/images/wespa_logo.svg";
 import about_logo from "../../public/images/about_logo.jpg";
-import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText } from 'lucide-react';
+import people_playing from "../../public/images/people_playing.png"
+import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight } from 'lucide-react';
+
+import SliderComponent from '../SliderComponent';
+import { SwiperSlide } from 'swiper/react';
+import Flags from './Flags';
 
 // Types
 interface Player {
@@ -38,6 +44,36 @@ export default function HomePage() {
     { id: 5, name: 'Alec Sjoholm', country: 'USA', ranking: 5, image: '/player5.jpg' },
   ];
 
+  
+
+  const quickLinks = [
+    {
+      icon: <Trophy className="w-8 h-8 text-primary" />,
+      title: "Tourneys",
+      description: "Browse and register for Scrabble tournaments",
+      href: "/tournaments",
+    },
+    {
+      icon: <Star className="w-8 h-8 text-primary" />,
+      title: "Ratings",
+      description: "Check player rankings in our global ratings system",
+      href: "/ratings",
+    },
+    {
+      icon: <BookText className="w-8 h-8 text-primary" />,
+      title: "Rules",
+      description: "Official rulebook for rules and regulations",
+      href: "/rules",
+    },
+    {
+      icon: <FileText className="w-8 h-8 text-primary" />,
+      title: "Guidelines",
+      description: "Essential policies for officially approved events",
+      href: "/guidelines",
+    },
+  ];
+
+  
   const membershipTiers: MembershipTier[] = [
     { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Africa', },
     { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Asia'},
@@ -81,33 +117,26 @@ export default function HomePage() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-16 md:py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-[url(/images/tiles-images.svg)] md:py-6  overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-sm bg-gray-100  w-fit py-2 px-4 rounded-full md:text-base text-black font-medium">Welcome to</p>
               <Image src={logo} alt="Home page Logo" priority className=" w-72 py-6"/>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
                 The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link 
+              <Link 
                   href="/membership" 
-                  className="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors"
+                  className=" items-center py-2 w-fit text-primary text-sm md:text-base  font-medium transition-colors flex"
                 >
-                  Become a Member
-                </Link>
-                <Link 
-                  href="/tournaments" 
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary  text-primary rounded-lg font-medium transition-colors"
-                >
-                  View upcoming tournaments
-                </Link>
-              </div>
+                  <span>Learn More</span><ChevronRight size={25} className=""/>
+              </Link>
             </div>
+
+            {/* Placeholder for globe */}
+
             <div className="hidden lg:flex justify-center items-center">
               <div className="w-full max-w-md aspect-square relative">
-                {/* Placeholder for globe - can be replaced with actual globe component */}
                 <div className="w-full h-full rounded-full flex items-center justify-center">
                   <Globe2 className="w-32 h-32 text-primary opacity-20" />
                 </div>
@@ -115,39 +144,40 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+ {/* Quick Links Section */}
+        <section className="py-16 md:py-8 ">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 py-10 sm:py-0 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {quickLinks.map((link, i) => (
+                <QuickLinkCard
+                  key={i}
+                  icon={link.icon}
+                  title={link.title}
+                  description={link.description}
+                  href={link.href}
+                />
+              ))}
+
+            </div>
+          </div>
+        </section>
       </section>
 
-      {/* Quick Links Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <QuickLinkCard
-              icon={<Trophy className="w-8 h-8 text-primary" />}
-              title="Tourneys"
-              description="Browse and register for Scrabble tournaments"
-              href="/tournaments"
-            />
-            <QuickLinkCard
-              icon={<Star className="w-8 h-8 text-primary" />}
-              title="Ratings"
-              description="Check player rankings in our global ratings system"
-              href="/ratings"
-            />
-            <QuickLinkCard
-              icon={<BookText className="w-8 h-8 text-primary" />}
-              title="Rules"
-              description="Official rulebook for rules and regulations"
-              href="/rules"
-            />
-            <QuickLinkCard
-              icon={<FileText className="w-8 h-8 text-primary" />}
-              title="Guidelines"
-              description="Essential policies for officially approved events"
-              href="/guidelines"
-            />
-          </div>
+     
+      {/* Scrabble without Borders */}
+
+
+      <section className=" bg-black py-24 px-14 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className=" flex flex-col gap-5">
+          <section  className=' text-white flex flex-col gap-5 '>
+            <p className=' text-4xl '>Scrabble Without Borders</p>
+            <article className=" text-sm text-gray-100">With 40 member nations and over 50 annual tournaments, WESPA unites plyers globally, fosters international competition and celebrates the games growth</article>
+          </section>
+          <Flags/>
         </div>
+        <Image src={people_playing} alt="People playing scrabble" className=" rounded-md  "/>
       </section>
+
 
       {/* About WESPA Section */}
       <section className="py-16 md:py-24 ">
@@ -305,15 +335,16 @@ function QuickLinkCard({ icon, title, description, href }: {
 }) {
   return (
     <Link href={href} className="group">
-      <div className="bg-gray-50 rounded-2xl p-6 h-full flex flex-col items-center text-center space-y-4 transition-all duration-300 hover:-translate-y-1">
+      <div className="bg-gray-50 rounded-2xl p-6 h-full flex flex-col  space-y-4 ">
         <div className="p-3 rounded-xl">
           {icon}
         </div>
         <h3 className="font-semibold text-lg text-gray-900">{title}</h3>
         <p className="text-sm text-gray-600 leading-relaxed flex-grow">{description}</p>
-        <button className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-cyan-400 group-hover:bg-cyan-400 transition-colors">
-          <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white" />
-        </button>
+        <p className="text-primary gap-3 border-gray-300 flex items-center  ">
+          <span className=" text-lg ">Explore</span> 
+          <ChevronRight className="w-5 h-5 " />
+        </p>
       </div>
     </Link>
   );
