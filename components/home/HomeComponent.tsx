@@ -1,9 +1,11 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import logo from "../../public/images/wespa_logo.svg";
-import about_logo from "../../public/images/about_logo.jpg";
+import blog1 from "../../public/newspaper-news-updates-information-digital-media.jpg";
+import blog2 from "../../public/newspaper-news-updates-information.jpg";
+import blog3 from "../../public/newspaper-news-updates-information.jpg";
 import people_playing from "../../public/images/people_playing.png"
 import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight, Globe } from 'lucide-react';
 import {CiGlobe} from "react-icons/ci"
@@ -11,15 +13,10 @@ import Flags from './Flags';
 
 import { FaGlobeAfrica, FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope } from 'react-icons/fa';
 import {FaEarthOceania} from "react-icons/fa6"
+import TopPlayers from './TopPlayers';
 
 // Types
-interface Player {
-  id: number;
-  name: string;
-  country: string;
-  ranking: number;
-  image: string;
-}
+
 
 interface MembershipTier {
   icon: React.ReactNode;
@@ -28,10 +25,10 @@ interface MembershipTier {
 }
 
 interface BlogPost {
-  id: number;
+  id?: number;
   title: string;
   excerpt: string;
-  image: string;
+  image: StaticImageData;
   date: string;
 }
 
@@ -43,15 +40,16 @@ interface CountriesProps {
 
 export default function HomePage() {
   // Sample data
-  const topPlayers: Player[] = [
-    { id: 1, name: 'David Eldar', country: 'Australia', ranking: 1, image: '/player1.jpg' },
-    { id: 2, name: 'Nigel Richards', country: 'New Zealand', ranking: 2, image: '/player2.jpg' },
-    { id: 3, name: 'Player Name', country: 'Country', ranking: 3, image: '/player3.jpg' },
-    { id: 4, name: 'Player Name', country: 'Country', ranking: 4, image: '/player4.jpg' },
-    { id: 5, name: 'Alec Sjoholm', country: 'USA', ranking: 5, image: '/player5.jpg' },
-  ];
 
-  
+
+// FAQ Data
+const faqs = [
+  "How is WESPA different from national scrabble associations?",
+  "What are the benefits of being a WESPA member?",
+  "Can I play in WESPA tournaments if I'm not a member yet?",
+  "How does one WESPA rating system work?",
+  "Are there really no membership fees with WESPA?"
+];
 
   const quickLinks = [
     {
@@ -95,28 +93,28 @@ export default function HomePage() {
       id: 1,
       title: 'Top books for inspiration',
       excerpt: 'To create better docs examples that developers can understand.',
-      image: '/blog1.jpg',
+      image: blog1,
       date: '2024-01-15'
     },
     {
       id: 2,
       title: 'Top books for inspiration',
       excerpt: 'Resource search docs explains everything you need to get started.',
-      image: '/blog2.jpg',
+      image: blog2,
       date: '2024-01-14'
     },
     {
       id: 3,
       title: 'Top books for inspiration',
       excerpt: 'Exclusive music docs example that developers can listen.',
-      image: '/blog3.jpg',
+      image: blog3,
       date: '2024-01-13'
     },
     {
       id: 4,
       title: 'Top books for inspiration',
       excerpt: 'Explains music docs example that developers can understand.',
-      image: '/blog4.jpg',
+      image: blog1,
       date: '2024-01-12'
     },
   ];
@@ -196,7 +194,7 @@ export default function HomePage() {
 
 
       {/* WESPA events across continents */}
-      <section className="py-16 md:py-24 ">
+      <section className="py-16 md:py-24 bg-gray-100 ">
         <div className="flex flex-col justify-center items-center text-center mb-12">
           <h1 className="text-2xl lg:text-3xl font-semibold text-primary">
             WESPA Events across Continents
@@ -206,7 +204,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <section className="grid grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-gray-200 bg-white">
+        <section className="grid grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-gray-200 bg-gray-100">
           {continents.map((continent, idx) => (
             <div
               key={idx}
@@ -231,119 +229,114 @@ export default function HomePage() {
       </section>
 
 
-      {/* Membership Pathways Section - Dark */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-black text-white">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-orange-400">
-                Membership Pathways
-              </h2>
-              <p className="text-gray-300 max-w-2xl mx-auto">
-                Connect with the global Scrabble community as a federation, an individual or a supporter
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {membershipTiers.map((tier, index) => (
-                <MembershipCard key={index} {...tier} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Top Players Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-gray-100">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-primary">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-primary">
                 WESPA Top Players
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-600 max-w-2xl text-sm mx-auto">
                 Honouring WESPA's champions and rising stars shaping the Scrabble world.
               </p>
             </div>
-            <div className="relative">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
-                {topPlayers.map((player) => (
-                  <PlayerCard key={player.id} {...player} />
-                ))}
-              </div>
-              <div className="text-center">
-                <Link 
-                  href="/players" 
-                  className="inline-flex items-center px-6 py-3 bg-cyan-400 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors"
-                >
-                  Official Ratings
-                </Link>
-              </div>
-            </div>
+            <TopPlayers/>
           </div>
         </div>
       </section>
 
-      {/* Membership Pathways Section - Light */}
-      <section className="py-16 md:py-24 bg-gray-50">
+        {/* Latest Updates Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-primary">
-                Membership Pathways
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Connect with the global Scrabble community as a federation, an individual or a supporter
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <MembershipPathwayCard
-                icon={<Users className="w-12 h-12 text-primary" />}
-                title="National Association"
-                description="Membership available if your country has a national association affiliated with WESPA and you fulfill certain eligibility conditions."
-              />
-              <MembershipPathwayCard
-                icon={<Globe2 className="w-12 h-12 text-primary" />}
-                title="WESPA +"
-                description="Open to all, enjoy family plans, flexible through renewals, connect with the global players, and your own rating."
-              />
-              <MembershipPathwayCard
-                icon={<Users className="w-12 h-12 text-primary" />}
-                title="Friends of Wespa"
-                description="Support the WESPA by donating, you don't get tournament ratings but you get recognized and always belong."
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Updates Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-primary">
-                Latest Updates from Wespa
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-cyan-600">
+                Latest Updates from WESPA
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Stay informed with the latest news, announcements, and developments from the global WESPA community.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
               {blogPosts.map((post) => (
-                <BlogCard key={post.id} {...post} />
+                <BlogCard key={post.id} excerpt={post.excerpt} date={post.date} title={post.title} image={post.image} id={post.id} />
               ))}
             </div>
-            <div className="text-center">
+            <div className="text-center"> 
               <Link 
                 href="/news" 
-                className="inline-flex items-center px-6 py-3 bg-primary  text-white rounded-lg font-medium transition-colors"
+                className="inline-flex items-center px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"
               >
-                Get updates
+                See More
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+            {/* Join Friends of WESPA */}
+      <section className="py-20 md:py-24 bg-black text-white">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 space-y-6">
+              <h2 className="text-3xl md:text-5xl">
+                Join Our Friends of WESPA Programme
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+                Help us grow the game worldwide. Whether you're a player, a fan, or simply love Scrabble, your support keeps our community thriving globally.
+              </p>
+              <div className="flex justify-center gap-4 pt-4">
+                <Link 
+                  href="/friends" 
+                  className="px-8 py-3 bg-gray-600/80 text-white rounded-lg font-medium transition-colors"
+                >
+                  Support Us
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="px-8 py-3 border-2 border-gray-600 hover:border-cyan-500 text-white rounded-lg font-medium transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center mt-12">
+              <div className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl">
+                <div className="aspect-[16/9] bg-gradient-to-br from-gray-700 to-gray-800 relative">
+                  <Image 
+                    src={people_playing} 
+                    alt="Community hands together" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* FAQ Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-cyan-600">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-gray-600 max-w-xl mx-auto">
+                Start here for quick answers about membership, events, and the global WESPA scrabble community.
+              </p>
+            </div>
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <FAQItem key={index} question={faq} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
@@ -372,44 +365,18 @@ function QuickLinkCard({ icon, title, description, href }: {
   );
 }
 
-// Component: Membership Card
-function MembershipCard({ icon, price, country }: MembershipTier) {
+// Component: FAQs
+function FAQItem({ question }: { question: string }) {
   return (
-    <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 flex flex-col items-center text-center space-y-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-700">
-      <div className="text-orange-400">
-        {icon}
+    <div className="bg-gray-50 hover:bg-gray-100 rounded-lg p-5 transition-all cursor-pointer border border-gray-200">
+      <div className="flex justify-between items-center">
+        <p className="text-gray-800 font-medium text-sm md:text-base pr-4">{question}</p>
+        <ChevronRight className="w-5 h-5 text-gray-400 flex-shrink-0 transform rotate-90" />
       </div>
-      <div>
-        <p className="text-3xl font-bold text-white">{price}</p>
-        <p className="text-sm text-gray-400">{country}</p>
-      </div>
-      <button className="px-6 py-2 bg-transparent border border-gray-600 rounded-lg text-white hover:bg-gray-700 transition-colors text-sm font-medium">
-        Details
-      </button>
     </div>
   );
 }
 
-// Component: Player Card
-function PlayerCard({ name, country, ranking, image }: Player) {
-  return (
-    <div className="group">
-      <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-        <div className="aspect-[3/4] bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
-          {/* Placeholder for player image */}
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-            <Users className="w-16 h-16" />
-          </div>
-        </div>
-        <div className="p-4 text-center">
-          <h3 className="font-semibold text-gray-900 mb-1">{name}</h3>
-          <p className="text-sm text-gray-500">{country}</p>
-          <p className="text-xs text-cyan-600 mt-2">#{ranking}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // Component: Membership Pathway Card
 function MembershipPathwayCard({ icon, title, description }: { 
@@ -437,11 +404,11 @@ function MembershipPathwayCard({ icon, title, description }: {
 function BlogCard({ title, excerpt, image, date }: BlogPost) {
   return (
     <div className="group">
-      <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <div className="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
         <div className="aspect-[4/3] bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
           {/* Placeholder for blog image */}
           <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-            <FileText className="w-16 h-16" />
+            <Image src={image} alt={"Blog Image"} className="w-full object-cover" />
           </div>
         </div>
         <div className="p-5 space-y-2">
