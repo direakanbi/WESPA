@@ -10,11 +10,11 @@ import people_playing from "../../public/images/people_playing.png"
 import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight, Globe } from 'lucide-react';
 import {CiGlobe} from "react-icons/ci"
 import Flags from './Flags';
-import GlobeAnimation from '../globe-animation';
 
 import { FaGlobeAfrica, FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope } from 'react-icons/fa';
 import {FaEarthOceania} from "react-icons/fa6"
 import TopPlayers from './TopPlayers';
+import GlobalAnimation from '../globe-animation';
 
 // Types
 
@@ -135,7 +135,7 @@ const faqs = [
       {/* Hero Section */}
       <section className="relative bg-[url(/images/tiles-images.svg)] md:py-6  overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <Image src={logo} alt="Home page Logo" priority className=" w-72 py-6"/>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
@@ -148,13 +148,9 @@ const faqs = [
                   <span>Learn More</span><ChevronRight size={25} className=""/>
               </Link>
             </div>
-
-            {/* Placeholder for globe */}
-
-            <div className="hidden lg:flex justify-center items-center">
-              <div className="w-full max-w-md aspect-square relative overflow-hidden">
-                <GlobeAnimation />
-              </div>
+            {/* Globe */}
+            <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center">
+              <GlobalAnimation />
             </div>
           </div>
         </div>

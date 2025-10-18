@@ -291,7 +291,7 @@ const GlobalAnimation: React.FC = () => {
 
     // Rotation animation
     const rotateGlobe = () => {
-        config.lambda += 0.2;
+        config.lambda += 0.9;
         projection.rotate([-config.lambda, config.phi]);
         svg.selectAll('path.country')
            .attr('d', (d: any) => path(d));
