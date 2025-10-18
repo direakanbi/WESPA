@@ -58,21 +58,21 @@ export default function YouthPage() {
                     transition-all duration-500 ease-in-out rounded-md px-4">
             <p className="text-lg md:text-xl lg:text-2xl font-semibold">August 30th – September 1st, 2025</p>
             <p className="text-base md:text-lg lg:text-xl pt-8">Malaysia</p>
-          </div>        
+                </div>
         </section>
         <ul className="pt-3 pb-5 flex flex-col gap-2 max-w-4xl mx-auto w-full text-base md:text-lg">
           <li className="flex gap-2 items-center">
             <MapPin size={20} className="md:w-6 md:h-6"/>
             <span>Malaysia</span>
-          </li>
+                  </li>
           <li className="flex gap-2 items-center">
             <Calendar size={20} className="md:w-6 md:h-6"/>
             <span>30th August - September 1st, 2025</span>
-          </li>
+                  </li>
           <li className="font-semibold animate-pulse text-blue-500 hover:text-blue-600 transition-colors">
             <a href="https://scrabble.org.my/wysc2025/">More information</a>
-          </li>
-        </ul>
+                  </li>
+                </ul>
       </section>
 
       {/* Winners Section */}
@@ -97,7 +97,7 @@ export default function YouthPage() {
                       className="w-full h-full object-cover" 
                       priority
                     />
-                  </div>
+                </div>
                   <section className="text-sm md:text-base">
                     <p className="mb-1">
                       <span className="font-semibold">Winner: </span>
@@ -120,7 +120,7 @@ export default function YouthPage() {
         <section className="mb-6">
           <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl">WESPA Youth Committee</h1>
           <div className="w-24 md:w-32 h-[2px] bg-black/70 rounded-md mt-1"/>
-        </section>
+      </section>
         <section className="md:flex md:gap-8 lg:gap-12 md:items-start">
           <div className="mb-6 md:mb-0 md:flex-shrink-0">
             <Image 
@@ -129,7 +129,7 @@ export default function YouthPage() {
               alt="Youth Committee Head Tariq Pervez" 
               className="rounded-md w-full md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover"
             />
-          </div>
+                    </div>
           <section className="flex flex-col gap-3 md:py-4">
             <p className="font-semibold text-2xl md:text-3xl lg:text-4xl">Tariq Pervez</p>
             <p className="font-semibold text-lg md:text-xl lg:text-2xl text-gray-700">
@@ -153,7 +153,7 @@ export default function YouthPage() {
             </section>
           </section>
         </section>
-      </div>   
+                  </div>
 
       {/* History Section */}
       <section className="mt-10 pt-10 px-5 md:px-8 lg:px-16 border-t-2 border-gray-300 max-w-7xl mx-auto">

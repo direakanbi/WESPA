@@ -1,11 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {ChevronDown} from "lucide-react"
-import logo from "../public/images/about_logo-removebg-preview.png"
 import Image from "next/image"
 
 export function Header() {
@@ -13,21 +12,38 @@ export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false)
   const [communityOpen, setCommunityOpen] = useState(false)
   const [calendarOpen, setCalendarOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white  ">
+    <header className={`sticky top-0 z-50 w-full bg-white opacity-100 transition-all duration-300`}>
       <div className="container-width">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Image src={logo} alt="WESPA Logo" className=" w-16"/>
+            <Image src="/images/new-wespa-logo.png" alt="WESPA Logo" width={64} height={64} className=" w-16"/>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className={`hidden lg:flex items-center gap-12`}>
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
                 <span>About</span>
                 <ChevronDown size={20} color="gray"/>
               </DropdownMenuTrigger>
@@ -60,21 +76,21 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/rankings" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <Link href="/rankings" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
               Ratings
             </Link>
 
             <Link
               href="/tournaments"
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors"
             >
               Tournaments
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
                 <span>Community</span>
-                <ChevronDown size={20} color={"gray"}/>
+                <ChevronDown size={20} color="gray"/>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
@@ -91,9 +107,9 @@ export function Header() {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
                 <span>Calendar</span>
-                <ChevronDown size={20} color={"gray"}/>
+                <ChevronDown size={20} color="gray"/>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
@@ -119,11 +135,11 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/news" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <Link href="/news" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
               News
             </Link>
 
-            <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <Link href="/contact" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
               Contact
             </Link>
           </nav>
@@ -131,7 +147,8 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <Button
               asChild
-              className="bg-primary hover:bg-secondary text-white rounded-full px-6 transition-colors duration-200"
+              variant="gradient"
+              className="rounded-full"
             >
               <Link href="/donate">Join WESPA</Link>
             </Button>
@@ -182,23 +199,23 @@ export function Header() {
                     </Link>
                     <Link href="/join" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Join Us
-                    </Link>
+            </Link>
                     <Link href="/credits" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Credits
-                    </Link>
+            </Link>
                   </div>
                 )}
               </div>
 
               {/* Ratings */}
               <Link href="/rankings" className="block text-sm font-medium hover:text-primary py-2" onClick={() => setMobileMenuOpen(false)}>
-                Ratings
-              </Link>
+              Ratings
+            </Link>
 
               {/* Tournaments */}
               <Link href="/tournaments" className="block text-sm font-medium hover:text-primary py-2" onClick={() => setMobileMenuOpen(false)}>
-                Tournaments
-              </Link>
+              Tournaments
+            </Link>
 
               {/* Community Section */}
               <div>
@@ -214,11 +231,11 @@ export function Header() {
                 {communityOpen && (
                   <div className="pl-4 space-y-2">
                     <Link href="/youth" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
-                      Youth Program
-                    </Link>
+              Youth Program
+            </Link>
                     <Link href="/membership" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
-                      Membership
-                    </Link>
+              Membership
+            </Link>
                   </div>
                 )}
               </div>
@@ -254,20 +271,21 @@ export function Header() {
 
               <Link href="/news" className="block text-sm font-medium hover:text-primary py-2" onClick={() => setMobileMenuOpen(false)}>
                 News
-              </Link>
+            </Link>
 
               <Link href="/contact" className="block text-sm font-medium hover:text-primary py-2" onClick={() => setMobileMenuOpen(false)}>
-                Contact
-              </Link>
+              Contact
+            </Link>
 
-              <Button
-                asChild
-                className="w-full bg-primary hover:bg-secondary rounded-full transition-colors duration-200 mt-4"
-              >
-                <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
-                  Join WESPA
-                </Link>
-              </Button>
+            <Button
+              asChild
+                variant="gradient"
+                className="w-full mt-4 rounded-full"
+            >
+              <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
+                Join WESPA
+              </Link>
+            </Button>
             </div>
           </nav>
         )}

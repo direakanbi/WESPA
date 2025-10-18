@@ -1,10 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <Header />
         <Suspense fallback={null}>{children}</Suspense>
         <Footer />

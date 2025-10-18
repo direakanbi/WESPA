@@ -10,6 +10,7 @@ import people_playing from "../../public/images/people_playing.png"
 import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight, Globe } from 'lucide-react';
 import {CiGlobe} from "react-icons/ci"
 import Flags from './Flags';
+import GlobeAnimation from '../globe-animation';
 
 import { FaGlobeAfrica, FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope } from 'react-icons/fa';
 import {FaEarthOceania} from "react-icons/fa6"
@@ -151,10 +152,8 @@ const faqs = [
             {/* Placeholder for globe */}
 
             <div className="hidden lg:flex justify-center items-center">
-              <div className="w-full max-w-md aspect-square relative">
-                <div className="w-full h-full rounded-full flex items-center justify-center">
-                  <Globe2 className="w-32 h-32 text-primary opacity-20" />
-                </div>
+              <div className="w-full max-w-md aspect-square relative overflow-hidden">
+                <GlobeAnimation />
               </div>
             </div>
           </div>

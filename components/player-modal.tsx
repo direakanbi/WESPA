@@ -4,20 +4,20 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 
 interface Player {
-  id: number
-  rank: number
-  name: string
+    id: number
+    rank: number
+    name: string
   rating: number
-  country: string
-  countryCode: string
-  totalPoints: number
-  club: string
+    country: string
+    countryCode: string
+    totalPoints: number
+    club: string
   status: string
   profileImage: string
   bio: string
   achievements: string[]
   recentGames: { opponent: string; result: string; score: string }[]
-}
+  }
 
 interface PlayerModalProps {
   player: Player | null
@@ -60,8 +60,8 @@ export function PlayerModal({ player, onClose }: PlayerModalProps) {
               <p className="text-lg font-medium text-muted-foreground">Club: {player.club}</p>
               <p className="text-lg font-medium text-muted-foreground">Matches Played: {player.recentGames.length}</p>
               <Badge variant="secondary" className="mt-2">{player.status}</Badge>
-            </div>
-          </div>
+                </div>
+                </div>
 
           <div className="px-6">
             <h3 className="font-semibold text-xl mb-2 text-foreground">Bio</h3>
@@ -76,7 +76,7 @@ export function PlayerModal({ player, onClose }: PlayerModalProps) {
                   <li key={index}>{achievement}</li>
                 ))}
               </ul>
-            </div>
+              </div>
           )}
 
           {player.recentGames.length > 0 && (
