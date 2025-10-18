@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export function Footer() {
@@ -7,8 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/rankings" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <img src="/wespa-logo.jpg" alt="WESPA" className="h-10 w-auto" />
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <Image src="/images/new-wespa-logo.png" alt="WESPA Logo" width={64} height={64} className=" w-16"/>
             </Link>
             <p className="text-sm text-white/80 leading-relaxed">
               The World English-Language Scrabble Players Association - promoting competitive Scrabble globally.

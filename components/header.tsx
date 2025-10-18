@@ -252,8 +252,8 @@ export function Header() {
                   />
                 </button>
                 {calendarOpen && (
-                  <div className="pl-4 space-y-2">
-                    <Link href="#" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                  <div className="pl-4 text-sm space-y-2">
+                    <Link href="#" className="block hover:text-hover" onClick={() => setMobileMenuOpen(false)}>
                       Tournament Tiers
                     </Link>
                     <Link href="#" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>

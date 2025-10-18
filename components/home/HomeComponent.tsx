@@ -1,22 +1,24 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 import logo from "../../public/images/wespa_logo.svg";
+import scrabble_without_borders from "../../public/images/scrabble_without_borders.jpg";
+import join_wespa_img from "../../public/images/join_wespa_img.png";
+import join_scrabble_network from "../../public/images/join_scrabble_network.png";
 import blog1 from "../../public/newspaper-news-updates-information-digital-media.jpg";
 import blog2 from "../../public/newspaper-news-updates-information.jpg";
 import blog3 from "../../public/newspaper-news-updates-information.jpg";
-import people_playing from "../../public/images/people_playing.png"
-import { ArrowRight, Trophy, Star, Earth, FileText, Users, Globe2, BookText, ChevronRight, Globe } from 'lucide-react';
+import { ArrowRight, Trophy, Star, Earth, FileText, Globe2, BookText, ChevronRight} from 'lucide-react';
 import {CiGlobe} from "react-icons/ci"
 import Flags from './Flags';
-
 import { FaGlobeAfrica, FaGlobeAmericas, FaGlobeAsia, FaGlobeEurope } from 'react-icons/fa';
 import {FaEarthOceania} from "react-icons/fa6"
 import TopPlayers from './TopPlayers';
 import GlobalAnimation from '../globe-animation';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
-// Types
 
 
 interface MembershipTier {
@@ -40,16 +42,38 @@ interface CountriesProps {
 }
 
 export default function HomePage() {
-  // Sample data
 
-
+  const {ref,inView} = useInView({
+    triggerOnce:true,
+    threshold:0.5
+  })
 // FAQ Data
 const faqs = [
-  "How is WESPA different from national scrabble associations?",
-  "What are the benefits of being a WESPA member?",
-  "Can I play in WESPA tournaments if I'm not a member yet?",
-  "How does one WESPA rating system work?",
-  "Are there really no membership fees with WESPA?"
+  {
+    question: "How is WESPA different from national Scrabble associations?",
+    answer:
+      "WESPA is the global governing body for competitive Scrabble in English. While national associations manage and promote Scrabble within their own countries, WESPA connects those associations, standardizes rules, maintains international player ratings, and organizes world-level events.",
+  },
+  {
+    question: "What are the benefits of being a WESPA member?",
+    answer:
+      "Membership connects you to a worldwide Scrabble community, gives you access to official WESPA ratings, opens the door to international tournaments, and provides resources and support for players and organizers alike.",
+  },
+  {
+    question: "Can I play in a WESPA tournament if I'm not ranked yet?",
+    answer:
+      "Yes! New players are welcome. Your performance in your first rated event will earn you an initial WESPA rating.",
+  },
+  {
+    question: "How often are WESPA ratings updated?",
+    answer:
+      "Ratings are updated shortly after each rated tournament, ensuring players always see their most current standings.",
+  },
+  {
+    question: "Are there country rankings in WESPA?",
+    answer:
+      "Yes. WESPA tracks and publishes both individual player rankings and country rankings based on the performance of top players.",
+  },
 ];
 
   const quickLinks = [
@@ -85,7 +109,7 @@ const faqs = [
     { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Asia'},
     { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Europe' },
     { icon: <Earth className="w-8 h-8" />, price: '16', country: 'America'},
-    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Australia'},
+    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Online'},
     { icon: <Globe2 className="w-8 h-8" />, price: '16', country: 'Multiple'},
   ];
 
@@ -125,8 +149,8 @@ const faqs = [
     {value:6, country:"Asia",icon:<FaGlobeAsia/>},
     {value:8, country:"Europe",icon:<FaGlobeEurope/>},
     {value:12, country:"America",icon:<FaGlobeAmericas/>},
-    {value:10, country:"Antarctica",icon:<FaEarthOceania/>},
-    {value:13, country:"Australia",icon:<CiGlobe/>},
+    {value:10, country:"Oceania",icon:<FaEarthOceania/>},
+    {value:13, country:"Online",icon:<CiGlobe/>},
   ]
 
 
@@ -137,7 +161,7 @@ const faqs = [
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Image src={logo} alt="Home page Logo" priority className=" w-72 py-6"/>
+              <Image src={logo} alt="Home page Logo" priority className=" w-72 pt-6 pb-2"/>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
                 The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
               </p>
@@ -184,14 +208,14 @@ const faqs = [
           </section>
           <Flags/>
         </div>
-        <Image src={people_playing} alt="People playing scrabble" className=" rounded-md  "/>
+        <Image src={scrabble_without_borders} alt="People playing scrabble" className=" rounded-md  "/>
       </section>
 
 
       {/* WESPA events across continents */}
-      <section className="py-16 md:py-24 bg-gray-100 ">
+      <section className="py-16 md:py-24 bg-primary/10 ">
         <div className="flex flex-col justify-center items-center text-center mb-12">
-          <h1 className="text-2xl lg:text-3xl font-semibold text-primary">
+          <h1 className="text-2xl lg:text-3xl  text-primary">
             WESPA Events across Continents
           </h1>
           <p className="text-gray-600 text-sm mt-2">
@@ -199,22 +223,27 @@ const faqs = [
           </p>
         </div>
 
-        <section className="grid grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-gray-200 bg-gray-100">
+        <section ref={ref} className="grid grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-gray-300 lg:px-20">
           {continents.map((continent, idx) => (
             <div
               key={idx}
               className="flex flex-col items-center justify-center gap-3 py-10 text-center"
             >
               <div className="text-5xl text-gray-900">{continent.icon}</div>
+              
 
               <p className="text-lg md:text-2xl font-semibold text-gray-800">
-                {continent.value}{" "}
+                {inView ? (
+                  <CountUp start={0} end={continent.value} duration={2.5} separator="," />
+                ) : (
+                  <span>0</span>
+                )}{" "}
                 <span className="text-gray-500 text-base font-normal">Tourneys</span>
               </p>
 
               <Link
                 href="#"
-                className="px-4 py-1 text-sm font-medium text-white bg-blue-400 rounded-full"
+                className="px-4 py-1 text-sm font-medium text-white bg-primary rounded-full"
               >
                 {continent.country}
               </Link>
@@ -226,11 +255,11 @@ const faqs = [
 
       {/* Top Players Section */}
       <section className="py-16 md:py-24 bg-gray-100">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-2 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-primary">
-                WESPA Top Players
+                WESPA Top 10 Players
               </h2>
               <p className="text-gray-600 max-w-2xl text-sm mx-auto">
                 Honouring WESPA's champions and rising stars shaping the Scrabble world.
@@ -246,7 +275,7 @@ const faqs = [
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-cyan-600">
+              <h2 className="text-3xl md:text-5xl mb-4 text-primary">
                 Latest Updates from WESPA
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -261,7 +290,7 @@ const faqs = [
             <div className="text-center"> 
               <Link 
                 href="/news" 
-                className="inline-flex items-center px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"
+                className="inline-flex items-center px-8 py-3 bg-primary hover:bg-primary text-white rounded-lg font-medium transition-colors"
               >
                 See More
               </Link>
@@ -269,28 +298,62 @@ const faqs = [
           </div>
         </div>
       </section>
-
-            {/* Join Friends of WESPA */}
-      <section className="py-20 md:py-24 bg-black text-white">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-10 space-y-6">
-              <h2 className="text-3xl md:text-5xl">
-                Join Our Friends of WESPA Programme
+      {/* Join The Global Scrabble Network */}
+      <section className="py-20 md:py-24 bg-primary/10 text-primary">
+        <div className="container lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center mx-auto px-4 md:px-6 lg:px-8">
+          <div className="relative pb-14">
+              <Image 
+                src={join_scrabble_network} 
+                alt="Community hands together" 
+                className="w-full h-full object-cover"
+              />
+          </div>
+          <div className=" lg:text-left text-center mb-10 space-y-6">
+              <h2 className="text-2xl md:text-3xl">
+                Join The Global Scrabble Network 
               </h2>
-              <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-                Help us grow the game worldwide. Whether you're a player, a fan, or simply love Scrabble, your support keeps our community thriving globally.
+              <p className="text-gray-800 text-sm  md:text-base max-w-3xl mx-auto leading-relaxed">
+                From national associations to individual players, everyone has a place at WESPA. By joining, you will tap into a global network that celebrates competitive Scrabble and brings players and organisers together across continents.
               </p>
-              <div className="flex justify-center gap-4 pt-4">
+              <div className="flex justify-center lg:justify-start gap-4 pt-4">
                 <Link 
                   href="/friends" 
-                  className="px-8 py-3 bg-gray-600/80 text-white rounded-lg font-medium transition-colors"
+                  className="px-4 py-3 bg-primary text-white text-sm md:text-base rounded-lg  transition-colors"
                 >
                   Support Us
                 </Link>
                 <Link 
                   href="/about" 
-                  className="px-8 py-3 border-2 border-gray-600 hover:border-cyan-500 text-white rounded-lg font-medium transition-colors"
+                  className="px-4 py-3 border-2 border-primary hover:border-primary text-primary text-sm md:text-base rounded-lg  transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
+          </div>
+
+        </div>
+      </section>
+      {/* Join Friends of WESPA */}
+      <section className="py-20 md:py-24 bg-black text-white">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 space-y-6">
+              <h2 className="text-2xl md:text-3xl">
+                Join Our Friends of WESPA Program
+              </h2>
+              <p className="text-gray-300 text-sm  md:text-base max-w-3xl mx-auto leading-relaxed">
+                Help us grow the game worldwide. Whether you're a player, a fan, or simply love Scrabble, your support keeps our community thriving globally.
+              </p>
+              <div className="flex justify-center gap-4 pt-4">
+                <Link 
+                  href="/friends" 
+                  className="px-4 py-3 bg-gray-600/80 text-white text-sm md:text-base rounded-lg  transition-colors"
+                >
+                  Support Us
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="px-4 py-3 border-2 border-gray-600 hover:border-primary text-white text-sm md:text-base rounded-lg  transition-colors"
                 >
                   Learn More
                 </Link>
@@ -300,7 +363,7 @@ const faqs = [
               <div className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl">
                 <div className="aspect-[16/9] bg-gradient-to-br from-gray-700 to-gray-800 relative">
                   <Image 
-                    src={people_playing} 
+                    src={join_wespa_img} 
                     alt="Community hands together" 
                     className="w-full h-full object-cover"
                   />
@@ -316,21 +379,23 @@ const faqs = [
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-cyan-600">
+              <h2 className="text-2xl md:text-4xl  mb-4 text-primary">
                 Frequently Asked Questions
               </h2>
               <p className="text-gray-600 max-w-xl mx-auto">
-                Start here for quick answers about membership, events, and the global WESPA scrabble community.
+                Start here for quick answers about membership, events, and the global WESPA Scrabble community.
               </p>
             </div>
+
             <div className="space-y-3">
               {faqs.map((faq, index) => (
-                <FAQItem key={index} question={faq} />
+                <FAQItem key={index} question={faq.question} answer={faq.answer} />
               ))}
             </div>
           </div>
         </div>
       </section>
+
 
     </main>
   );
@@ -361,12 +426,29 @@ function QuickLinkCard({ icon, title, description, href }: {
 }
 
 // Component: FAQs
-function FAQItem({ question }: { question: string }) {
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="bg-gray-50 hover:bg-gray-100 rounded-lg p-5 transition-all cursor-pointer border border-gray-200">
+    <div
+      onClick={() => setIsOpen(!isOpen)}
+      className="bg-gray-50 hover:bg-gray-100 rounded-lg p-5 transition-all cursor-pointer border border-gray-200"
+    >
       <div className="flex justify-between items-center">
         <p className="text-gray-800 font-medium text-sm md:text-base pr-4">{question}</p>
-        <ChevronRight className="w-5 h-5 text-gray-400 flex-shrink-0 transform rotate-90" />
+        <ChevronRight
+          className={`w-5 h-5 text-gray-400 transform transition-transform duration-300 ${
+            isOpen ? "rotate-90" : ""
+          }`}
+        />
+      </div>
+
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-40 mt-3" : "max-h-0"
+        }`}
+      >
+        <p className="text-gray-600 text-sm md:text-base leading-relaxed">{answer}</p>
       </div>
     </div>
   );
@@ -387,7 +469,7 @@ function MembershipPathwayCard({ icon, title, description }: {
         </div>
         <h3 className="font-semibold text-xl text-gray-900">{title}</h3>
         <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-        <button className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-cyan-400 hover:bg-cyan-400 transition-colors group">
+        <button className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-hover hover:bg-hover transition-colors group">
           <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white" />
         </button>
       </div>
@@ -407,7 +489,7 @@ function BlogCard({ title, excerpt, image, date }: BlogPost) {
           </div>
         </div>
         <div className="p-5 space-y-2">
-          <h3 className="font-semibold text-lg text-gray-900 line-clamp-2 group-hover:text-cyan-600 transition-colors">
+          <h3 className="font-semibold text-lg text-gray-900 line-clamp-2 group-hover:text-hover transition-colors">
             {title}
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{excerpt}</p>

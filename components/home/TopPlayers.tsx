@@ -38,10 +38,10 @@ const topPlayers: Player[] = [
 
 function TopPlayers() {
   return (
-    <div className="px-4 md:px-8 lg:px-12 py-10">
+    <div className=" md:px-2 lg:px-6 py-8">
       
       <Swiper
-        spaceBetween={30}
+        spaceBetween={10}
         centeredSlides={true}
         loop={true}
         autoplay={{
@@ -59,14 +59,14 @@ function TopPlayers() {
       >
         {topPlayers.map((player) => (
           <SwiperSlide key={player.id}>
-            <div className="bg-white border border-gray-200 shadow rounded-2xl flex flex-col items-center overflow-hidden hover:shadow-m transition-shadow duration-300">
+            <div className="bg-white border border-gray-200 shadow rounded-2xl flex flex-col items-center overflow-hidden hover:shadow-m transition-shadow duration-300 swiper-slide-active:scale-105">
               
               {/* Player Image */}
               <div className="relative w-full h-72">
                 <Image
                   src={player.image}
                   alt={player.name}
-                  fill
+                  fill 
                   className="object-cover"
                 />
               </div>
