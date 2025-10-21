@@ -18,6 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        gayathri: ['Gayathri', 'sans-serif'],
         montserrat: ["Montserrat", "sans-serif"],
         lato: ["Lato", "sans-serif"],
         "open-sans": ["Open Sans", "sans-serif"],
