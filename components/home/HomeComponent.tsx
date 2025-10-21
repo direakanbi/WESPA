@@ -104,15 +104,6 @@ const faqs = [
   ];
 
   
-  const membershipTiers: MembershipTier[] = [
-    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Africa', },
-    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Asia'},
-    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Europe' },
-    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'America'},
-    { icon: <Earth className="w-8 h-8" />, price: '16', country: 'Online'},
-    { icon: <Globe2 className="w-8 h-8" />, price: '16', country: 'Multiple'},
-  ];
-
   const blogPosts: BlogPost[] = [
     {
       id: 1,
