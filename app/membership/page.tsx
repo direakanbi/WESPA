@@ -10,6 +10,8 @@ import CountUp from "react-countup";
 import {Flag,UserRound,Users} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import BenefitMembership from "@/components/membership/BenefitMembership";
 
 interface MemberTypesProps{
   type:string;
@@ -25,6 +27,28 @@ const count = [
   {amount:1,text:"Global Rating System"},
 ];
 
+const membershipBenefits = [
+  {
+    title: "Official Recognition",
+    description:
+      "Gain official WESPA recognition and representation in global governance.",
+  },
+  {
+    title: "Tournament Sanctioning",
+    description:
+      "Host WESPA-sanctioned tournaments with official rating points.",
+  },
+  {
+    title: "Player Development",
+    description:
+      "Access training resources, coaching programs, and youth initiatives.",
+  },
+  {
+    title: "Global Network",
+    description:
+      "Connect with associations worldwide and participate in international events.",
+  },
+];
 
 
 export default function MembershipPage() {
@@ -113,95 +137,55 @@ export default function MembershipPage() {
       <section className="section-spacing bg-background">
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-bold text-3xl mb-8 text-center">Membership Benefits</h2>
+            <h2 className="font-bold font-gayathri text-3xl mb-8 text-center">
+              Membership Benefits
+            </h2>
+
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Official Recognition</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Gain official WESPA recognition and representation in global governance.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              {membershipBenefits.map((benefit, index) => (
+                <Card
+                  key={index}
+                  className="shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <svg
+                        className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
 
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Tournament Sanctioning</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Host WESPA-sanctioned tournaments with official rating points.
-                      </p>
+                      <div>
+                        <h3 className="font-semibold mb-1 text-lg">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {benefit.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Player Development</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Access training resources, coaching programs, and youth initiatives.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Global Network</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Connect with associations worldwide and participate in international events.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      <section>
+        <BenefitMembership/>
+      </section>
+
+
+
 
       {/* Application Form */}
       {/* <section className="section-spacing">
