@@ -3,20 +3,34 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-background z-0" />
-        <div className="absolute inset-0 scrabble-texture opacity-30 z-0" />
+      {/* HERO SECTION: Centered, Sleek Design with Image Background */}
+      <section className="relative py-20 md:py-36 overflow-hidden min-h-[50vh] flex items-center justify-center text-center">
+        
+        {/* New Background Image Layer: Using local image named 'hospitality.jpg' */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0" 
+          // Reference the image from the public folder
+          style={{ backgroundImage: `url('/images/hospitality.jpg')` }}
+        />
+        
+        {/* Dark Overlays for Text Contrast (Crucial for sleek, readable text) */}
+        <div className="absolute inset-0 bg-black/70 z-0" /> 
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-background/50 z-0" />
+        
         <div className="container-width relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="font-bold text-4xl md:text-6xl mb-6 text-balance">About WESPA</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              The World English-Language Scrabble Players Association is the global governing body for competitive
-              English-language Scrabble.
+          {/* Centering the Content and applying high-impact typography */}
+          <div className="max-w-4xl mx-auto">
+            <h1 className="font-extrabold text-5xl md:text-7xl mb-6 text-balance text-white drop-shadow-lg">
+              WESPA: The Global Governing Body
+            </h1>
+            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
+              We are the World English-Language Scrabble Players Association, the official international organization for competitive English-language Scrabble.
             </p>
           </div>
         </div>
       </section>
 
+      {/* MISSION & VISION SECTION (Original Code) */}
       <section className="section-spacing">
         <div className="container-width">
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -64,7 +78,12 @@ export default function AboutPage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
 
+      {/* JOURNEY SECTION (Original Code) */}
+      <section className="section-spacing">
+        <div className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-bold text-3xl mb-8 text-center">Our Journey</h2>
             <div className="space-y-8">
@@ -137,6 +156,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* GLOBAL IMPACT SECTION (Original Code) */}
       <section className="section-spacing bg-muted/30">
         <div className="container-width">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -206,6 +226,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* PARTNERS SECTION (Original Code) */}
       <section className="section-spacing">
         <div className="container-width">
           <h2 className="font-bold text-3xl mb-8 text-center">Our Partners</h2>

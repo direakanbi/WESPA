@@ -149,20 +149,28 @@ const faqs = [
     <main className="flex-1">
       {/* Hero Section */}
       <section className="relative bg-[url(/images/tiles-images.svg)] md:py-6  overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Image src={logo} alt="Home page Logo" priority className=" w-72 pt-6 pb-2"/>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-                The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
-              </p>
-              <Link 
-                  href="/membership" 
-                  className=" items-center py-2 w-fit text-primary text-sm md:text-base  font-medium transition-colors flex"
-                >
-                  <span>Learn More</span><ChevronRight size={25} className=""/>
-              </Link>
-            </div>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Left Column: Logo + Text (now properly stacked) */}
+      <div className="flex flex-col items-start">
+        <Image 
+          src={logo} 
+          alt="WESPA Logo" 
+          priority 
+          className="w-72 mb-6" 
+          // Remove pt/pb — use margin instead
+        />
+        <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4">
+          The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
+        </p>
+        <Link 
+          href="/membership" 
+          className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors"
+        >
+          <span>Learn More</span>
+          <ChevronRight size={25} />
+        </Link>
+      </div>
             {/* Globe */}
             <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center">
               <GlobalAnimation />
