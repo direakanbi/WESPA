@@ -124,16 +124,19 @@ export function Header() {
                 <DropdownMenuContent>
                   <DropdownMenuItem asChild>
                     <Link href="/ratings" className="hover:text-primary">
+                      Ratings
+                    </Link>
+                    <Link href="/ratings/otb_ratings" className="hover:text-primary">
                       Official OTB Ratings
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/ratings" className="hover:text-primary">
+                    <Link href="/ratings/online_ratings" className="hover:text-primary">
                       Online Ratings
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/ratings" className="hover:text-primary">
+                    <Link href="/ratings/ytd_ranking" className="hover:text-primary">
                       Year-to-Date (YTD) Ranking
                     </Link>
                   </DropdownMenuItem>
@@ -318,12 +321,15 @@ export function Header() {
                 {ratingsOpen && (
                   <div className="pl-4 space-y-2">
                     <Link href="/ratings" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                      Rating
+                    </Link>
+                    <Link href="/ratings/otb_ratings" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Official OTB Ratings
                     </Link>
-                    <Link href="/ratings" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/ratings/online_ratings" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Online Ratings
                     </Link>
-                    <Link href="/ratings" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/ratings/ytd_ranking" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Year-to-Date (YTD) Ranking
                     </Link>
                   </div>
