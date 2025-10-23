@@ -88,15 +88,15 @@ const membershipRights = [
 function BenefitMembership() {
   return (
     <div className=' lg:px-32 flex flex-col gap-16 md:gap-24 py-10'>
-        <section className='  border-b-[2px] border-b-gray-100'>
-            <h1 className=" text-center font-gayathri text-2xl md:text-3xl lg:text-4xl pb-10 pt-3">Membership Class Details</h1>
+        <section className=' bg-primary lg:rounded-md border-b-[2px] border-b-gray-100'>
+            <h1 className=" text-center font-gayathri text-white text-2xl md:text-3xl lg:text-4xl pb-10 pt-16">Membership Class Details</h1>
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead className=' px-3 md:text-sm lg:text-base  border-t-[2px] border-l-[2px] border-gray-100'>Membership </TableHead>
-                        <TableHead className=' md:text-sm lg:text-base border-l-[2px] border-gray-100 border-t-[2px] px-6'>Fee </TableHead>
-                        <TableHead className=" md:text-sm lg:text-base border-l-[2px] border-gray-100 border-t-[2px] pl-2 pr-6">Votes by hands</TableHead>
-                        <TableHead className=" md:text-sm lg:text-base border-r-[2px] border-l-[2px] border-gray-100 border-t-[2px] px-6">Votes by poll</TableHead>
+                        <TableHead className=' text-white px-3 md:text-sm lg:text-base  border-t-[2px] border-l-[2px] border-gray-100'>Membership </TableHead>
+                        <TableHead className='text-white md:text-sm lg:text-base border-l-[2px] border-gray-100 border-t-[2px] px-6'>Fee </TableHead>
+                        <TableHead className="text-white md:text-sm lg:text-base border-l-[2px] border-gray-100 border-t-[2px] pl-2 pr-6">Votes by hands</TableHead>
+                        <TableHead className="text-white md:text-sm lg:text-base border-r-[2px] border-l-[2px] border-gray-100 border-t-[2px] px-6">Votes by poll</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -104,23 +104,23 @@ function BenefitMembership() {
                     {
                         membershipClasses.map((item)=>(
                             <TableRow key={item.sn}>
-                                <TableCell className=' lg:text-base border-l-[2px] border-r-[2px] border-gray-100 px-5  '>{item.sn}</TableCell>
-                                <TableCell className=' lg:text-base border-l-[2px] border-r-[2px] border-gray-100 px-5'>{item.fees}</TableCell>
-                                <TableCell className=' lg:text-base border-l-[2px] border-r-[2px] border-gray-100 px-5 '>{item.votesShowHands}</TableCell>
-                                <TableCell className=' lg:text-base  px-7 border-l-[2px] border-r-[2px] border-gray-100 '>{item.votesPollProxy}</TableCell>
+                                <TableCell className=' lg:text-base border-l-[2px] border-r-[2px] border-gray-100 text-white px-5  '>{item.sn}</TableCell>
+                                <TableCell className=' lg:text-base border-l-[2px] border-r-[2px] border-gray-100 text-white px-5'>{item.fees}</TableCell>
+                                <TableCell className=' lg:text-base border-l-[2px] border-r-[2px] border-gray-100 text-white px-5 '>{item.votesShowHands}</TableCell>
+                                <TableCell className=' lg:text-base  px-7 border-l-[2px] border-r-[2px] border-gray-100 text-white '>{item.votesPollProxy}</TableCell>
                             </TableRow>
                         ))
                     }
                 </TableBody>
             </Table>
         </section>
-        <section className='  border-b-[2px] border-b-gray-100'>
+        <section className=' bg-green-700 lg:rounded-md text-white border-b-[2px] border-b-gray-100'>
             <h1 className=" text-center font-gayathri text-2xl md:text-3xl lg:text-4xl pb-10 pt-3">Membership Rights</h1>
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead className=' px-3 md:text-sm lg:text-base  border-t-[2px] border-l-[2px] border-gray-100'>Membership Rights</TableHead>
-                        <TableHead className=' md:text-sm lg:text-base border-l-[2px] border-gray-100 border-t-[2px] px-6'>Class </TableHead>
+                        <TableHead className=' px-3 md:text-sm lg:text-base  border-t-[2px] border-l-[2px] text-white border-gray-100'>Membership Rights</TableHead>
+                        <TableHead className='text-white md:text-sm lg:text-base border-l-[2px] border-gray-100 border-t-[2px] px-6'>Class </TableHead>
                         <TableHead className=" md:text-sm lg:text-base  border-gray-100 border-t-[2px] pl-2 pr-6"></TableHead>
                         <TableHead className=" md:text-sm lg:text-base   border-gray-100 border-t-[2px] px-6"></TableHead>
                         <TableHead className=" md:text-sm lg:text-base   border-gray-100 border-t-[2px] px-6"></TableHead>
@@ -128,11 +128,11 @@ function BenefitMembership() {
                     </TableRow>
                     <TableRow>
                         <TableHead className=' px-3 md:text-sm lg:text-base  border-t-[2px] border-l-[2px] border-gray-100'></TableHead>
-                        <TableHead className=' md:text-sm lg:text-base border-l-[2px] border-r-[2px] border-gray-100 border-t-[2px] '>1 </TableHead>
-                        <TableHead className=" md:text-sm lg:text-base  border-gray-100 border-t-[2px] border-l-[2px] pl-2 pr-6">2</TableHead>
-                        <TableHead className=" md:text-sm lg:text-base border-r-[2px]  border-gray-100 border-t-[2px] border-l-[2px] ">3</TableHead>
-                        <TableHead className=" md:text-sm lg:text-base border-r-[2px]  border-gray-100 border-t-[2px] border-l-[2px] ">4</TableHead>
-                        <TableHead className=" md:text-sm lg:text-base border-r-[2px]  border-gray-100 border-t-[2px] ">5</TableHead>
+                        <TableHead className=' md:text-sm lg:text-base border-l-[2px] border-r-[2px] border-gray-100 border-t-[2px]  text-white'>1 </TableHead>
+                        <TableHead className=" md:text-sm lg:text-base  border-gray-100 border-t-[2px] border-l-[2px] pl-2 pr-6 text-white">2</TableHead>
+                        <TableHead className=" md:text-sm lg:text-base border-r-[2px]  border-gray-100 border-t-[2px] border-l-[2px]  text-white">3</TableHead>
+                        <TableHead className=" md:text-sm lg:text-base border-r-[2px]  border-gray-100 border-t-[2px] border-l-[2px] text-white ">4</TableHead>
+                        <TableHead className=" md:text-sm lg:text-base border-r-[2px]  border-gray-100 border-t-[2px] text-white">5</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
