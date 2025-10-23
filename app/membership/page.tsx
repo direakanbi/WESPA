@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import BenefitMembership from "@/components/membership/BenefitMembership";
+import { FAQItem } from "@/components/home/HomeComponent";
 
 interface MemberTypesProps{
   type:string;
@@ -47,6 +48,33 @@ const membershipBenefits = [
     title: "Global Network",
     description:
       "Connect with associations worldwide and participate in international events.",
+  },
+];
+const faqs = [
+  {
+    question: "Who can join WESPA as an individual member?",
+    answer:
+      "WESPA is the global governing body for competitive Scrabble in English. While national associations manage and promote Scrabble within their own countries, WESPA connects those associations, standardises rules, maintains international player ratings, and organises world-level events.",
+  },
+  {
+    question: "What are the benefits of being a WESPA member?",
+    answer:
+      "Membership connects you to a worldwide Scrabble community, gives you access to official WESPA ratings, opens the door to international tournaments, and provides resources and support for players and organizers alike.",
+  },
+  {
+    question: "What are the membership tiers for Federations joining WESPA?",
+    answer:
+      "Yes! New players are welcome. Your performance in your first rated event will earn you an initial WESPA rating.",
+  },
+  {
+    question: "How often are WESPA ratings updated?",
+    answer:
+      "Ratings are updated shortly after each rated tournament, ensuring players always see their most current standings.",
+  },
+  {
+    question: "Are there country rankings in WESPA?",
+    answer:
+      "Yes. WESPA tracks and publishes both individual player rankings and country rankings based on the performance of top players.",
   },
 ];
 
@@ -184,8 +212,26 @@ export default function MembershipPage() {
         <BenefitMembership/>
       </section>
 
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-4xl  mb-4 text-primary">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-gray-600 max-w-xl mx-auto">
+                Start here for quick answers about membership, events, and the global WESPA Scrabble community.
+              </p>
+            </div>
 
-
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <FAQItem key={index} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Application Form */}
       {/* <section className="section-spacing">
