@@ -245,7 +245,7 @@ export function Header() {
             <div className="space-y-2">
               
               {/* HOME Mobile Link */}
-              <Link href="/" className="block text-sm font-medium hover:text-primary py-2" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/" className="block font-medium hover:text-primary py-2" onClick={() => setMobileMenuOpen(false)}>
                 Home
               </Link>
               
@@ -253,7 +253,7 @@ export function Header() {
               <div>
                 <button
                   onClick={() => setAboutOpen(!aboutOpen)}
-                  className="flex justify-between w-full text-left text-sm font-medium py-2 hover:text-primary transition-colors"
+                  className="flex justify-between w-full text-left font-medium py-2 hover:text-primary transition-colors"
                 >
                   <span>About</span>
                   <ChevronDown
@@ -262,13 +262,13 @@ export function Header() {
                 </button>
                 {aboutOpen && (
                   <div className="pl-4 space-y-2">
-                    <Link href="/about" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/about" className=" block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       WESPA
                     </Link>
-                    <Link href="/committee" className="text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/committee" className="block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Our Committees
                     </Link>
-                    <Link href="/credits" className=" text-sm block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/credits" className=" block hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Credits
                     </Link>
                   </div>
