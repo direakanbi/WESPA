@@ -141,7 +141,7 @@ export default function MembershipPage() {
               Membership Benefits
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
               {membershipBenefits.map((benefit, index) => (
                 <Card
                   key={index}
