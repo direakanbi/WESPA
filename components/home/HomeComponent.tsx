@@ -138,49 +138,49 @@ export default function HomePage() {
   ];
 
   const continents:CountriesProps[]  = [
-    {value:16, country:"Africa",icon:<FaGlobeAfrica/>},
-    {value:6, country:"Asia",icon:<FaGlobeAsia/>},
-    {value:8, country:"Europe",icon:<FaGlobeEurope/>},
-    {value:12, country:"America",icon:<FaGlobeAmericas/>},
-    {value:10, country:"Oceania",icon:<FaEarthOceania/>},
-    {value:13, country:"Online",icon:<CiGlobe/>},
+    {value:16, country:"Africa",icon:<FaGlobeAfrica className=" w-16 h-16 lg:w-20 lg:h-20"/>},
+    {value:6, country:"Asia",icon:<FaGlobeAsia className=" w-16 h-16 lg:w-20 lg:h-20"/>},
+    {value:8, country:"Europe",icon:<FaGlobeEurope className=" w-16 h-16 lg:w-20 lg:h-20"/>},
+    {value:12, country:"America",icon:<FaGlobeAmericas className=" w-16 h-16 lg:w-20 lg:h-20"/>},
+    {value:10, country:"Oceania",icon:<FaEarthOceania className=" w-16 h-16 lg:w-20 lg:h-20"/>},
+    {value:13, country:"Online",icon:<CiGlobe className=" w-16 h-16 lg:w-20 lg:h-20"/>},
   ]
 
 
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="relative bg-[url(/images/tiles-images.svg)] md:py-6  overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-    <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Left Column: Logo + Text (now properly stacked) */}
-      <div className="flex flex-col items-start">
-        <Image 
-          src={logo} 
-          alt="WESPA Logo" 
-          priority 
-          className="w-72 mb-6" 
-          // Remove pt/pb — use margin instead
-        />
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4">
-          The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
-        </p>
-        <Link 
-          href="/membership" 
-          className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors"
-        >
-          <span>Learn More</span>
-          <ChevronRight size={25} />
-        </Link>
-      </div>
-            {/* Globe */}
-            <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center">
-              <GlobalAnimation />
-            </div>
+      <section className="relative bg-[url(/images/tiles-images.svg)]   overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14">
+              {/* Left Column: Logo + Text (now properly stacked) */}
+              <div className="flex flex-col  items-start">
+                <Image 
+                  src={logo} 
+                  alt="WESPA Logo" 
+                  priority 
+                  className=" w-[289px] mb-6 -translate-x-5" 
+                  // Remove pt/pb — use margin instead
+                />
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4">
+                  The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
+                </p>
+                <Link 
+                  href="/membership" 
+                  className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors"
+                >
+                  <span>Learn More</span>
+                  <ChevronRight size={25} />
+                </Link>
+              </div>
+              {/* Globe */}
+              <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center">
+                <GlobalAnimation />
+              </div>
           </div>
         </div>
- {/* Quick Links Section */}
-        <section className="py-16 md:py-8 ">
+      {/* Quick Links Section */}
+        <section className="py-14 md:py-8 ">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto grid grid-cols-1 py-10 sm:py-0 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {quickLinks.map((link, i) => (
@@ -214,9 +214,9 @@ export default function HomePage() {
 
 
       {/* WESPA events across continents */}
-      <section className="py-16 md:py-24 bg-primary/10 ">
+      <section className="py-16 md:pt-24 md:pb-16 bg-gray-100 ">
         <div className="flex flex-col justify-center items-center text-center mb-12">
-          <h1 className="text-2xl lg:text-3xl  text-primary">
+          <h1 className="text-2xl lg:text-4xl  text-primary">
             WESPA Events across Continents
           </h1>
           <p className="text-gray-600 text-sm mt-2">
@@ -228,26 +228,27 @@ export default function HomePage() {
           {continents.map((continent, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center gap-3 py-10 text-center"
+              className="flex flex-col lg:flex-row items-center justify-center gap-5 py-10 text-center"
             >
               <div className="text-5xl text-gray-900">{continent.icon}</div>
-              
+              <section className=" flex flex-col gap-3">
 
-              <p className="text-lg md:text-2xl font-semibold text-gray-800">
-                {inView ? (
-                  <CountUp start={0} end={continent.value} duration={2.5} separator="," />
-                ) : (
-                  <span>0</span>
-                )}{" "}
-                <span className="text-gray-500 text-base font-normal">Tourneys</span>
-              </p>
+                <p className="text-lg md:text-2xl font-normal text-gray-800">
+                  {inView ? (
+                    <CountUp start={0} end={continent.value} duration={2.5} separator="," />
+                  ) : (
+                    <span>0</span>
+                  )}{" "}
+                  <span className="text-gray-500 text-base font-normal">Tourneys</span>
+                </p>
 
-              <Link
-                href="#"
-                className="px-4 py-1 text-sm font-medium text-white bg-primary rounded-full"
-              >
-                {continent.country}
-              </Link>
+                <Link
+                  href="#"
+                  className="px-4 py-1 text-sm font-medium text-white bg-primary rounded-full"
+                >
+                  {continent.country}
+                </Link>
+              </section>
             </div>
           ))}
         </section>
@@ -255,9 +256,9 @@ export default function HomePage() {
 
 
       {/* Top Players Section */}
-      <section className="py-16 md:py-24 bg-gray-100">
-        <div className="container mx-auto px-2 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+      <section className="py-16 md:py-24 bg-primary/10">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="max-w-8xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-primary">
                 WESPA Top 10 Players
