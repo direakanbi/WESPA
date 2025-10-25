@@ -10,6 +10,9 @@ import CountUp from "react-countup";
 import {Flag,UserRound,Users} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import BenefitMembership from "@/components/membership/BenefitMembership";
+import { FAQItem } from "@/components/home/HomeComponent";
 
 interface MemberTypesProps{
   type:string;
@@ -25,6 +28,55 @@ const count = [
   {amount:1,text:"Global Rating System"},
 ];
 
+const membershipBenefits = [
+  {
+    title: "Official Recognition",
+    description:
+      "Gain official WESPA recognition and representation in global governance.",
+  },
+  {
+    title: "Tournament Sanctioning",
+    description:
+      "Host WESPA-sanctioned tournaments with official rating points.",
+  },
+  {
+    title: "Player Development",
+    description:
+      "Access training resources, coaching programs, and youth initiatives.",
+  },
+  {
+    title: "Global Network",
+    description:
+      "Connect with associations worldwide and participate in international events.",
+  },
+];
+const faqs = [
+  {
+    question: "Who can join WESPA as an individual member?",
+    answer:
+      "WESPA is the global governing body for competitive Scrabble in English. While national associations manage and promote Scrabble within their own countries, WESPA connects those associations, standardises rules, maintains international player ratings, and organises world-level events.",
+  },
+  {
+    question: "What are the benefits of being a WESPA member?",
+    answer:
+      "Membership connects you to a worldwide Scrabble community, gives you access to official WESPA ratings, opens the door to international tournaments, and provides resources and support for players and organizers alike.",
+  },
+  {
+    question: "What are the membership tiers for Federations joining WESPA?",
+    answer:
+      "Yes! New players are welcome. Your performance in your first rated event will earn you an initial WESPA rating.",
+  },
+  {
+    question: "How often are WESPA ratings updated?",
+    answer:
+      "Ratings are updated shortly after each rated tournament, ensuring players always see their most current standings.",
+  },
+  {
+    question: "Are there country rankings in WESPA?",
+    answer:
+      "Yes. WESPA tracks and publishes both individual player rankings and country rankings based on the performance of top players.",
+  },
+];
 
 
 export default function MembershipPage() {
@@ -113,91 +165,69 @@ export default function MembershipPage() {
       <section className="section-spacing bg-background">
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-bold text-3xl mb-8 text-center">Membership Benefits</h2>
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Official Recognition</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Gain official WESPA recognition and representation in global governance.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <h2 className="font-bold font-gayathri text-3xl mb-8 text-center">
+              Membership Benefits
+            </h2>
 
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Tournament Sanctioning</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Host WESPA-sanctioned tournaments with official rating points.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {membershipBenefits.map((benefit, index) => (
+                <Card
+                  key={index}
+                  className="shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <svg
+                        className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
 
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Player Development</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Access training resources, coaching programs, and youth initiatives.
-                      </p>
+                      <div>
+                        <h3 className="font-semibold mb-1 text-lg">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {benefit.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="h-5 w-5 text-primary flex-shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <div>
-                      <h3 className="font-semibold mb-1">Global Network</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Connect with associations worldwide and participate in international events.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+      <section>
+        <BenefitMembership/>
+      </section>
+
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-4xl  mb-4 text-primary">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-gray-600 max-w-xl mx-auto">
+                Start here for quick answers about membership, events, and the global WESPA Scrabble community.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <FAQItem key={index} question={faq.question} answer={faq.answer} />
+              ))}
             </div>
           </div>
         </div>

@@ -41,13 +41,6 @@ interface CountriesProps {
   value:number;
 }
 
-export default function HomePage() {
-
-  const {ref,inView} = useInView({
-    triggerOnce:true,
-    threshold:0.5
-  })
-// FAQ Data
 const faqs = [
   {
     question: "How is WESPA different from national Scrabble associations?",
@@ -75,6 +68,15 @@ const faqs = [
       "Yes. WESPA tracks and publishes both individual player rankings and country rankings based on the performance of top players.",
   },
 ];
+
+
+export default function HomePage() {
+
+  const {ref,inView} = useInView({
+    triggerOnce:true,
+    threshold:0.5
+  })
+// FAQ Data
 
   const quickLinks = [
     {
@@ -434,7 +436,7 @@ function QuickLinkCard({ icon, title, description, href }: {
 }
 
 // Component: FAQs
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+export function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -463,27 +465,6 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 
-// Component: Membership Pathway Card
-function MembershipPathwayCard({ icon, title, description }: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string;
-}) {
-  return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <div className="flex flex-col items-center text-center space-y-4">
-        <div className="p-4  rounded-xl">
-          {icon}
-        </div>
-        <h3 className="font-semibold text-xl text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-        <button className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-hover hover:bg-hover transition-colors group">
-          <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white" />
-        </button>
-      </div>
-    </div>
-  );
-}
 
 // Component: Blog Card
 function BlogCard({ title, excerpt, image, date }: BlogPost) {
