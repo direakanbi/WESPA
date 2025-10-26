@@ -62,59 +62,66 @@ export default function AboutPage() {
 
       {/* WESPA Framework Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container-width">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">WESPA Framework</h2>
-            <p className="text-gray-600">WESPA supports tournaments, players, and organisers, while setting international standards for Scrabble.</p>
-          </div>
+  <div className="container-width">
+    <div className="max-w-4xl mx-auto text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-2">WESPA Framework</h2>
+      <p className="text-gray-600">
+        WESPA supports tournaments, players, and organisers, while setting international standards for Scrabble.
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: <BookText className="w-8 h-8 text-primary" />,
-                title: "Rules & Standards",
-                desc: "Ensuring fair play and consistent rules worldwide.",
-                link: "/rules",
-                label: "WESPA Rules >"
-              },
-              {
-                icon: <Trophy className="w-8 h-8 text-primary" />,
-                title: "Tournaments & Ratings",
-                desc: "Running tournaments and maintaining global ratings.",
-                link: "/ratings",
-                label: "Official Ratings >"
-              },
-              {
-                icon: <Star className="w-8 h-8 text-primary" />,
-                title: "Development & Growth",
-                desc: "Growing the game through players and associations.",
-                link: "/resources",
-                label: "Resources >"
-              },
-              {
-                icon: <Users className="w-8 h-8 text-primary" />,
-                title: "Community",
-                desc: "Building a united & recognised Scrabble community.",
-                link: "/community",
-                label: "Associations >"
-              }
-            ].map((item, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow duration-200 h-[200px]">
-                <CardContent className="p-5 flex flex-col justify-between">
-                  <div>
-                    <div className="mb-3">{item.icon}</div>
-                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{item.desc}</p>
-                  </div>
-                  <Link href={item.link} className="text-primary text-sm font-medium hover:underline">
-                    {item.label}
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid md:grid-cols-4 gap-6">
+      {[
+        {
+          icon: <BookText className="w-8 h-8 text-primary" />,
+          title: "Rules & Standards",
+          desc: "Ensuring fair play and consistent rules worldwide.",
+          link: "/rules",
+          label: "WESPA Rules >"
+        },
+        {
+          icon: <Trophy className="w-8 h-8 text-primary" />,
+          title: "Tournaments & Ratings",
+          desc: "Running tournaments and maintaining global ratings.",
+          link: "/ratings",
+          label: "Official Ratings >"
+        },
+        {
+          icon: <Star className="w-8 h-8 text-primary" />,
+          title: "Development & Growth",
+          desc: "Growing the game through players and associations.",
+          link: "/resources",
+          label: "Resources >"
+        },
+        {
+          icon: <Users className="w-8 h-8 text-primary" />,
+          title: "Community",
+          desc: "Building a united & recognised Scrabble community.",
+          link: "/community",
+          label: "Associations >"
+        }
+      ].map((item, i) => (
+        <Card key={i} className="hover:shadow-md transition-shadow duration-200 h-[280px] w-[220px] mx-auto rounded-lg bg-white">
+          <CardContent className="p-6 flex flex-col justify-between">
+            {/* Icon */}
+            <div className="mb-4">{item.icon}</div>
+            
+            {/* Title */}
+            <h3 className="font-semibold text-lg text-gray-900 mb-2">{item.title}</h3>
+            
+            {/* Description */}
+            <p className="text-gray-600 text-sm mb-4">{item.desc}</p>
+            
+            {/* Link - Pushed to bottom */}
+            <Link href={item.link} className="text-primary text-sm font-medium hover:underline mt-auto">
+              {item.label}
+            </Link>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* A Global Connection Section */}
       <section className="py-20 bg-white">
@@ -186,22 +193,22 @@ export default function AboutPage() {
                 <div className="p-0 flex flex-col h-full">
                   {/* Headshot container - Takes fixed height */}
                   <div className="relative w-full h-[240px] flex-shrink-0">
-          <Image
-            src="/images/fake_player3.jpg"
-            alt={member.name}
-            fill
-            className="object-cover rounded-t-lg"
-          />
-          {/* Flag Icon - Bigger, with white background */}
-          <div className="absolute bottom-1 left-1 w-10 h-10 rounded-md overflow-hidden bg-white flex items-center justify-center"> {/* Increased size to w-10 h-10, added bg-white and flex centering */}
-            <Image
-              src={member.flag}
-              alt={`${member.name}'s country`}
-              fill // Use fill to let the Image component manage the size within the parent div
-              className="object-cover" // Maintain object-cover for the flag image itself
-            />
-          </div>
-        </div>
+                    <Image
+                      src="/images/fake_player3.jpg"
+                      alt={member.name}
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                    {/* Flag Icon - Bigger, with white background */}
+                    <div className="absolute bottom-1 left-1 w-10 h-10 rounded-md overflow-hidden bg-white flex items-center justify-center"> {/* Increased size to w-10 h-10, added bg-white and flex centering */}
+                      <Image
+                        src={member.flag}
+                        alt={`${member.name}'s country`}
+                        fill // Use fill to let the Image component manage the size within the parent div
+                        className="object-cover" // Maintain object-cover for the flag image itself
+                      />
+                    </div>
+                  </div>
 
                   {/* Text Block - Positioned directly below the headshot container, aligned left */}
                   <div className="text-left px-4 py-3 flex-grow flex flex-col justify-center"> {/* Added flex-grow and flex-col justify-center */}
