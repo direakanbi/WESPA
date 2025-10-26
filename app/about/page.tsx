@@ -16,8 +16,20 @@ export default function AboutPage() {
   return (
     <main className="flex-1">
       {/* Hero Section – "WESPA at a Glance" */}
-      <section className="relative bg-black text-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/tiles-hero.png')] opacity-2"></div>
+      {/* Hero Section - "WESPA at a Glance" - Updated for Large Overlapping Image */}
+      <section className="relative bg-black text-white py-20 md:py-32 min-h-[600px]"> {/* Kept min-h for debugging */}
+        {/* Background pattern/image overlay */}
+        <Image
+          src="/images/tiles-hero.png"
+          alt="Background pattern"
+          fill
+          className="absolute inset-0 z-0" // Using Image component for background
+          ref={(el) => {
+            if (el) {
+              console.log('About Page Hero Background Image:', window.getComputedStyle(el).backgroundImage);
+            }
+          }}
+        />
         <div className="container-width relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">WESPA at a Glance</h1>
@@ -27,21 +39,22 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
+          {/* Collage Image Container - Made relative for absolute positioning */}
+          <div className="relative h-[550px] md:h-[650px] rounded-3xl shadow-2xl z-50"> {/* Increased z-index to z-50 */}
+            {/* Collage Image - Positioned absolutely at bottom, extending into next section */}
             <Image
-              src={collageImage}
+              src={collageImage} // e.g., '/images/scrabble-collage.jpg'
               alt="Players enjoying Scrabble worldwide"
-              width={1200}
-              height={600}
-              className="w-full h-auto object-cover"
+              fill
+              className="object-cover top-[800px]" // Pushed image down by another 200px
             />
           </div>
         </div>
       </section>
 
-      {/* The Global Body Section */}
-      <section className="py-20 bg-white">
-        <div className="container-width">
+      {/* The Global Body Section - Pulled up to overlap with Hero Image */}
+      <section className="py-20 bg-white -mt-32 md:-mt-48 relative z-10">
+        <div className="container-width pt-20"> {/* Reverted padding-top to previous position */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -99,14 +112,14 @@ export default function AboutPage() {
                 label: "Associations >"
               }
             ].map((item, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow duration-200 h-[200px]">
-                <CardContent className="p-5 flex flex-col justify-between">
+              <Card key={i} className="border-none shadow-sm hover:shadow-lg transition-shadow duration-200">
+                <CardContent className="p-6 flex flex-col justify-between h-full">
                   <div>
                     <div className="mb-3">{item.icon}</div>
                     <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                     <p className="text-gray-600 text-sm mb-4">{item.desc}</p>
                   </div>
-                  <Link href={item.link} className="text-primary text-sm font-medium hover:underline">
+                  <Link href={item.link} className="text-primary text-sm font-semibold hover:underline">
                     {item.label}
                   </Link>
                 </CardContent>
@@ -186,22 +199,22 @@ export default function AboutPage() {
                 <div className="p-0 flex flex-col h-full">
                   {/* Headshot container - Takes fixed height */}
                   <div className="relative w-full h-[240px] flex-shrink-0">
-          <Image
-            src="/images/fake_player3.jpg"
-            alt={member.name}
-            fill
-            className="object-cover rounded-t-lg"
-          />
-          {/* Flag Icon - Bigger, with white background */}
-          <div className="absolute bottom-1 left-1 w-10 h-10 rounded-md overflow-hidden bg-white flex items-center justify-center"> {/* Increased size to w-10 h-10, added bg-white and flex centering */}
-            <Image
-              src={member.flag}
-              alt={`${member.name}'s country`}
-              fill // Use fill to let the Image component manage the size within the parent div
-              className="object-cover" // Maintain object-cover for the flag image itself
-            />
-          </div>
-        </div>
+                    <Image
+                      src="/images/fake_player3.jpg"
+                      alt={member.name}
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                    {/* Flag Icon - Bigger, with white background */}
+                    <div className="absolute bottom-1 left-1 w-10 h-10 rounded-md overflow-hidden bg-white flex items-center justify-center"> {/* Increased size to w-10 h-10, added bg-white and flex centering */}
+                      <Image
+                        src={member.flag}
+                        alt={`${member.name}'s country`}
+                        fill // Use fill to let the Image component manage the size within the parent div
+                        className="object-cover" // Maintain object-cover for the flag image itself
+                      />
+                    </div>
+                  </div>
 
                   {/* Text Block - Positioned directly below the headshot container, aligned left */}
                   <div className="text-left px-4 py-3 flex-grow flex flex-col justify-center"> {/* Added flex-grow and flex-col justify-center */}
