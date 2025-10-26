@@ -152,7 +152,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative bg-[url(/images/tiles-images.svg)]   overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14   px-[5%]">
+          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14   px-[14%]">
               {/* Left Column: Logo + Text (now properly stacked) */}
               <div className="flex flex-col lg:pt-20 items-start">
                 <Image 
