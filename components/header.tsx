@@ -127,6 +127,12 @@ export function Header() {
                       Ratings
                     </Link>
                   </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link href="/ratings/otb_ratings" className="hover:text-primary">
+                      Official OTB Ratings
+                    </Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/ratings/online_ratings" className="hover:text-primary">
                       Online Ratings
