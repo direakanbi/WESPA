@@ -177,12 +177,13 @@
   @apply p-6 lg:p-8;
 }
 
-.swiper-slide-active > div {
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-.swiper-slide-prev > div,
-.swiper-slide-next > div {
+.swiper-slide > div {
   transform: scale(0.85);
   opacity: 0.9;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.swiper-slide-active > div {
+  transform: scale(1);
+  opacity: 1;
 }
