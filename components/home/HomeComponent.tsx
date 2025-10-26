@@ -151,10 +151,10 @@ export default function HomePage() {
     <main className="flex-1">
       {/* Hero Section */}
       <section className="relative bg-[url(/images/tiles-images.svg)]   overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-10">
-          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14">
+        <div className="container mx-auto px-4 lg:px-[5%] ">
+          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12  ">
               {/* Left Column: Logo + Text (now properly stacked) */}
-              <div className="flex flex-col  items-start">
+              <div className="flex flex-col lg:pt-20  items-start">
                 <Image 
                   src={logo} 
                   alt="WESPA Logo" 
@@ -180,7 +180,7 @@ export default function HomePage() {
           </div>
         </div>
       {/* Quick Links Section */}
-        <section className="py-14 md:py-8 ">
+        <section className="py-14 md:py-8  ">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto grid grid-cols-1 py-10 sm:py-0 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {quickLinks.map((link, i) => (

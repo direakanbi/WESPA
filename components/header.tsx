@@ -215,7 +215,7 @@ export function Header() {
           {/* END: Group Logo and Navigation for controlled spacing */}
 
 
-          {/* <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <Button
               asChild
               variant="gradient"
@@ -223,7 +223,7 @@ export function Header() {
             >
               <Link href="/donate">Join WESPA</Link>
             </Button>
-          </div> */}
+          </div>
 
           {/* Mobile Menu Button */}
           <button
