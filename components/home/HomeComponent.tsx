@@ -151,7 +151,7 @@ export default function HomePage() {
     <main className="flex-1">
       {/* Hero Section */}
       <section className="relative bg-[url(/images/tiles-images.svg)]   overflow-hidden">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-10">
           <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14">
               {/* Left Column: Logo + Text (now properly stacked) */}
               <div className="flex flex-col  items-start">
@@ -174,7 +174,7 @@ export default function HomePage() {
                 </Link>
               </div>
               {/* Globe */}
-              <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center">
+              <div className="hidden lg:h-[400px] bg-red-900 h-full lg:flex justify-center items-center">
                 <GlobalAnimation />
               </div>
           </div>

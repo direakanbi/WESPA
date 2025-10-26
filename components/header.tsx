@@ -40,7 +40,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           
           {/* START: Group Logo and Navigation for controlled spacing (lg:gap-12) */}
-          <div className="flex items-center lg:gap-12"> 
+          <div className="flex items-center lg:gap-12 lg:px-10"> 
             
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -48,7 +48,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className={`hidden lg:flex items-center gap-12`}>
+            <nav className={`hidden lg:flex items-center justify-evenly gap-12`}>
               
               {/* HOME */}
               <Link href="/" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
@@ -209,7 +209,7 @@ export function Header() {
           {/* END: Group Logo and Navigation for controlled spacing */}
 
 
-          <div className="hidden lg:flex items-center gap-4">
+          {/* <div className="hidden lg:flex items-center gap-4">
             <Button
               asChild
               variant="gradient"
@@ -217,7 +217,7 @@ export function Header() {
             >
               <Link href="/donate">Join WESPA</Link>
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button

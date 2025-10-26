@@ -349,7 +349,7 @@ const GlobalAnimation: React.FC = () => {
     };
   }, []);
 
-  return <svg ref={svgRef} style={{ width: '100%', height: '100%' }} />;
+  return <svg ref={svgRef} style={{ width: '80%', height: '80%' }} />;
 };
 
 // === GeoJSON ID → ISO alpha3 mapping (from world-atlas) ===
