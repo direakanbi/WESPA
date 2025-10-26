@@ -174,7 +174,7 @@ export default function HomePage() {
                 </Link>
               </div>
               {/* Globe */}
-              <div className="hidden lg:h-[400px] bg-red-900 h-full lg:flex justify-center items-center">
+              <div className="hidden lg:h-[400px]  h-full lg:flex justify-center items-center">
                 <GlobalAnimation />
               </div>
           </div>
