@@ -1,251 +1,279 @@
-import { Card, CardContent } from "@/components/ui/card"
+// app/about/page.tsx
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Globe2, Trophy, BookText, Users, Star, Shield, Award, User } from 'lucide-react';
+
+// Replace these with actual images from your public folder
+const collageImage = '/images/scrabble-collage.png'; // or use your own
+const worldMapImage = '/images/world-map-scrabble.png';
 
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      {/* HERO SECTION: Centered, Sleek Design with Image Background */}
-      <section className="relative py-20 md:py-36 overflow-hidden min-h-[50vh] flex items-center justify-center text-center">
-        
-        {/* New Background Image Layer: Using local image named 'hospitality.jpg' */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0" 
-          // Reference the image from the public folder
-          style={{ backgroundImage: `url('/images/hospitality.jpg')` }}
-        />
-        
-        {/* Dark Overlays for Text Contrast (Crucial for sleek, readable text) */}
-        <div className="absolute inset-0 bg-black/70 z-0" /> 
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-background/50 z-0" />
-        
+      {/* Hero Section – "WESPA at a Glance" */}
+      <section className="relative bg-black text-white py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/tiles-hero.png')] opacity-2"></div>
         <div className="container-width relative z-10">
-          {/* Centering the Content and applying high-impact typography */}
-          <div className="max-w-4xl mx-auto">
-            <h1 className="font-extrabold text-5xl md:text-7xl mb-6 text-balance text-white drop-shadow-lg">
-              WESPA: The Global Governing Body
-            </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
-              We are the World English-Language Scrabble Players Association, the official international organization for competitive English-language Scrabble.
-            </p>
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">WESPA at a Glance</h1>
+            <p className="text-xl text-gray-300 mb-8">Connecting players, associations, and organisers worldwide.</p>
+            <div className="inline-flex items-center px-4 py-1 bg-blue-600/30 rounded-full text-sm font-medium">
+              SINCE 2003
+            </div>
+          </div>
+
+          <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src={collageImage}
+              alt="Players enjoying Scrabble worldwide"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* MISSION & VISION SECTION (Original Code) */}
-      <section className="section-spacing">
+      {/* The Global Body Section */}
+      <section className="py-20 bg-white">
         <div className="container-width">
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="border-2 border-primary/20 shadow-sm hover:shadow-md transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="rounded-lg bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                  <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                    <circle cx="12" cy="12" r="4" strokeWidth="2" />
-                  </svg>
-                </div>
-                <h2 className="font-bold text-2xl mb-4">Our Mission</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  To promote and develop competitive English-language Scrabble worldwide, fostering a global community
-                  of players through fair competition, standardized rules, and inclusive participation across all
-                  nations and skill levels.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 shadow-sm hover:shadow-md transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="rounded-lg bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                  <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                    />
-                  </svg>
-                </div>
-                <h2 className="font-bold text-2xl mb-4">Our Vision</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  A world where Scrabble is recognized as a premier mind sport, with thriving communities on every
-                  continent, accessible pathways for new players, and opportunities for champions to compete at the
-                  highest international level.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* JOURNEY SECTION (Original Code) */}
-      <section className="section-spacing">
-        <div className="container-width">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-bold text-3xl mb-8 text-center">Our Journey</h2>
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="font-bold text-2xl text-primary">1999</span>
-                </div>
-                <div className="flex-1 pb-8 border-l-2 border-primary/20 pl-6">
-                  <h3 className="font-semibold text-xl mb-2">WESPA Founded</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Established to provide unified governance for English-language Scrabble competitions worldwide,
-                    bringing together national associations under one global framework.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="font-bold text-2xl text-primary">2005</span>
-                </div>
-                <div className="flex-1 pb-8 border-l-2 border-primary/20 pl-6">
-                  <h3 className="font-semibold text-xl mb-2">Global Rating System</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Launched the comprehensive WESPA rating system, providing standardized player rankings across all
-                    member nations and tournaments.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="font-bold text-2xl text-primary">2012</span>
-                </div>
-                <div className="flex-1 pb-8 border-l-2 border-primary/20 pl-6">
-                  <h3 className="font-semibold text-xl mb-2">Youth Initiative Launch</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Introduced dedicated youth programs and championships to nurture the next generation of Scrabble
-                    players and ensure the sport's continued growth.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="font-bold text-2xl text-primary">2020</span>
-                </div>
-                <div className="flex-1 pb-8 border-l-2 border-primary/20 pl-6">
-                  <h3 className="font-semibold text-xl mb-2">Digital Transformation</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Expanded online tournament infrastructure and digital resources, enabling global participation
-                    during challenging times and beyond.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="font-bold text-2xl text-primary">2025</span>
-                </div>
-                <div className="flex-1 pl-6">
-                  <h3 className="font-semibold text-xl mb-2">Continued Growth</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Today, WESPA represents over 50 countries and 10,000+ active players, hosting more than 100
-                    sanctioned tournaments annually across six continents.
-                  </p>
-                </div>
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                The global body for English-language Scrabble competition and fair play.
+              </h2>
+            </div>
+            <div className="text-gray-600 space-y-6">
+              <p>
+                Since its founding in 2003, WESPA has united more than 40 national associations under a shared vision for competitive Scrabble. Through our federations, individual members, and supporters, we have built a truly global community connected by standardised rules, ratings, and tournaments.
+              </p>
+              <p>
+                Each year, WESPA supports over 50 sanctioned events across continents, providing players with recognition, fair competition, and pathways to international championships. In 2022, we expanded opportunities by lifting restrictions on sanctioned tournaments, giving organisers more freedom to host events while maintaining global standards.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* GLOBAL IMPACT SECTION (Original Code) */}
-      <section className="section-spacing bg-muted/30">
+      {/* WESPA Framework Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container-width">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="font-bold text-3xl mb-4">Global Impact</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              WESPA's reach extends across continents, uniting diverse communities through the shared language of
-              Scrabble.
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">WESPA Framework</h2>
+            <p className="text-gray-600">WESPA supports tournaments, players, and organisers, while setting international standards for Scrabble.</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                icon: <BookText className="w-8 h-8 text-primary" />,
+                title: "Rules & Standards",
+                desc: "Ensuring fair play and consistent rules worldwide.",
+                link: "/rules",
+                label: "WESPA Rules >"
+              },
+              {
+                icon: <Trophy className="w-8 h-8 text-primary" />,
+                title: "Tournaments & Ratings",
+                desc: "Running tournaments and maintaining global ratings.",
+                link: "/ratings",
+                label: "Official Ratings >"
+              },
+              {
+                icon: <Star className="w-8 h-8 text-primary" />,
+                title: "Development & Growth",
+                desc: "Growing the game through players and associations.",
+                link: "/resources",
+                label: "Resources >"
+              },
+              {
+                icon: <Users className="w-8 h-8 text-primary" />,
+                title: "Community",
+                desc: "Building a united & recognised Scrabble community.",
+                link: "/community",
+                label: "Associations >"
+              }
+            ].map((item, i) => (
+              <Card key={i} className="hover:shadow-lg transition-shadow duration-200 h-[200px]">
+                <CardContent className="p-5 flex flex-col justify-between">
+                  <div>
+                    <div className="mb-3">{item.icon}</div>
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{item.desc}</p>
+                  </div>
+                  <Link href={item.link} className="text-primary text-sm font-medium hover:underline">
+                    {item.label}
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* A Global Connection Section */}
+      <section className="py-20 bg-white">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">A Global Connection</h2>
+            <p className="text-gray-600">Bridging continents through the universal language of words</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-900">United by Words, Connected by Passion</h3>
+              <p className="text-gray-600">
+                WESPA brings together Scrabble enthusiasts from every corner of the globe. From bustling tournaments in Asia to intimate clubs in Europe, from championship events in Africa to community gatherings in the Americas—we are the thread that connects diverse cultures through competitive wordplay.
+              </p>
+              <p className="text-gray-600">
+                Our mission is to promote fair play, foster excellence, and ensure that every player, regardless of location or background, has access to world-class competition and resources.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                {[
+                  { icon: <Globe2 className="w-5 h-5 text-primary" />, title: "Global Reach", desc: "Federations on 6 continents" },
+                  { icon: <Shield className="w-5 h-5 text-primary" />, title: "Fair Play", desc: "Unified rules & ratings" },
+                  { icon: <Award className="w-5 h-5 text-primary" />, title: "Excellence", desc: "World-class standards" },
+                  { icon: <Users className="w-5 h-5 text-primary" />, title: "Community", desc: "Inclusive & welcoming" }
+                ].map((item, i) => (
+                  <Card key={i} className="bg-gray-50 p-4">
+                    <div className="flex items-start gap-2">
+                      <div>{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-sm">{item.title}</h4>
+                        <p className="text-xs text-gray-500">{item.desc}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={worldMapImage}
+                alt="Global Scrabble connections"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Executive Committee Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">WESPA Executive Committee</h2>
+            <p className="text-gray-600">
+              The WESPA Committee governs the association’s operations, setting international standards, shaping policies, and safeguarding the integrity of competitive Scrabble worldwide.
             </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: "Jason Broersma", role: "Treasurer", flag: "/flags/canada.webp" },
+              { name: "Chris Lipe", role: "Chair Person", flag: "/flags/usa.webp" },
+              { name: "Carol Johnsen", role: "Secretary", flag: "/flags/australia.webp" }
+            ].map((member, i) => (
+              <div key={i} className="text-center hover:shadow-sm transition-shadow duration-200 h-[320px] w-[260px] mx-auto bg-white rounded-lg">
+                {/* Changed: Use flex-col, allow headshot area to grow/shrink, align items start (left) */}
+                <div className="p-0 flex flex-col h-full">
+                  {/* Headshot container - Takes fixed height */}
+                  <div className="relative w-full h-[240px] flex-shrink-0">
+          <Image
+            src="/images/fake_player3.jpg"
+            alt={member.name}
+            fill
+            className="object-cover rounded-t-lg"
+          />
+          {/* Flag Icon - Bigger, with white background */}
+          <div className="absolute bottom-1 left-1 w-10 h-10 rounded-md overflow-hidden bg-white flex items-center justify-center"> {/* Increased size to w-10 h-10, added bg-white and flex centering */}
+            <Image
+              src={member.flag}
+              alt={`${member.name}'s country`}
+              fill // Use fill to let the Image component manage the size within the parent div
+              className="object-cover" // Maintain object-cover for the flag image itself
+            />
+          </div>
+        </div>
+
+                  {/* Text Block - Positioned directly below the headshot container, aligned left */}
+                  <div className="text-left px-4 py-3 flex-grow flex flex-col justify-center"> {/* Added flex-grow and flex-col justify-center */}
+                    <div className="font-semibold text-base text-gray-900">{member.name}</div>
+                    <p className="text-xs text-gray-500">{member.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/committee" className="text-primary text-sm font-medium hover:underline">
+              View all Members →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Impact Section */}
+      <section className="py-20 bg-black text-white">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-2">Global Impact</h2>
+            <p className="text-gray-300">Connecting players, associations, and organisers worldwide.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-              <CardContent className="p-6 text-center">
-                <div className="rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
-                    />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 12h20" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-xl mb-2">50+ Countries</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Member associations spanning Africa, Asia, Europe, North America, Oceania, and South America.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-              <CardContent className="p-6 text-center">
-                <div className="rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-xl mb-2">100+ Tournaments</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Annual sanctioned events ranging from local competitions to world championships.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-              <CardContent className="p-6 text-center">
-                <div className="rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                    <circle cx="12" cy="12" r="4" strokeWidth="2" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-xl mb-2">10,000+ Players</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Active competitive players tracked in our global rating system across all skill levels.
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: <Globe2 className="w-8 h-8 text-orange-400" />,
+                title: "50+ Countries",
+                desc: "Member associations spanning Africa, Asia, Europe, North America, Oceania, and South America."
+              },
+              {
+                icon: <Trophy className="w-8 h-8 text-orange-400" />,
+                title: "100+ Tournaments",
+                desc: "Annual sanctioned events ranging from local competitions to world championships."
+              },
+              {
+                icon: <Users className="w-8 h-8 text-orange-400" />,
+                title: "10,000+ Players",
+                desc: "Active competitive players tracked in our global rating system across all skill levels."
+              }
+            ].map((item, i) => (
+              <Card key={i} className="bg-gray-900 border border-gray-700 hover:border-gray-600 transition-colors duration-200">
+                <CardContent className="p-6 text-center">
+                  <div className="mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* PARTNERS SECTION (Original Code) */}
-      <section className="section-spacing">
+      {/* Our Partners Section */}
+      <section className="py-20 bg-white">
         <div className="container-width">
-          <h2 className="font-bold text-3xl mb-8 text-center">Our Partners</h2>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-            <div className="h-16 w-32 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground">
-              Partner Logo
-            </div>
-            <div className="h-16 w-32 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground">
-              Partner Logo
-            </div>
-            <div className="h-16 w-32 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground">
-              Partner Logo
-            </div>
-            <div className="h-16 w-32 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground">
-              Partner Logo
-            </div>
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Our Partners</h2>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="h-20 w-32 bg-gray-100 rounded-lg flex items-center justify-center text-xs text-gray-500">
+                Partner Logo
+              </div>
+            ))}
           </div>
         </div>
       </section>
     </main>
-  )
+  );
 }
