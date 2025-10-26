@@ -152,21 +152,22 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative bg-[url(/images/tiles-images.svg)]   overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14">
+          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14   px-[14%]">
               {/* Left Column: Logo + Text (now properly stacked) */}
-              <div className="flex flex-col items-start justify-self-center self-center translate-x-[50px]">
-                <Image
-                  src={logo}
-                  alt="WESPA Logo"
-                  priority
-                  className="w-[289px] mb-6"
+              <div className="flex flex-col lg:pt-20 items-start">
+                <Image 
+                  src={logo} 
+                  alt="WESPA Logo" 
+                  priority 
+                  className=" w-[289px] mb-6 -translate-x-5" 
+                  // Remove pt/pb — use margin instead
                 />
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4 text-left">
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4">
                   The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
                 </p>
-                <Link
-                  href="/membership"
-                  className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors text-left"
+                <Link 
+                  href="/membership" 
+                  className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors"
                 >
                   <span>Learn More</span>
                   <ChevronRight size={25} />

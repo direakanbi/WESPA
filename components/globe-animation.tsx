@@ -291,7 +291,7 @@ const GlobalAnimation: React.FC = () => {
 
     // Rotation animation
     const rotateGlobe = () => {
-        config.lambda += 0.9;
+        config.lambda += 1.9;
         projection.rotate([-config.lambda, config.phi]);
         svg.selectAll('path.country')
            .attr('d', (d: any) => path(d));
@@ -349,7 +349,7 @@ const GlobalAnimation: React.FC = () => {
     };
   }, []);
 
-  return <svg ref={svgRef} style={{ width: '80%', height: '80%' }} />;
+  return <svg ref={svgRef} style={{ width: '85%', height: '85%' }} />;
 };
 
 // === GeoJSON ID → ISO alpha3 mapping (from world-atlas) ===
