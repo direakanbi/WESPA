@@ -7,7 +7,7 @@ import membership_hero from "../../public/images/membership_hero.png"
 import world_map from "../../public/images/membership.png" 
 import Image from "next/image";
 import CountUp from "react-countup";
-import {Flag,UserRound,Users} from "lucide-react";
+import {Flag,MoveRight,UserRound,Users} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
@@ -95,7 +95,7 @@ export default function MembershipPage() {
 
   return (
     <main className="flex-1">
-      <section className="relative py-20 md:py-28  overflow-hidden ">
+      <section className="relative py-20 md:py-36  overflow-hidden lg:px-14 lg:h-[600px]">
         <div className="absolute inset-0 z-0">
           <Image src={membership_hero} priority alt="Member ship Image" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
@@ -115,11 +115,11 @@ export default function MembershipPage() {
       </section>
 
       {/* COUNT section */}
-      <section ref={ref} className="  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-10 ">
+      <section ref={ref} className="  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-10 lg:py-10 lg:px-14">
         {
           count.map((eachOne,idx)=>{
             return(
-              <div key={idx} className=" flex items-center lg:items-start lg:flex-col bg-gray-100 gap-5 py-5 px-10 rounded-md ">
+              <div key={idx} className=" flex items-center lg:items-start lg:flex-col bg-gray-100 gap-5 lg:gap-8 py-5 lg:py-10  px-10 rounded-md ">
                 <p className=" font-semibold text-2xl sm:text-3xl lg:text-4xl ">
                   {
                     inView?<CountUp delay={0.3} duration={5} start={0} end={eachOne.amount}/>:
@@ -134,10 +134,10 @@ export default function MembershipPage() {
       </section>
 
       {/* MEMBERSHIP SUPPORT */}
-      <section className=" bg-black flex flex-col gap-12 py-10 md:py-16 px-5">
+      <section className=" bg-black flex flex-col gap-12 lg:gap-24 py-10 lg:py-24 md:py-16 px-5 lg:px-24">
         <section className=" flex gap-5 flex-col">
           <h1 className=" font-gayathri text-3xl md:text-5xl text-center font-medium text-white">Membership & Support Pathways</h1>
-          <p className=" text-white font-poppins text-center">
+          <p className=" text-white text-sm font-poppins text-center">
             WESPA membership is open to federations and players, with a support pathway for friends of global Scrabble.
           </p>
 
@@ -248,7 +248,7 @@ export default function MembershipPage() {
 
 const DisplayMemberType = ({typeId}:{typeId:number})=>{
   const data = [
-    {header:"National Association",id:1,text:"National associations connect their players to the global Scrabble framework, providing ratings, recognition, and access to tournaments.Membership is classified into two tiers, based on association size and voting rights."},
+    {header:"National Association",id:1,text:"National associations connect their players to the global Scrabble framework, providing ratings, recognition, and access to tournaments.\n\n\nMembership is classified into two tiers, based on association size and voting rights."},
     {header:"WESPA+",id:2,text:"Players and fans can build a direct link with WESPA, gaining access to exclusive content, online events, and a profile within the worldwide Scrabble community. \n WESPA+ is open to individuals who are not members of a national federation but still want to engage directly with the global Scrabble community."},
     {header:"Friends of Wespa",id:3,text:"Individuals, communities, and organizations can champion the growth of Scrabble worldwide, receiving recognition, unique supporter benefits, and invitations to special events."},
   ].filter((eachOne)=>eachOne.id===typeId)
@@ -259,8 +259,9 @@ const DisplayMemberType = ({typeId}:{typeId:number})=>{
         data.map((eachOne)=>{
           return (
           <section key={eachOne.id} className=" py-10 px-2 flex flex-col gap-4">
-            <h1 className=" text-2xl text-white">{eachOne.header}</h1>
-            <article className=" text-base text-gray-300">{eachOne.text}</article>
+            <h1 className=" text-2xl lg:text-4xl text-white">{eachOne.header}</h1>
+            <article className=" text-base  text-gray-300">{eachOne.text}</article>
+            <button className=" text-primary flex lg:pt-8 font-semibold gap-2 items-center "><span>View Members</span><MoveRight size={20}/></button>
           </section>
           )
         })

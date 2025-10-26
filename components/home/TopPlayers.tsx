@@ -53,7 +53,7 @@ function TopPlayers() {
         breakpoints={{
           0: { slidesPerView: 2 },
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          1024: { slidesPerView: 5 },
         }}
         className="mySwiper"
       >
@@ -62,7 +62,7 @@ function TopPlayers() {
             <div className="bg-white border border-gray-200 shadow rounded-2xl flex flex-col items-center overflow-hidden hover:shadow-m transition-shadow duration-300 swiper-slide-active:scale-105">
               
               {/* Player Image */}
-              <div className="relative w-full h-72">
+              <div className="relative w-full h-80 lg:h-72">
                 <Image
                   src={player.image}
                   alt={player.name}
