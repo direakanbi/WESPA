@@ -34,6 +34,7 @@ import switz from "../public/flags/switz.webp";
 import tanzania from "../public/flags/tanzania.webp";
 import thailand from "../public/flags/tanzania.webp";
 import trinidad from "../public/flags/trinidad.webp";
+import turkey from "../public/flags/tr.webp";
 import uae from "../public/flags/uae.webp";
 import uganda from "../public/flags/ug.webp";
 import uk from "../public/flags/uk.webp";
@@ -41,5 +42,5 @@ import us from "../public/flags/australia.webp";
 
 
 export {
-    australia,bangladesh,botswana,cameroon,canada,gambia,ghana,germany,hongKong,india,indonesia,ireland,kenya,liberia,malaysia,malta,nepal,netherlands,newZealand,nigeria,pakistan,philippines,poland,qatar,romania,seychelles,sierreLeone,singapore,southAfrica,spain,sriLanka,sweden,switz,tanzania,thailand,trinidad,uae,uk,us,uganda
+    australia,bangladesh,botswana,cameroon,canada,gambia,ghana,germany,hongKong,india,indonesia,ireland,kenya,liberia,malaysia,malta,nepal,netherlands,newZealand,nigeria,pakistan,philippines,poland,qatar,romania,seychelles,sierreLeone,singapore,southAfrica,spain,sriLanka,sweden,switz,tanzania,thailand,trinidad,turkey,uae,uk,us,uganda
 }

@@ -1,15 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
+import footer_image from "../public/images/footer_logo.png"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-black text-white mt-20">
+    <footer className="border-t border-border bg-black text-white ">
       <div className="container-width py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <Image src="/images/new-wespa-logo.png" alt="WESPA Logo" width={64} height={64} className=" w-16"/>
+                <Image src={footer_image} alt="WESPA Logo" width={64} height={64} className=" w-16"/>
             </Link>
             <p className="text-sm text-white/80 leading-relaxed">
               The World English-Language Scrabble Players Association - promoting competitive Scrabble globally.
