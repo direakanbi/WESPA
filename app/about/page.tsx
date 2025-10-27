@@ -75,11 +75,13 @@ export default function AboutPage() {
 
       {/* WESPA Framework Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container-width">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">WESPA Framework</h2>
-            <p className="text-gray-600">WESPA supports tournaments, players, and organisers, while setting international standards for Scrabble.</p>
-          </div>
+  <div className="container-width">
+    <div className="max-w-4xl mx-auto text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-2">WESPA Framework</h2>
+      <p className="text-gray-600">
+        WESPA supports tournaments, players, and organisers, while setting international standards for Scrabble.
+      </p>
+    </div>
 
           <div className="grid md:grid-cols-4 gap-6">
             {[

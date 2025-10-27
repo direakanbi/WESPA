@@ -159,10 +159,10 @@ export default function HomePage() {
                   src={logo} 
                   alt="WESPA Logo" 
                   priority 
-                  className=" w-[289px] mb-6 -translate-x-5" 
+                  className=" w-[289px] mb-[5px] -translate-x-5"
                   // Remove pt/pb — use margin instead
                 />
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4">
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-[5px]">
                   The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
                 </p>
                 <Link 
