@@ -2,19 +2,17 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 interface CommitteeMember {
   id: number
   name: string
   role: string
-  country: string
+  country:StaticImageData
   countryCode: string
-  photo: string
-  bio: string
-  committee: string
+  photo:  StaticImageData
 }
 
 export function CommitteeMemberCard({ member }: { member: CommitteeMember }) {
@@ -23,21 +21,8 @@ export function CommitteeMemberCard({ member }: { member: CommitteeMember }) {
   return (
     <>
       <Card className="hover:shadow-lg transition-shadow">
-        <CardContent className="p-6">
-          <div className="flex flex-col items-center text-center">
-            <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden bg-muted">
-              <Image src={member.photo || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-            </div>
-            <h3 className="font-serif font-semibold text-xl mb-1">{member.name}</h3>
-            <p className="text-primary font-medium mb-2">{member.role}</p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <span className="text-xs bg-muted px-2 py-1 rounded font-mono">{member.countryCode}</span>
-              <span>{member.country}</span>
-            </div>
-            <Button variant="outline" size="sm" onClick={() => setShowBio(true)}>
-              Read Bio
-            </Button>
-          </div>
+        <CardContent>
+          
         </CardContent>
       </Card>
 
@@ -55,11 +40,10 @@ export function CommitteeMemberCard({ member }: { member: CommitteeMember }) {
                 <p className="font-medium text-primary">{member.role}</p>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span className="text-xs bg-muted px-2 py-1 rounded font-mono">{member.countryCode}</span>
-                  <span>{member.country}</span>
+                  <Image src={member.country} alt={member.countryCode} width={20} height={15} className="object-cover rounded-sm" />
                 </div>
               </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
           </div>
         </DialogContent>
       </Dialog>
