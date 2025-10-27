@@ -2,23 +2,18 @@ import Link from "next/link";
 
 interface CreditItemProps {
   initial: string;
-  number: number;
   name: string;
   description: string;
 }
 
 const CreditItem: React.FC<CreditItemProps> = ({
   initial,
-  number,
   name,
   description,
 }) => (
-  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md">
-    <div className="relative flex items-center justify-center w-16 h-16 bg-black-100 text-blue-600 text-2xl font-bold rounded-full">
-      {initial}
-      <span className="absolute bottom-0 right-0 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-        {number}
-      </span>
+  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md bg-gradient-to-br from-white to-primary/10">
+    <div className="relative flex items-center justify-center w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+      <img src={`/images/scrabble-${initial.toLowerCase()}.png`} alt={name} className="w-full h-full object-contain" />
     </div>
     <div>
       <h3 className="text-lg font-semibold">{name}</h3>
@@ -43,11 +38,11 @@ const CreditsPage: React.FC = () => {
             supported WESPA's global mission.
           </p>
           <nav className="text-sm" >
-            <Link href="/" className="text-blue-300 hover:underline">
+            <Link href="/" className="text-primary hover:underline">
               Home
             </Link>{" "}
             {">"}{" "}
-            <Link href="/about" className="text-blue-300 hover:underline">
+            <Link href="/about" className="text-primary hover:underline">
               About
             </Link>{" "}
             {">"} <span className="text-white">Credits</span>
@@ -64,35 +59,31 @@ const CreditsPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <CreditItem
             initial="K"
-            number={5}
             name="Katy Yiakmis"
             description="Design work on the logo and masthead"
           />
           <CreditItem
             initial="S"
-            number={1}
             name="Sam Kantimathi"
             description="Original logo concept"
           />
           <CreditItem
             initial="L"
-            number={1}
             name="Llewellyn Jegels"
             description="Previous webmaster — early work on the website"
           />
           <CreditItem
             initial="C"
-            number={3}
             name="Craig Beevers,"
             description="Previous webmaster — early work on the website"
           />
         </div>
 
-        <p className="text-center text-xl mt-12">
+        <p className="text-center text-xl mt-12 font-bold">
           Thank you to all volunteers and contributors.
         </p>
         <div className="text-center mt-6">
-          <Link href="/" className="text-blue-600 hover:underline text-lg">
+          <Link href="/" className="text-primary hover:underline text-lg font-bold">
             Back to Home {">"}
           </Link>
         </div>
