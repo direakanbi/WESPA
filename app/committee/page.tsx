@@ -1,12 +1,16 @@
 import { CommitteeMemberCard } from "@/components/committee-member-card"
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import hero_img from "../../public/images/committee-hero.png";
 import dummy_image from "../../public/images/placeholder_img.png";
 import Link from "next/link";
 import { canada,australia,nigeria,india,us,uk,hongKong, turkey} from "@/lib/flags";
 import { Button } from "@/components/ui/button";
-import { FaStar } from "react-icons/fa";
-
+import star from "../../public/icons/Tournaments.svg";
+import ethics from "../../public/icons/Ethics.svg";
+import rules from "../../public/icons/Rules.svg";
+import communication from "../../public/icons/communication.svg";
+import members from "../../public/icons/member_affairs.svg"
+import youth_scrabble from "../../public/icons/youth_scrabble.svg"
 
 const topCommittee = [
   {
@@ -102,7 +106,14 @@ const committeeMembers = [
     photo: dummy_image,
   },
 ]
-
+const committees_rules = [
+  {image:star,header:"Tournament & Ratings",text:"Managing tournaments and player ratings",link:"#"},
+  {image:ethics,header:"Ethics & Disciplinary",text:"Ensuring fairness and integrity in play",link:"#"},
+  {image:rules,header:"Rules & Dictionary",text:"Maintaining official rules and word limits",link:"#"},
+  {image:communication,header:"Communication media & Branding",text:"Promoting Scrabble and its global image",link:"#"},
+  {image:youth_scrabble,header:"Youth Scrabble",text:"Inspiring and guiding young players",link:"#"},
+  {image:members,header:"Members Affairs",text:"Supporting and connecting member nations.",link:"#"},
+]
 export default function CommitteePage() {
  
   return (
@@ -194,6 +205,23 @@ export default function CommitteePage() {
           </div>
         </div>
       </section>
+      {/* Our Committees */}
+
+      <section className=" lg:grid lg:grid-cols-4 gap-5 px-10">
+        {
+          committees_rules.map((rule,idx)=>{
+            return(
+              <div key={idx} className=" flex flex-col gap-3 bg-white py-8 px-4 rounded-md">
+                <Image src={rule.image} alt={rule.header} className=" w-12 "/>
+                <p className=" font-semibold text-lg">{rule.header}</p>
+                <p className=" text-sm text-gray-800">{rule.text}</p>
+                <Link href={rule.link} className=" text-primary"><p className=" text-sm ">See Members</p></Link>
+              </div>
+            )
+          })
+        }
+      </section>
+
     </main>
   )
 }
