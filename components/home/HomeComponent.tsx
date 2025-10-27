@@ -150,31 +150,32 @@ export default function HomePage() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="relative bg-[url(/images/tiles-images.svg)]   overflow-hidden">
+ {/* Hero Section */}
+ <section className="relative bg-[url(/images/tiles-images.svg)] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/50 rounded-full blur-3xl scale-150"></div>
         <div className="container mx-auto px-4">
-          <div className="w-full h-[400px] lg:h-[600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14   px-[14%]">
-              {/* Left Column: Logo + Text (now properly stacked) */}
-              <div className="flex flex-col lg:pt-20 items-start">
-                <Image 
-                  src={logo} 
-                  alt="WESPA Logo" 
-                  priority 
-                  className=" w-[289px] mb-[5px] -translate-x-5"
-                  // Remove pt/pb — use margin instead
+          <div className="w-full h-[300px] lg:h-[400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14   px-[5%]">
+              {/* Left Column: Logo + Text (now properly stacked and aligned left) */}
+              <div className="flex flex-col lg:pt-10 items-start"> {/* items-start ensures content aligns to the left */}
+                <Image
+                  src={logo}
+                  alt="WESPA Logo"
+                  priority
+                  className="mb-[5px] max-w-xs" // Ensure it's left-aligned and has a reasonable max-width
                 />
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-[5px]">
+                <p className="text-sm md:text-base text-black-600 leading-relaxed max-w-lg mb-[5px] text-left font-semibold"> {/* Added text-left just to be sure */}
                   The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
                 </p>
-                <Link 
-                  href="/membership" 
-                  className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors"
+                <Link
+                  href="/membership"
+                  className="flex items-center gap-2 text-primary text-sm md:text-base font-medium transition-colors text-left" // Added text-left just to be sure
                 >
                   <span>Learn More</span>
                   <ChevronRight size={25} />
                 </Link>
               </div>
               {/* Globe */}
-              <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center">
+              <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center translate-x-10 -translate-y-10">
                 <GlobalAnimation />
               </div>
           </div>
