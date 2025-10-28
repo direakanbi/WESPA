@@ -239,7 +239,7 @@ export default function AboutPage() {
       <section className="py-20 bg-black text-white">
         <div className="container-width">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2">Global Impact</h2>
+            <h2 className="text-3xl font-bold mb-2 text-white">Global Impact</h2>
             <p className="text-gray-300">Connecting players, associations, and organisers worldwide.</p>
           </div>
 
@@ -261,10 +261,10 @@ export default function AboutPage() {
                 desc: "Active competitive players tracked in our global rating system across all skill levels."
               }
             ].map((item, i) => (
-              <Card key={i} className="bg-gray-900 border border-gray-700 hover:border-gray-600 transition-colors duration-200">
-                <CardContent className="p-6 text-center">
+              <Card key={i} className="bg-black border border-gray-700 hover:border-gray-600 transition-colors duration-200 text-center">
+                <CardContent className="p-6 flex flex-col items-center justify-center h-full">
                   <div className="mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
                   <p className="text-gray-400 text-sm">{item.desc}</p>
                 </CardContent>
               </Card>
