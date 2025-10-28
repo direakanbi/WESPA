@@ -8,17 +8,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Globe2, Trophy, BookText, Users, Star, Shield, Award, User } from 'lucide-react';
 
-// Replace these with actual images from your public folder
-const collageImage = '/images/scrabble-collage.png'; // or use your own
+
+const collageImage = '/images/scrabble-collage.png'; 
 const worldMapImage = '/images/world-map-scrabble.png';
 
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      {/* Hero Section – "WESPA at a Glance" */}
-      {/* Hero Section - "WESPA at a Glance" - Updated for Large Overlapping Image */}
-      <section className="relative bg-black text-white py-20 md:py-32 min-h-[600px]"> {/* Kept min-h for debugging */}
-        {/* Background pattern/image overlay */}
+      <section className="relative bg-black text-white py-20 md:py-32 min-h-[600px]">
         <Image
           src="/images/tiles-hero.png"
           alt="Background pattern"
@@ -39,22 +36,21 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Collage Image Container - Made relative for absolute positioning */}
-          <div className="relative h-[550px] md:h-[650px] rounded-3xl shadow-2xl z-50"> {/* Increased z-index to z-50 */}
-            {/* Collage Image - Positioned absolutely at bottom, extending into next section */}
+          
+          <div className="relative h-[550px] md:h-[650px] rounded-3xl shadow-2xl z-100"> {/* Increased z-index to z-50 */}
             <Image
-              src={collageImage} // e.g., '/images/scrabble-collage.jpg'
+              src={collageImage} 
               alt="Players enjoying Scrabble worldwide"
               fill
-              className="object-cover top-[800px]" // Pushed image down by another 200px
+              className="object-cover top-[1000px]" 
             />
           </div>
         </div>
       </section>
 
-      {/* The Global Body Section - Pulled up to overlap with Hero Image */}
-      <section className="py-20 bg-white -mt-32 md:-mt-48 relative z-10">
-        <div className="container-width pt-20"> {/* Reverted padding-top to previous position */}
+      {/* The Global Body Section*/}
+      <section className="py-20 bg-white -mt-50 md:-mt-48 relative z-10">
+        <div className="container-width pt-20"> 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -197,9 +193,7 @@ export default function AboutPage() {
               { name: "Carol Johnsen", role: "Secretary", flag: "/flags/australia.webp" }
             ].map((member, i) => (
               <div key={i} className="text-center hover:shadow-sm transition-shadow duration-200 h-[320px] w-[260px] mx-auto bg-white rounded-lg">
-                {/* Changed: Use flex-col, allow headshot area to grow/shrink, align items start (left) */}
                 <div className="p-0 flex flex-col h-full">
-                  {/* Headshot container - Takes fixed height */}
                   <div className="relative w-full h-[240px] flex-shrink-0">
                     <Image
                       src="/images/fake_player3.jpg"
@@ -207,19 +201,18 @@ export default function AboutPage() {
                       fill
                       className="object-cover rounded-t-lg"
                     />
-                    {/* Flag Icon - Bigger, with white background */}
+
                     <div className="absolute bottom-1 left-1 w-10 h-10 rounded-md overflow-hidden bg-white flex items-center justify-center"> {/* Increased size to w-10 h-10, added bg-white and flex centering */}
                       <Image
                         src={member.flag}
                         alt={`${member.name}'s country`}
-                        fill // Use fill to let the Image component manage the size within the parent div
-                        className="object-cover" // Maintain object-cover for the flag image itself
+                        fill 
+                        className="object-cover"
                       />
                     </div>
                   </div>
 
-                  {/* Text Block - Positioned directly below the headshot container, aligned left */}
-                  <div className="text-left px-4 py-3 flex-grow flex flex-col justify-center"> {/* Added flex-grow and flex-col justify-center */}
+                  <div className="text-left px-4 py-3 flex-grow flex flex-col justify-center">
                     <div className="font-semibold text-base text-gray-900">{member.name}</div>
                     <p className="text-xs text-gray-500">{member.role}</p>
                   </div>

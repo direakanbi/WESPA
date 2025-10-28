@@ -27,7 +27,7 @@
 }
 
 :root {
-  --font-quicksand: "Inter";
+  --font-quicksand: "Quicksand";
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0.015 250);
 
@@ -157,7 +157,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-[var(--font-quicksand)];
   }
 
 }
