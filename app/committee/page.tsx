@@ -4,9 +4,9 @@ import dummy_image from "../../public/images/placeholder_img.png";
 import Link from "next/link";
 import { canada,australia,nigeria,india,us,uk,hongKong, turkey} from "@/lib/flags";
 import { Button } from "@/components/ui/button";
-import star from "../../public/icons/Tournaments.svg";
-import ethics from "../../public/icons/Ethics.svg";
-import rules from "../../public/icons/Rules.svg";
+import star from "../../public/icons/tournaments.svg";
+import ethics from "../../public/icons/ethics.svg";
+import rules from "../../public/icons/rules.svg";
 import communication from "../../public/icons/communication.svg";
 import members from "../../public/icons/member_affairs.svg"
 import youth_scrabble from "../../public/icons/youth_scrabble.svg"
