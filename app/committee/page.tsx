@@ -1,6 +1,5 @@
-import { CommitteeMemberCard } from "@/components/committee-member-card"
 import Image, {StaticImageData} from "next/image";
-import hero_img from "../../public/images/committee-hero.png";
+
 import dummy_image from "../../public/images/placeholder_img.png";
 import Link from "next/link";
 import { canada,australia,nigeria,india,us,uk,hongKong, turkey} from "@/lib/flags";
@@ -11,6 +10,7 @@ import rules from "../../public/icons/Rules.svg";
 import communication from "../../public/icons/communication.svg";
 import members from "../../public/icons/member_affairs.svg"
 import youth_scrabble from "../../public/icons/youth_scrabble.svg"
+import DarkHero from "@/components/DarkHero";
 
 const topCommittee = [
   {
@@ -112,36 +112,17 @@ const committees_rules_one = [
   {image:rules,header:"Rules & Dictionary",text:"Maintaining official rules and word limits",link:"#"},
   {image:communication,header:"Communication media & Branding",text:"Promoting Scrabble and its global image",link:"#"},
 ]
-
-const committees_rules_two = [
-   {image:youth_scrabble,header:"Youth Scrabble",text:"Inspiring and guiding young players",link:"#"},
-  {image:members,header:"Members Affairs",text:"Supporting and connecting member nations.",link:"#"},
+const links = [
+  {name:"Home",href:"/"},
+  {name:"About",href:"/about"},
+  {name:"Our committees",href:"#"},
 ]
+
 export default function CommitteePage() {
  
   return (
     <main className=" bg-primary/5 ">
-      <section className="relative  py-20 md:py-28 overflow-hidden h-[600px] lg:h-[500px]">
-        <div className="absolute inset-0 -z-10">
-          <Image src={hero_img} alt="Hero section for Committee" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
-        <div className="container-width relative z-10 ">
-          <div className="">
-            <h1 className="font-bold text-4xl md:text-6xl mb-10 text-white  text-center">Executive Committee</h1>
-            <p className="text-xl text-white   text-center leading-relaxed">
-              WESPA committees uphold rules, ratings, <br/> youth development, global tournaments and official <br/> dictionaries.
-            </p>
-          </div>
-            <section className=" flex justify-center gap-3 items-center pt-8">
-              <Link href="/" className=" text-white text-lg font-semibold">Home</Link>
-              <span className=" text-white text-base">&gt;</span>
-              <Link href="/about" className=" text-white text-lg font-semibold">About</Link>
-              <span className=" text-white text-base">&gt;</span>
-              <Link href="#" className=" text-primary text-lg font-semibold">Our committees</Link>
-            </section>
-        </div>
-      </section>
+      <DarkHero heading=" Executive Committee" text="WESPA committees uphold rules, ratings, youth development, global tournaments and official dictionaries." links={links}/> 
 
       <div className=" bg-gray-50 py-10 lg:py-24 ">
         <section className="lg:px-32">
