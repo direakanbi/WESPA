@@ -1,4 +1,4 @@
-const events = [
+export const events = [
   {
     startDate: "2025-01-12",
     endDate: "2025-01-14",
