@@ -106,19 +106,22 @@ const committeeMembers = [
     photo: dummy_image,
   },
 ]
-const committees_rules = [
+const committees_rules_one = [
   {image:star,header:"Tournament & Ratings",text:"Managing tournaments and player ratings",link:"#"},
   {image:ethics,header:"Ethics & Disciplinary",text:"Ensuring fairness and integrity in play",link:"#"},
   {image:rules,header:"Rules & Dictionary",text:"Maintaining official rules and word limits",link:"#"},
   {image:communication,header:"Communication media & Branding",text:"Promoting Scrabble and its global image",link:"#"},
-  {image:youth_scrabble,header:"Youth Scrabble",text:"Inspiring and guiding young players",link:"#"},
+]
+
+const committees_rules_two = [
+   {image:youth_scrabble,header:"Youth Scrabble",text:"Inspiring and guiding young players",link:"#"},
   {image:members,header:"Members Affairs",text:"Supporting and connecting member nations.",link:"#"},
 ]
 export default function CommitteePage() {
  
   return (
     <main className=" bg-primary/5 ">
-      <section className="relative mb-10 lg:mb-20 py-20 md:py-28 overflow-hidden h-[600px] lg:h-[500px]">
+      <section className="relative  py-20 md:py-28 overflow-hidden h-[600px] lg:h-[500px]">
         <div className="absolute inset-0 -z-10">
           <Image src={hero_img} alt="Hero section for Committee" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/20" />
@@ -140,87 +143,111 @@ export default function CommitteePage() {
         </div>
       </section>
 
-
+      <div className=" bg-gray-50 py-10 lg:py-24 ">
+        <section className="lg:px-32">
+          <div >
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16">
+              {
+                topCommittee.map((member) =>{
+                  return(
+                    <div key={member.id} className=" p-2 bg-white rounded-2xl">
+                      <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
+                        <div className="relative  mb-1 ">
+                          <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-54 h-64  object-cover" />
+                          <section className=" w-10 p-3 absolute bottom-0 -left-0.5 bg-white rounded-full">
+                            <Image src={member.country || "/placeholder.svg"} alt={member.name} className={`  `}/>
+                          </section>
+                        </div>
+                        <section className=" w-full px-1 flex items-center justify-between gap-5 ">
+                          <div className="flex flex-col gap-1 text-sm text-black mb-4">
+                            <h3 className=" font-semibold text-lg mb-1">{member.name}</h3>
+                            <p className="text-muted-foreground font-medium mb-2">{member.role}</p>
+                          </div>
+                          <Button variant="outline" size="sm">
+                            Read Bio
+                          </Button>
+                        </section>
+                      </div>
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </div>
+        </section>
+        <section className=" pt-10 pb-16">
+          <div className="container-width">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {
+                committeeMembers.map((member) =>{
+                  return(
+                    <div key={member.id} className=" p-2 bg-white rounded-2xl">
+                      <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
+                        <div className="relative mb-1 ">
+                          <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-54 h-64  object-cover"/>
+                          <section className=" w-10 p-3 absolute bottom-0 -left-0.5 bg-white rounded-full">
+                            <Image src={member.country || "/placeholder.svg"} alt={member.name} className={`  `}/>
+                          </section>
+                        </div>
+                        <section className=" w-full px-1 flex items-center justify-between gap-5 ">
+                          <div className="flex flex-col gap-1 text-sm text-black mb-4">
+                            <h3 className=" font-semibold text-base mb-1">{member.name}</h3>
+                            <p className="text-muted-foreground mb-2">{member.role}</p>
+                          </div>
+                          <Button variant="outline" size="sm">
+                            Read Bio
+                          </Button>
+                        </section>
+                      </div>
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Committee Members */}
-      <section className="lg:px-32">
-        <div >
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {
-              topCommittee.map((member) =>{
-                return(
-                  <div key={member.id} className=" p-2 bg-white rounded-2xl">
-                    <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
-                      <div className="relative bg-red-900 mb-1 ">
-                        <Image src={member.photo || "/placeholder.svg"} alt={member.name} className="object-cover " />
-                        <section className=" w-10 p-3 absolute bottom-0 -left-0.5 bg-white rounded-full">
-                          <Image src={member.country || "/placeholder.svg"} alt={member.name} className={`  `}/>
-                        </section>
-                      </div>
-                      <section className=" w-full px-1 flex items-center justify-between gap-5 ">
-                        <div className="flex flex-col gap-1 text-sm text-black mb-4">
-                          <h3 className="font-serif font-semibold text-lg mb-1">{member.name}</h3>
-                          <p className="text-muted-foreground font-medium mb-2">{member.role}</p>
-                        </div>
-                        <Button variant="outline" size="sm">
-                          Read Bio
-                        </Button>
-                      </section>
-                    </div>
-                  </div>
-                )
-              })
-            }
-          </div>
-        </div>
-      </section>
-      <section className=" pt-10 pb-16">
-        <div className="container-width">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {
-              committeeMembers.map((member) =>{
-                return(
-                  <div key={member.id} className=" p-2 bg-white rounded-2xl">
-                    <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
-                      <div className="relative mb-1 ">
-                        <Image src={member.photo || "/placeholder.svg"} alt={member.name} className="object-cover" />
-                        <section className=" w-10 p-3 absolute bottom-0 -left-0.5 bg-white rounded-full">
-                          <Image src={member.country || "/placeholder.svg"} alt={member.name} className={`  `}/>
-                        </section>
-                      </div>
-                      <section className=" w-full px-1 flex items-center justify-between gap-5 ">
-                        <div className="flex flex-col gap-1 text-sm text-black mb-4">
-                          <h3 className="font-serif font-semibold text-lg mb-1">{member.name}</h3>
-                          <p className="text-muted-foreground font-medium mb-2">{member.role}</p>
-                        </div>
-                        <Button variant="outline" size="sm">
-                          Read Bio
-                        </Button>
-                      </section>
-                    </div>
-                  </div>
-                )
-              })
-            }
-          </div>
-        </div>
-      </section>
       {/* Our Committees */}
+      <div className=" flex flex-col gap-10 py-10">
+        <section className=" flex flex-col gap-1 mb-8">
+          <h2 className=" text-4xl font-medium text-center mb-2">Our Committees</h2>
+          <p className=" text-sm text-gray-500 font-semibold text-center">Wespa committes ensure Scrabble thrives worldwide</p>
+        </section>
+        <section className=" grid grid-cols-2 lg:grid-cols-4 gap-5 px-10">
+          {
+            committees_rules_one.map((rule,idx)=>{
+              return(
+                <div key={idx} className=" flex flex-col gap-3 bg-white py-8 px-4 rounded-md">
+                  <Image src={rule.image} alt={rule.header} className=" w-12 "/>
+                  <p className=" font-semibold text-lg">{rule.header}</p>
+                  <p className=" text-sm text-gray-800">{rule.text}</p>
+                  <Link href={rule.link} className=" text-primary"><p className=" text-sm ">See Members</p></Link>
+                </div>
+              )
+            })
+          }
+        </section>
+        <section className="mb-10 flex justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 px-10">
+            <div className="flex flex-col gap-10 bg-white py-8 px-4 rounded-md">
+              <Image src={youth_scrabble} alt="Youth Scrabble" className="w-12" />
+              <p className="font-semibold text-lg">Youth Scrabble</p>
+              <p className="text-sm text-gray-800">Inspiring and guiding young players</p>
+              <Link href="#" className="text-primary"><p className="text-sm">See Members</p></Link>
+            </div> 
+            <div className="flex flex-col gap-10 bg-white py-8 px-4 rounded-md">
+              <Image src={members} alt="Members Affairs" className="w-12" />
+              <p className="font-semibold text-lg">Members Affairs</p>
+              <p className="text-sm text-gray-800">Promoting Scrabble and its global image</p>
+              <Link href="#" className="text-primary"><p className="text-sm">See Members</p></Link>
+            </div> 
+          </div>
+        </section>
 
-      <section className=" lg:grid lg:grid-cols-4 gap-5 px-10">
-        {
-          committees_rules.map((rule,idx)=>{
-            return(
-              <div key={idx} className=" flex flex-col gap-3 bg-white py-8 px-4 rounded-md">
-                <Image src={rule.image} alt={rule.header} className=" w-12 "/>
-                <p className=" font-semibold text-lg">{rule.header}</p>
-                <p className=" text-sm text-gray-800">{rule.text}</p>
-                <Link href={rule.link} className=" text-primary"><p className=" text-sm ">See Members</p></Link>
-              </div>
-            )
-          })
-        }
-      </section>
+      </div>
+
 
     </main>
   )
