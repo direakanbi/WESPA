@@ -132,7 +132,7 @@ export default function CommitteePage() {
               {
                 topCommittee.map((member) =>{
                   return(
-                    <div key={member.id} className=" p-2 bg-white rounded-2xl w-80">
+                    <div key={member.id} className="group hover:-translate-y-2 transition-transform duration-300 p-2 bg-white rounded-2xl w-80">
                       <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
                         <div className="relative  mb-1 ">
                           <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-64 h-64 rounded-2xl object-cover" />
@@ -163,7 +163,7 @@ export default function CommitteePage() {
               {
                 committeeMembers.map((member) =>{
                   return(
-                    <div key={member.id} className=" p-2 bg-white rounded-2xl">
+                    <div key={member.id} className=" group hover:-translate-y-2 transition-transform duration-300 p-2 bg-white rounded-2xl">
                       <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
                         <div className="relative mb-1 ">
                           <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-64 h-64 rounded-2xl object-cover"/>
@@ -213,13 +213,13 @@ export default function CommitteePage() {
         </section>
         <section className="mb-10 flex justify-center">
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 px-10">
-            <div className="w-[266px]  h-72  flex flex-col justify-between bg-white py-8 px-4 rounded-md">
+            <div className="w-[266px]  h-[266px]  flex flex-col justify-between bg-white py-8 px-4 rounded-md">
               <Image src={youth_scrabble} alt="Youth Scrabble" className="w-12" />
               <p className="font-semibold text-lg">Youth Scrabble</p>
               <p className="text-sm text-gray-800">Inspiring and guiding young scrabble players</p>
               <Link href="#" className="text-primary"><p className="text-sm">See Members</p></Link>
             </div> 
-            <div className=" w-[266px]  h-72 flex flex-col justify-between bg-white py-8 px-4 rounded-md">
+            <div className=" w-[266px]  h-[266px] flex flex-col justify-between bg-white py-8 px-4 rounded-md">
               <Image src={members} alt="Members Affairs" className="w-12" />
               <p className="font-semibold text-lg">Members Affairs</p>
               <p className="text-sm text-gray-800">Promoting Scrabble and its global image</p>
