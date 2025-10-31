@@ -153,7 +153,7 @@ export default function HomePage() {
  {/* Hero Section */}
  <section className="relative bg-[url(/images/tiles-images.svg)] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/50 rounded-full blur-3xl scale-150"></div>
-        <div className="container mx-auto px-4 my-12">
+        <div className="container mx-auto px-4 mt-12 mb-16">
           <div className="container-width h-[300px] lg:h-[400px] mx-auto grid grid-cols-1 lg:grid-cols-2  pt-14 gap-6 px-1 ">
               <div className="flex flex-col pt-10  lg:pt-16 lg:pb-10 items-start translate-x-10"> 
                 <Image

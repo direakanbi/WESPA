@@ -126,12 +126,12 @@ export default function CommitteePage() {
 
       <div className=" bg-gray-50 py-10 lg:py-24 ">
         <section className="lg:px-32">
-          <div >
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16">
+          <div className="container-width">
+            <div className="grid md:grid-cols-2 lg:flex lg:justify-center lg:items-center gap-6 ">
               {
                 topCommittee.map((member) =>{
                   return(
-                    <div key={member.id} className=" p-2 bg-white rounded-2xl">
+                    <div key={member.id} className=" p-2 bg-white rounded-2xl w-80">
                       <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
                         <div className="relative  mb-1 ">
                           <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-54 h-64  object-cover" />
@@ -191,7 +191,7 @@ export default function CommitteePage() {
 
       {/* Committee Members */}
       {/* Our Committees */}
-      <div className=" flex flex-col gap-10 py-10">
+      <div className=" container-width flex flex-col gap-10 py-10">
         <section className=" flex flex-col gap-1 mb-8">
           <h2 className=" text-4xl font-medium text-center mb-2">Our Committees</h2>
           <p className=" text-sm text-gray-500 font-semibold text-center">Wespa committes ensure Scrabble thrives worldwide</p>
@@ -211,14 +211,14 @@ export default function CommitteePage() {
           }
         </section>
         <section className="mb-10 flex justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 px-10">
-            <div className="flex flex-col gap-10 bg-white py-8 px-4 rounded-md">
+          <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 px-10">
+            <div className="w-[266px]  h-72  flex flex-col justify-between bg-white py-8 px-4 rounded-md">
               <Image src={youth_scrabble} alt="Youth Scrabble" className="w-12" />
               <p className="font-semibold text-lg">Youth Scrabble</p>
-              <p className="text-sm text-gray-800">Inspiring and guiding young players</p>
+              <p className="text-sm text-gray-800">Inspiring and guiding young scrabble players</p>
               <Link href="#" className="text-primary"><p className="text-sm">See Members</p></Link>
             </div> 
-            <div className="flex flex-col gap-10 bg-white py-8 px-4 rounded-md">
+            <div className=" w-[266px]  h-72 flex flex-col justify-between bg-white py-8 px-4 rounded-md">
               <Image src={members} alt="Members Affairs" className="w-12" />
               <p className="font-semibold text-lg">Members Affairs</p>
               <p className="text-sm text-gray-800">Promoting Scrabble and its global image</p>
