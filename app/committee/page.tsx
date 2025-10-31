@@ -2,7 +2,7 @@ import Image, {StaticImageData} from "next/image";
 
 import dummy_image from "../../public/images/placeholder_img.png";
 import Link from "next/link";
-import { canada,australia,nigeria,india,us,uk,hongKong, turkey} from "@/lib/flags";
+import { canada,australia,nigeria,india,us,uk,hongKong, turkey, liberia, malta, pakistan, southAfrica, kenya, thailand} from "@/lib/flags";
 import { Button } from "@/components/ui/button";
 import star from "../../public/icons/tournaments.svg";
 import ethics from "../../public/icons/ethics.svg";
@@ -11,99 +11,100 @@ import communication from "../../public/icons/communication.svg";
 import members from "../../public/icons/member_affairs.svg"
 import youth_scrabble from "../../public/icons/youth_scrabble.svg"
 import DarkHero from "@/components/DarkHero";
+import { chris_lipe, ike_obidike, karen_richards, limo_kipkemol, lukeman_owolabi, olobatoke_aka, ravee_jorado, sudhir_kamath, tariq_pervez, tony_leah, wayne_kelly } from "@/lib/images";
 
 const topCommittee = [
   {
     id: 1,
-    name: "Jason Broersma",
-    role: "Treasurer",
-    country: canada,
-    countryCode: "Canada",
-    photo: dummy_image,
+    name: "Lukeman Owolabi",
+    role: "Chairman",
+    country: liberia,
+    countryCode: "Liberia",
+    photo: lukeman_owolabi,
   },
   {
     id: 2,
     name: "Chris Lipe",
-    role: "Chairperson",
-    country: canada,
-    countryCode: "Canada",
-    photo: dummy_image,
+    role: "Secretary",
+    country: malta,
+    countryCode: "Malta",
+    photo: chris_lipe,
   },
   {
     id: 3,
-    name: "Carol Johnsen",
-    role: "Secretary",
-    country: australia,
-    countryCode: "AU",
-    photo: dummy_image,
+    name: "Sudhir Kamath",
+    role: "Treasurer",
+    country: india,
+    countryCode: "India",
+    photo: sudhir_kamath,
   },
 ]
 const committeeMembers = [
   
   {
     id: 4,
-    name: "Phillips Lukeman",
+    name: "Karen Richards",
     role: "Member",
-    country: nigeria,
-    countryCode: "NG",
-    photo: dummy_image,
+    country: australia,
+    countryCode: "Australia",
+    photo: karen_richards,
   },
   {
     id: 5,
-    name: "Chock Heng Kong",
+    name: "Olobatoke Aka",
     role: "Member",
-    country: turkey,
-    countryCode: "TK",
-    photo: dummy_image,
+    country: nigeria,
+    countryCode: "Nigeria",
+    photo: olobatoke_aka,
    
   },
   {
     id: 6,
-    name: "Douglas Tsang",
-    role: "Youth Coordinator",
-    country: hongKong,
-    countryCode: "HK",
-    photo: dummy_image,
+    name: "Tariq Perez",
+    role: "Member",
+    country: pakistan,
+    countryCode: "Pakistan",
+    photo: tariq_pervez,
   },
   {
     id: 7,
-    name: "Udayan Grover",
+    name: "Ike Obidike",
     role: "Member",
-    country: india,
-    countryCode: "IN",
-    photo: dummy_image,
+    country: southAfrica,
+    countryCode: "South Africa",
+    photo: ike_obidike,
   },
   {
     id: 9,
-    name: "Tony Leah",
+    name: "Limo Kipkemol",
     role: "Member",
-    country: canada,
-    countryCode: "CA",
-    photo: dummy_image,
+    country: kenya,
+    countryCode: "Kenya",
+    photo: limo_kipkemol,
   },
   {
     id: 10,
-    name: "Mina Le",
-    role: "Member",
-    country: us,
-    countryCode: "US",
-    photo: dummy_image,
-  },
-  {
-    id: 8,
-    name: "Chief Toke Aka",
-    role: "Member",
-    country: nigeria,
-    countryCode: "NG",
-    photo: dummy_image,
-  },
-  {
-    id: 11,
     name: "Wayne Kelly",
     role: "Member",
     country: uk,
-    countryCode: "UK",
-    photo: dummy_image,
+    countryCode: "United Kingdom",
+    photo: wayne_kelly,
+  },
+  {
+    id: 8,
+    name: "Ravee Jordol",
+    role: "Member",
+    country: thailand,
+    countryCode: "Thailand",
+    photo: ravee_jorado,
+  },
+  {
+    id: 11,
+    name: "Tony Leah",
+    role: "Member",
+    country: canada,
+    countryCode: "Canada",
+    photo: tony_leah,
   },
 ]
 const committees_rules_one = [
@@ -134,7 +135,7 @@ export default function CommitteePage() {
                     <div key={member.id} className=" p-2 bg-white rounded-2xl w-80">
                       <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
                         <div className="relative  mb-1 ">
-                          <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-54 h-64  object-cover" />
+                          <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-64 h-64 rounded-2xl object-cover" />
                           <section className=" w-10 p-3 absolute bottom-0 -left-0.5 bg-white rounded-full">
                             <Image src={member.country || "/placeholder.svg"} alt={member.name} className={`  `}/>
                           </section>
@@ -165,7 +166,7 @@ export default function CommitteePage() {
                     <div key={member.id} className=" p-2 bg-white rounded-2xl">
                       <div className="flex flex-col items-center border-[1px] border-gray-50 rounded-2xl">
                         <div className="relative mb-1 ">
-                          <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-54 h-64  object-cover"/>
+                          <Image src={member.photo || "/placeholder.svg"} alt={member.name} className=" w-64 h-64 rounded-2xl object-cover"/>
                           <section className=" w-10 p-3 absolute bottom-0 -left-0.5 bg-white rounded-full">
                             <Image src={member.country || "/placeholder.svg"} alt={member.name} className={`  `}/>
                           </section>
