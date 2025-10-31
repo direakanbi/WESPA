@@ -35,9 +35,9 @@ export function Header() {
 
 
   return (
-    <header className={`sticky top-0 z-50 w-full bg-white opacity-100 transition-all duration-300`}>
+    <header className={` sticky top-0 z-50 w-full bg-white opacity-100 transition-all duration-300`}>
       <div className="container-width">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between ">
           
           {/* START: Group Logo and Navigation for controlled spacing (lg:gap-12) */}
           <div className="flex items-center lg:gap-12 lg:px-10"> 

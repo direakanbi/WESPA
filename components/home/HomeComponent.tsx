@@ -153,15 +153,14 @@ export default function HomePage() {
  {/* Hero Section */}
  <section className="relative bg-[url(/images/tiles-images.svg)] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-white/50 rounded-full blur-3xl scale-150"></div>
-        <div className="container mx-auto px-4">
-          <div className="w-full h-[300px] lg:h-[400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 pt-14   px-[5%]">
-              {/* Left Column: Logo + Text (now properly stacked and aligned left) */}
-              <div className="flex flex-col lg:pt-10 items-start"> {/* items-start ensures content aligns to the left */}
+        <div className="container mx-auto px-4 my-12">
+          <div className="container-width h-[300px] lg:h-[400px] mx-auto grid grid-cols-1 lg:grid-cols-2  pt-14 gap-6 px-1 ">
+              <div className="flex flex-col pt-10  lg:pt-16 lg:pb-10 items-start translate-x-10"> 
                 <Image
                   src={logo}
                   alt="WESPA Logo"
                   priority
-                  className="mb-[5px] max-w-xs" // Ensure it's left-aligned and has a reasonable max-width
+                  className="mb-10 w-72 lg:-translate-x-10" 
                 />
                 <p className="text-sm md:text-base text-black-600 leading-relaxed max-w-lg mb-[5px] text-left font-semibold"> {/* Added text-left just to be sure */}
                   The World English-language Scrabble Players Association (WESPA) is the global framework for competitive Scrabble, uniting national federations through shared rules and ratings.
@@ -175,15 +174,15 @@ export default function HomePage() {
                 </Link>
               </div>
               {/* Globe */}
-              <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center translate-x-10 -translate-y-10">
+              <div className="hidden lg:h-[400px] h-full lg:flex justify-center items-center translate-x-5 -translate-y-10">
                 <GlobalAnimation />
               </div>
           </div>
         </div>
       {/* Quick Links Section */}
-        <section className="py-14 md:py-8 ">
+        <section className="py-14 md:py-8  my-14">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 py-10 sm:py-0 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 py-10 sm:py-0 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {quickLinks.map((link, i) => (
                 <QuickLinkCard
                   key={i}
