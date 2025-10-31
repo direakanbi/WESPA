@@ -1,7 +1,8 @@
 import DarkHero from '@/components/DarkHero'
 import React from 'react'
 import Image from 'next/image';
-import overview from "../../public/scrabble-tournament-players-competing.jpg";
+import overview from "../../public/images/championship_overview.png";
+import first_player from "../../public/images/fake_player1.jpg"
 import { Calendar, Trophy } from 'lucide-react';
 
 const links =[
@@ -19,12 +20,12 @@ const pastHosts = [
 ]
 
 const pastChampions = [
-  { year: 2023, name: "Nigel Richards", flag: "🇳🇿", img: overview },
-  { year: 2022, name: "Nigel Richards", flag: "🇳🇿", img: overview },
-  { year: 2021, name: "Nigel Richards", flag: "🇳🇿", img: overview },
-  { year: 2020, name: "Nigel Richards", flag: "🇳🇿", img: overview },
-  { year: 2019, name: "Nigel Richards", flag: "🇳🇿", img: overview },
-  { year: 2018, name: "Nigel Richards", flag: "🇳🇿", img: overview },
+  { year: 2023, name: "Nigel Richards", flag: "🇳🇿", img: first_player },
+  { year: 2022, name: "Nigel Richards", flag: "🇳🇿", img: first_player },
+  { year: 2021, name: "Nigel Richards", flag: "🇳🇿", img: first_player },
+  { year: 2020, name: "Nigel Richards", flag: "🇳🇿", img: first_player },
+  { year: 2019, name: "Nigel Richards", flag: "🇳🇿", img: first_player },
+  { year: 2018, name: "Nigel Richards", flag: "🇳🇿", img: first_player },
 ]
 
 function page() {
@@ -33,59 +34,62 @@ function page() {
         <DarkHero heading='WESPA Championship (WESPAC)' text="The pinnacle of global English-language Scrabble competition" links={links}/>
         
         <section className="py-16 bg-gray-50">
-            <div className=" max-w-[1400px] mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-            {/* Text */}
-            <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-6">
-                Championship Overview
-                </h1>
-                <p className="text-lg text-gray-700 mb-4">
-                The WESPA Championship (WESPAC) is the premier biennial tournament that
-                brings together the world's elite Scrabble players to compete for the
-                ultimate title in English-language competitive Scrabble.
-                </p>
-                <p className="text-lg text-gray-700 mb-6">
-                Organized by the World English-language Scrabble Players Association,
-                WESPAC showcases the highest level of strategic gameplay, lexical
-                knowledge, and competitive excellence. Players from over 40 countries
-                qualify through regional championships to earn their place at this
-                prestigious event.
-                </p>
-                <p className="text-lg text-gray-700">
-                The tournament features multiple rounds of intense competition, with the
-                world's best players battling for supremacy and the honor of being
-                crowned WESPA Champion.
-                </p>
+            <div className=" max-w-[1400px]  mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                        Championship Overview
+                    </h1>
+                    <p className="text-lg text-gray-700 mb-4">
+                        The WESPA Championship (WESPAC) is the premier biennial tournament that
+                        brings together the world's elite Scrabble players to compete for the
+                        ultimate title in English-language competitive Scrabble.
+                    </p>
+                    <p className="text-lg text-gray-700 mb-6">
+                        Organized by the World English-language Scrabble Players Association,
+                        WESPAC showcases the highest level of strategic gameplay, lexical
+                        knowledge, and competitive excellence. Players from over 40 countries
+                        qualify through regional championships to earn their place at this
+                        prestigious event.
+                    </p>
+                    <p className="text-lg text-gray-700">
+                        The tournament features multiple rounds of intense competition, with the
+                        world's best players battling for supremacy and the honor of being
+                        crowned WESPA Champion.
+                    </p>
 
-                {/* Badges */}
-                <div className="flex gap-8 mt-8">
-                <div className="flex items-center gap-2">
-                    <Trophy/>
-                    <div>
-                        <div className="text-xl font-semibold">40+</div>
-                        <div className="text-sm text-gray-500">Countries</div>
+                    {/* Badges */}
+                    <div className="flex gap-8 mt-8">
+                        <div className="flex items-center gap-2">
+                            <section className=" p-3 rounded-full bg-primary ">
+ 
+                                <Trophy size={25} color={"#ffffff"} />
+                            </section>
+                            <div>
+                                <div className="text-primary text-xl font-semibold">40+</div>
+                                <div className="text-sm text-gray-500">Countries</div>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <section className=" p-3 rounded-full bg-primary ">
+                                <Calendar size={25} color={"#ffffff"} />
+
+                            </section>
+                            <div>
+                                <div className="text-primary text-xl font-semibold">Biennial</div>
+                                <div className="text-sm text-gray-500">Every 2 years</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    <Calendar/>
-                    <div>
-                    <div className="text-sm text-gray-500">Every 2 years</div>
-                    <div className="text-xl font-semibold">Biennial</div>
-                    </div>
-                </div>
-                </div>
-            </div>
 
-            {/* Image */}
-            <div className="relative rounded-lg overflow-hidden shadow-lg">
-                <Image
-                src={overview}
-                alt="WESPAC players"
-                width={800}
-                height={500}
-                className="object-cover w-full h-full"
-                />
-            </div>
+                {/* Image */}
+                <div className=" bg-gray-100 h-full rounded-lg">
+                    <Image
+                    src={overview}
+                    alt="WESPAC players"
+                    className="object-cover -translate-y-4 translate-x-2 rounded-lg w-full h-full"
+                    />
+                </div>
             </div>
         </section>
 
@@ -142,26 +146,23 @@ function page() {
             {/* Grid layout for champions */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {pastChampions.map((champ) => (
-                <div
-                    key={champ.year}
-                    className="bg-white rounded-lg shadow-md overflow-hidden"
-                >
-                    <div className="relative h-48">
-                    <Image
-                        src={champ.img}
-                        alt={champ.name}
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute top-2 right-2 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {champ.year}
+                    <div key={champ.year} className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div className="relative h-48 w-full">
+                        <Image
+                            src={champ.img}
+                            alt={champ.name}
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute top-2 right-2 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            {champ.year}
+                        </div>
+                        </div>
+                        <div className="p-4 text-center">
+                        <h3 className="font-semibold text-lg">{champ.name}</h3>
+                        <p className="text-2xl mt-1">{champ.flag}</p>
+                        </div>
                     </div>
-                    </div>
-                    <div className="p-4 text-center">
-                    <h3 className="font-semibold text-lg">{champ.name}</h3>
-                    <p className="text-2xl mt-1">{champ.flag}</p>
-                    </div>
-                </div>
                 ))}
             </div>
             </div>

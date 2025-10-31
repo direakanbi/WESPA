@@ -18,7 +18,7 @@ type SliderProps = {
   className?: string;
 }
 
-function SliderComponent({children,autoplayDelay=4000,slidesPerView=3,className=""}:SliderProps) {
+export function SliderComponent({children,autoplayDelay=4000,slidesPerView=3,className=""}:SliderProps) {
   return (
     <div className={className}>
       <Swiper
@@ -43,4 +43,9 @@ function SliderComponent({children,autoplayDelay=4000,slidesPerView=3,className=
   )
 }
 
-export default SliderComponent
+export function RegularSlider({children}:{children:React.ReactNode}) {
+  return(
+    <>
+    </>
+  )
+}
