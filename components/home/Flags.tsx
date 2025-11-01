@@ -1,6 +1,7 @@
+"use client";
 import React from 'react'
 import { australia,bangladesh,botswana,cameroon,canada,gambia,germany,ghana,hongKong,india,indonesia,ireland,kenya,liberia,malaysia,malta,nepal,netherlands,newZealand,nigeria,pakistan,philippines,poland,qatar,romania,seychelles, sierreLeone,singapore,southAfrica,spain,sriLanka,sweden,switz,tanzania,thailand,trinidad,uae,uk,us,uganda} from '@/lib/flags';
-import SliderComponent from '../SliderComponent';
+import { SliderComponent } from '../SliderComponent';
 import { SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 

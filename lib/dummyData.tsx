@@ -1,242 +1,366 @@
 export const events = [
   {
+    id: 1,
     startDate: "2025-01-12",
     endDate: "2025-01-14",
-    continent: "African",
+    continent: "africa",
     country: "Nigeria",
     state: "Lagos",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 8,
+    eventName: "WESPA Africa Kickoff 2025 - Awolowo - Early Bird 🥇"
   },
   {
+    id: 2,
     startDate: "2025-02-05",
     endDate: "2025-02-07",
-    continent: "African",
+    continent: "africa",
     country: "Ghana",
     state: "Accra",
-    organizer: "Game 1"
+    organizer: "Game 1",
+    games: 6,
+    eventName: "New Year Scrabble Clash - Akwaba - Early Bird 🎉"
   },
   {
+    id: 3,
     startDate: "2025-03-10",
     endDate: "2025-03-13",
-    continent: "American",
+    continent: "america",
     country: "US",
     state: "Texas",
-    organizer: "Game 2"
+    organizer: "Game 2",
+    games: 10,
+    eventName: "Texas Open 2025 - Invictus Challenge ⭐"
   },
   {
+    id: 4,
     startDate: "2025-04-20",
     endDate: "2025-04-22",
-    continent: "European",
+    continent: "europe",
     country: "UK",
     state: "London",
-    organizer: "Game 3"
+    organizer: "Game 3",
+    games: 7,
+    eventName: "WESPA European Masters"
   },
   {
+    id: 5,
     startDate: "2025-05-01",
     endDate: "2025-05-02",
-    continent: "Asian",
+    continent: "asia",
     country: "Sri Lanka",
     state: "Colombo",
-    organizer: "Game 4"
+    organizer: "Game 4",
+    games: 9,
+    eventName: "Colombo Challenge 2025"
   },
   {
+    id: 6,
     startDate: "2025-05-10",
     endDate: "2025-05-12",
-    continent: "African",
+    continent: "africa",
     country: "Nigeria",
     state: "Abuja",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 6,
+    eventName: "Abuja Invitational"
   },
   {
+    id: 7,
     startDate: "2025-06-05",
     endDate: "2025-06-07",
-    continent: "American",
+    continent: "america",
     country: "US",
     state: "California",
-    organizer: "Game 5"
+    organizer: "Game 5",
+    games: 8,
+    eventName: "California Summer Open"
   },
   {
+    id: 8,
     startDate: "2025-06-18",
     endDate: "2025-06-19",
-    continent: "European",
+    continent: "europe",
     country: "UK",
     state: "Manchester",
-    organizer: "Game 6"
+    organizer: "Game 6",
+    games: 5,
+    eventName: "Manchester Mind Games"
   },
   {
+    id: 9,
     startDate: "2025-07-01",
     endDate: "2025-07-03",
-    continent: "Asian",
+    continent: "asia",
     country: "Sri Lanka",
     state: "Kandy",
-    organizer: "Game 7"
+    organizer: "Game 7",
+    games: 7,
+    eventName: "Kandy Invitational 2025"
   },
   {
+    id: 10,
     startDate: "2025-07-14",
     endDate: "2025-07-16",
-    continent: "African",
+    continent: "africa",
     country: "Ghana",
     state: "Kumasi",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 10,
+    eventName: "Kumasi Scrabble Open"
   },
   {
+    id: 11,
     startDate: "2025-08-02",
     endDate: "2025-08-03",
-    continent: "African",
+    continent: "africa",
     country: "Nigeria",
     state: "Enugu",
-    organizer: "Game 8"
+    organizer: "Game 8",
+    games: 6,
+    eventName: "Enugu Regional Games"
   },
   {
+    id: 12,
     startDate: "2025-08-20",
     endDate: "2025-08-22",
-    continent: "American",
+    continent: "america",
     country: "US",
     state: "New York",
-    organizer: "Game 9"
+    organizer: "Game 9",
+    games: 8,
+    eventName: "New York Classic 2025"
   },
   {
+    id: 13,
     startDate: "2025-09-10",
     endDate: "2025-09-12",
-    continent: "European",
+    continent: "europe",
     country: "UK",
     state: "Birmingham",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 9,
+    eventName: "WESPA European Cup 2025"
   },
   {
+    id: 14,
     startDate: "2025-09-28",
     endDate: "2025-09-29",
-    continent: "Asian",
+    continent: "asia",
     country: "Sri Lanka",
     state: "Galle",
-    organizer: "Game 10"
+    organizer: "Game 10",
+    games: 5,
+    eventName: "Galle City Challenge"
   },
   {
+    id: 15,
     startDate: "2025-10-01",
     endDate: "2025-10-03",
-    continent: "Online",
+    continent: "online",
     country: "Online",
     state: "Virtual",
-    organizer: "Game 11"
+    organizer: "Game 11",
+    games: 10,
+    eventName: "Virtual Masters 2025"
   },
   {
+    id: 16,
     startDate: "2025-10-14",
     endDate: "2025-10-15",
-    continent: "African",
+    continent: "africa",
     country: "Ghana",
     state: "Tamale",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 8,
+    eventName: "Tamale Invitational"
   },
   {
+    id: 17,
     startDate: "2025-10-22",
     endDate: "2025-10-24",
-    continent: "American",
+    continent: "america",
     country: "US",
     state: "Florida",
-    organizer: "Game 12"
+    organizer: "Game 12",
+    games: 6,
+    eventName: "Florida Sunshine Cup"
   },
   {
+    id: 18,
     startDate: "2025-11-03",
     endDate: "2025-11-04",
-    continent: "European",
+    continent: "europe",
     country: "UK",
     state: "Liverpool",
-    organizer: "Game 13"
+    organizer: "Game 13",
+    games: 7,
+    eventName: "Liverpool Scrabble Series"
   },
   {
+    id: 19,
     startDate: "2025-11-10",
     endDate: "2025-11-12",
-    continent: "African",
+    continent: "africa",
     country: "Nigeria",
     state: "Kano",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 9,
+    eventName: "Kano Regional Cup"
   },
   {
+    id: 20,
     startDate: "2025-11-20",
     endDate: "2025-11-22",
-    continent: "Online",
+    continent: "online",
     country: "Online",
     state: "Virtual",
-    organizer: "Game 14"
+    organizer: "Game 14",
+    games: 8,
+    eventName: "Online Global Open"
   },
   {
+    id: 21,
     startDate: "2025-12-01",
     endDate: "2025-12-03",
-    continent: "Asian",
+    continent: "asia",
     country: "Sri Lanka",
     state: "Jaffna",
-    organizer: "Game 15"
+    organizer: "Game 15",
+    games: 7,
+    eventName: "Jaffna Scrabble Masters"
   },
   {
+    id: 22,
     startDate: "2025-12-10",
     endDate: "2025-12-12",
-    continent: "African",
+    continent: "africa",
     country: "Ghana",
     state: "Cape Coast",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 10,
+    eventName: "Cape Coast Championship"
   },
   {
+    id: 23,
     startDate: "2026-01-05",
     endDate: "2026-01-07",
-    continent: "American",
+    continent: "america",
     country: "US",
     state: "Illinois",
-    organizer: "Game 16"
+    organizer: "Game 16",
+    games: 5,
+    eventName: "Winter Scrabble Festival"
   },
   {
+    id: 24,
     startDate: "2026-01-18",
     endDate: "2026-01-20",
-    continent: "European",
+    continent: "europe",
     country: "UK",
     state: "Leeds",
-    organizer: "Game 17"
+    organizer: "Game 17",
+    games: 10,
+    eventName: "Leeds Masters 2026"
   },
   {
+    id: 25,
     startDate: "2026-02-02",
     endDate: "2026-02-04",
-    continent: "African",
+    continent: "africa",
     country: "Nigeria",
     state: "Port Harcourt",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 7,
+    eventName: "Port Harcourt Invitational"
   },
   {
+    id: 26,
     startDate: "2026-02-15",
     endDate: "2026-02-17",
-    continent: "American",
+    continent: "america",
     country: "US",
     state: "Washington",
-    organizer: "Game 18"
+    organizer: "Game 18",
+    games: 6,
+    eventName: "Capital Scrabble Classic"
   },
   {
+    id: 27,
     startDate: "2026-03-01",
     endDate: "2026-03-03",
-    continent: "Asian",
+    continent: "asia",
     country: "Sri Lanka",
     state: "Matara",
-    organizer: "Game 19"
+    organizer: "Game 19",
+    games: 8,
+    eventName: "Matara Regional Cup"
   },
   {
+    id: 28,
     startDate: "2026-03-10",
     endDate: "2026-03-12",
-    continent: "African",
+    continent: "africa",
     country: "Ghana",
     state: "Sunyani",
-    organizer: "Game 20"
+    organizer: "Game 20",
+    games: 9,
+    eventName: "Sunyani Challenge"
   },
   {
+    id: 29,
     startDate: "2026-03-25",
     endDate: "2026-03-26",
-    continent: "Online",
+    continent: "online",
     country: "Online",
     state: "Virtual",
-    organizer: "Game 21"
+    organizer: "Game 21",
+    games: 10,
+    eventName: "Virtual Spring Championship"
   },
   {
+    id: 30,
     startDate: "2026-04-02",
     endDate: "2026-04-04",
-    continent: "African",
+    continent: "africa",
     country: "Nigeria",
     state: "Ibadan",
-    organizer: "SCAG"
+    organizer: "SCAG",
+    games: 8,
+    eventName: "Ibadan Scrabble Open"
+  },
+  // 🌏 Oceania Events
+  {
+    id: 31,
+    startDate: "2025-04-10",
+    endDate: "2025-04-12",
+    continent: "oceania",
+    country: "Australia",
+    state: "Sydney",
+    organizer: "WESPA",
+    games: 9,
+    eventName: "Sydney Open 2025"
+  },
+  {
+    id: 32,
+    startDate: "2025-06-22",
+    endDate: "2025-06-24",
+    continent: "oceania",
+    country: "New Zealand",
+    state: "Auckland",
+    organizer: "NZ Scrabble Club",
+    games: 7,
+    eventName: "Auckland Challenge 2025"
+  },
+  {
+    id: 33,
+    startDate: "2025-12-20",
+    endDate: "2025-12-22",
+    continent: "oceania",
+    country: "Australia",
+    state: "Melbourne",
+    organizer: "WESPA",
+    games: 10,
+    eventName: "WESPA Championship 2025"
   }
 ];
