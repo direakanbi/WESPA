@@ -58,7 +58,7 @@ export default function OTBPage() {
           <div className="max-w-3xl mx-auto text-lg space-y-6">
             <p>
               The WESPA Ratings Officer updates the{" "}
-              <a href="/ratings/otb_ratings#" className="text-primary underline">
+              <a href="/ratings/otb_ratings#" className="text-white font-bold">
                 ratings file
               </a>{" "}
               using the latest results of approved tournaments. Rankings are
@@ -98,25 +98,27 @@ export default function OTBPage() {
               placeholder="Enter player name..."
               className="w-full pr-10 py-2 border rounded-full"
             />
-            <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <SearchIcon className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#47b2e4] text-white p-1 rounded-full" />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col items-center">
-            <CheckCircle2Icon className="h-12 w-12 text-primary mb-3" />
-            <p className="text-center text-lg">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-35">
+          <div className="flex items-start space-x-4 justify-center">
+            <CheckCircle2Icon className="h-8 w-8 text-primary" />
+            <p className="text-base font-medium max-w-[150px] text-left">
               Verified player stats from WESPA
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <ZapIcon className="h-12 w-12 text-primary mb-3" />
-            <p className="text-center text-lg">
+          <div className="h-24 w-px bg-gray-700 mx-4 hidden md:block" /> {/* Divider */}
+          <div className="flex items-start space-x-4 justify-center">
+            <ZapIcon className="h-8 w-8 text-primary" />
+            <p className="text-base font-medium max-w-[200px] text-left">
               Real-time updates after every tournament
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <GlobeIcon className="h-12 w-12 text-primary mb-3" />
-            <p className="text-center text-lg">
+          <div className="h-24 w-px bg-gray-700 mx-4 hidden md:block" /> {/* Divider */}
+          <div className="flex items-start space-x-4 justify-center">
+            <GlobeIcon className="h-8 w-8 text-primary" />
+            <p className="text-base font-medium max-w-[200px] text-left">
               Discover players from across the globe
             </p>
           </div>
@@ -124,8 +126,8 @@ export default function OTBPage() {
       </section>
 
       {/* Section 5: Find A Country */}
-      <section className="section-spacing container-width text-center bg-gray-50 py-16">
-        <h2 className="text-4xl font-bold mb-4">Find A Country</h2>
+      <section className="text-center bg-[#eaf5fe] py-24">
+        <h2 className="text-4xl font-bold mb-4 text-[#47b2e4]">Find A Country</h2>
         <p className="text-lg text-muted-foreground mb-8">
           Discover how active players from each nation rank by rating and
           performance.
@@ -135,31 +137,33 @@ export default function OTBPage() {
             <Input
               type="text"
               placeholder="Enter country name..."
-              className="w-full pr-10 py-2 border rounded-full"
+              className="w-full pr-10 py-2 border rounded-full bg-white"
             />
-            <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <SearchIcon className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#47b2e4] text-white p-1 rounded-full" />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-35">
+          <div className="flex items-start space-x-4 justify-center">
             <img
               src="/icons/bronze.svg"
               alt="Active player rankings"
-              className="h-12 w-12 mb-3"
+              className="h-10 w-10"
             />
-            <p className="text-center text-lg">
+            <p className="text-base font-medium max-w-[200px] text-left">
               Active player rankings by country
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <GlobeIcon className="h-12 w-12 text-primary mb-3" />
-            <p className="text-center text-lg">
+          <div className="h-24 w-px bg-gray-700 mx-4 hidden md:block" /> {/* Divider */}
+          <div className="flex items-start space-x-4 justify-center">
+            <GlobeIcon className="h-8 w-8 text-primary" />
+            <p className="text-base font-medium max-w-[150px] text-left">
               Dynamic global leaderboard
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <SearchIcon className="h-12 w-12 text-primary mb-3" />
-            <p className="text-center text-lg">
+          <div className="h-24 w-px bg-gray-700 mx-4 hidden md:block" /> {/* Divider */}
+          <div className="flex items-start space-x-4 justify-center">
+            <SearchIcon className="h-8 w-8 text-primary" />
+            <p className="text-base font-medium max-w-[150px] text-left">
               Interactive search for instant stats
             </p>
           </div>
@@ -167,8 +171,17 @@ export default function OTBPage() {
       </section>
 
       {/* Section 6: Find A Tournament */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="container-width text-center">
+      <section
+        className="relative py-24 text-white"
+        style={{
+          backgroundImage: "url('/images/tiles-hero.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" style={{zIndex: 1}} />
+        <div className="container-width text-center relative z-10">
           <h2 className="text-4xl font-bold mb-4">Find A Tournament</h2>
           <p className="text-lg text-muted-foreground mb-8">
             You can obtain information on previous tournaments here.
@@ -176,8 +189,8 @@ export default function OTBPage() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
             <span className="text-lg">Between</span>
             <Select>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="2008" />
+              <SelectTrigger className="w-[180px] bg-white">
+                <SelectValue placeholder="2008"/>
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="2008">2008</SelectItem>
@@ -187,7 +200,7 @@ export default function OTBPage() {
             </Select>
             <span className="text-lg">and</span>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-[180px] bg-white">
                 <SelectValue placeholder="2025" />
               </SelectTrigger>
               <SelectContent>
@@ -198,8 +211,8 @@ export default function OTBPage() {
             </Select>
             <span className="text-lg">in</span>
             <Select>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Germany" />
+              <SelectTrigger className="w-[180px] bg-white">
+                <SelectValue placeholder="Germany" className="bg-white"/>
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="germany">Germany</SelectItem>
@@ -213,23 +226,25 @@ export default function OTBPage() {
               <Input
                 type="text"
                 placeholder="Search..."
-                className="w-full pr-10 py-2 border rounded-full"
+                className="w-full pr-10 py-2 border rounded-full bg-white"
               />
-              <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <SearchIcon className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#47b2e4] text-white p-1 rounded-full" />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center">
-              <TrophyIcon className="h-12 w-12 text-primary mb-3" />
-              <p className="text-center text-lg">Explore Global Tournaments</p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-35">
+            <div className="flex items-start space-x-4 justify-center">
+              <TrophyIcon className="h-8 w-8 text-primary" />
+              <p className="text-base font-medium max-w-[200px] text-left">Explore Global Tournaments</p>
             </div>
-            <div className="flex flex-col items-center">
-              <FilterIcon className="h-12 w-12 text-primary mb-3" />
-              <p className="text-center text-lg">Filter by Country or Year</p>
+            <div className="h-24 w-px bg-gray-700 mx-4 hidden md:block" /> {/* Divider */}
+            <div className="flex items-start space-x-4 justify-center">
+              <FilterIcon className="h-8 w-8 text-primary" />
+              <p className="text-base font-medium max-w-[200px] text-left">Filter by Country or Year</p>
             </div>
-            <div className="flex flex-col items-center">
-              <StarIcon className="h-12 w-12 text-primary mb-3" />
-              <p className="text-center text-lg">Discover Prestigious Events</p>
+            <div className="h-24 w-px bg-gray-700 mx-4 hidden md:block" /> {/* Divider */}
+            <div className="flex items-start space-x-4 justify-center">
+              <StarIcon className="h-8 w-8 text-primary" />
+              <p className="text-base font-medium max-w-[200px] text-left">Discover Prestigious Events</p>
             </div>
           </div>
         </div>

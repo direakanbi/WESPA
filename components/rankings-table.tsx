@@ -6,15 +6,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import { ArrowUpIcon, ArrowDownIcon, MinusIcon } from "lucide-react";
 
 /**
  * Renders a rankings table based on the new design.
