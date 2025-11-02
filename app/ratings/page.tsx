@@ -12,7 +12,7 @@ const links =[
 export default function RankingsPage() {
   return (
     <main className="flex-1">
-      <DarkHero heading="WESPA RATINGS" text={`Most recent tournament: Autocar Bangkok International Championship 2025 updated on Mon Oct 27 07:24:45 2025`}/>
+       <DarkHero heading="WESPA RATINGS" text={`Most recent tournament: Autocar Bangkok International Championship 2025 updated on Mon Oct 27 07:24:45 2025`} links={links}/>
 
       {/* Rankings Content */}
       <section className="section-spacing">
