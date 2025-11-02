@@ -51,13 +51,13 @@ export function Header() {
             <nav className={`hidden lg:flex items-center justify-evenly gap-12`}>
               
               {/* HOME */}
-              <Link href="/" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                 Home
               </Link>
 
               {/* ABOUT Dropdown - Regular Case */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                   <span>About</span>
                   <ChevronDown size={20} color="gray"/>
                 </DropdownMenuTrigger>
@@ -82,7 +82,7 @@ export function Header() {
 
               {/* TOURNAMENTS Dropdown - Regular Case */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                   <span>Tournaments</span>
                   <ChevronDown size={20} color="gray"/>
                 </DropdownMenuTrigger>
@@ -117,7 +117,7 @@ export function Header() {
               
               {/* RATINGS Dropdown - Regular Case */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                   <span>Ratings</span>
                   <ChevronDown size={20} color="gray"/>
                 </DropdownMenuTrigger>
@@ -148,7 +148,7 @@ export function Header() {
 
               {/* COMMUNITY Dropdown - Regular Case */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                   <span>Community</span>
                   <ChevronDown size={20} color="gray"/>
                 </DropdownMenuTrigger>
@@ -178,7 +178,7 @@ export function Header() {
               
               {/* RESOURCES Dropdown - Regular Case */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                   <span>Resources</span>
                   <ChevronDown size={20} color="gray"/>
                 </DropdownMenuTrigger>
@@ -202,12 +202,12 @@ export function Header() {
               </DropdownMenu>
 
               {/* NEWS - Regular Case */}
-              <Link href="/news" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+              <Link href="/news" className="text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                 News
               </Link>
               
               {/* CONTACT - Regular Case */}
-              <Link href="/contact" className="text-sm font-medium tracking-px text-foreground hover:text-primary transition-colors">
+              <Link href="/contact" className="text-sm font-bold tracking-px text-foreground hover:text-primary transition-colors">
                 Contact
               </Link>
             </nav>
