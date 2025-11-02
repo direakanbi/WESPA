@@ -39,9 +39,9 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="flex-1 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-base mb-8">
+      <nav className="flex items-center gap-2 text-sm mb-8">
         {breadcrumbs.map((link:{text:string,id:number,href:string}, index) => (
           <div key={link.id} className="flex items-center gap-2">
             <a 
@@ -85,11 +85,11 @@ export default function ContactPage() {
         </section>
 
         {/* Right Section - Contact Form */}
-        <section className=''>
+        <section>
           <div className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-lg font-medium text-gray-900 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
                   Name
                 </label>
                 <input
@@ -99,12 +99,12 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-lg font-medium text-gray-900 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                   Email
                 </label>
                 <input
@@ -114,14 +114,14 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email address"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
                 />
               </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="location" className="block text-lg font-medium text-gray-900 mb-2">
+                <label htmlFor="location" className="block text-sm font-medium text-gray-900 mb-2">
                   Location
                 </label>
                 <select
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition appearance-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition appearance-none bg-white"
                 >
                   <option>Afghanistan</option>
                   <option>Albania</option>
@@ -141,7 +141,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="department" className="block text-lg font-medium text-gray-900 mb-2">
+                <label htmlFor="department" className="block text-sm font-medium text-gray-900 mb-2">
                   Department
                 </label>
                 <select
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   name="department"
                   value={formData.department}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition appearance-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition appearance-none bg-white"
                 >
                   <option>General Enquiry</option>
                   <option>Sales</option>
@@ -161,7 +161,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-lg font-medium text-gray-900 mb-2">
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-900 mb-2">
                 Subject
               </label>
               <input
@@ -171,12 +171,12 @@ export default function ContactPage() {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Subject"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-lg font-medium text-gray-900 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
                 How can we help?
               </label>
               <textarea
@@ -186,13 +186,13 @@ export default function ContactPage() {
                 onChange={handleChange}
                 placeholder="Enter your message here..."
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition resize-none"
               />
             </div>
 
             <button
               onClick={handleSubmit}
-              className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-xl hover:bg-primary/80 transition duration-200 shadow-md hover:shadow-lg"
+              className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/80 transition duration-200 shadow-md hover:shadow-lg"
             >
               Send Message
             </button>
