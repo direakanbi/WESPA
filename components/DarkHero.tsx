@@ -37,4 +37,4 @@ function DarkHero({heading,text,links}:{
   )
 }
 
-export default DarkHero
+export default DarkHero;

@@ -1,5 +1,6 @@
-import { RankingsTable } from "@/components/rankings-table"
+import RankingsTable from "@/components/rankings-table"
 import { RankingsFilters } from "@/components/rankings-filters"
+import { rankings } from "@/lib/dummyData"
 
 export default function RankingsPage() {
   return (
@@ -23,7 +24,7 @@ export default function RankingsPage() {
       <section className="section-spacing">
         <div className="container-width">
           <RankingsFilters />
-          <RankingsTable />
+          <RankingsTable rankings={rankings} />
         </div>
       </section>
     </main>

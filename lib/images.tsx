@@ -9,19 +9,21 @@ import sudhir_kamath from "../public/committee/sudhir_kamath.jpg";
 import tariq_pervez from "../public/committee/tariq_pervez.jpg";
 import tony_leah from "../public/committee/tony_leah.jpg";
 import wayne_kelly from "../public/committee/wayne_kelly.jpg";
-import alec_sjoholm from "../public/wespa_top_ten/alec_sjoholm.jpg";
-import david_eldar from "../public/wespa_top_ten/david_eldar.jpg";
-import hubert_wee from "../public/wespa_top_ten/hubert_wee.jpeg";
-import jakob_teitelbaum from "../public/wespa_top_ten/jakob_teitelbaum.jpeg";
-import komol_panyasoponlert from "../public/wespa_top_ten/komol_panyasoponlert.jpg";
-import madhav_kamath from "../public/wespa_top_ten/madhav_kamath.jpg";
-import nigel_richards from "../public/wespa_top_ten/nigel_richards.jpg";
-import panupol_sujjayakorn from "../public/wespa_top_ten/panupol_sujjayakorn.jpeg";
-import thacha_koowirat from "../public/wespa_top_ten/thacha_koowirat.jpg";
-import toh_weibin from "../public/wespa_top_ten/toh_weibin.jpg";
+import NigelRichards from "../public/images/Nigel Richards - #1 New Zealand.jpg";
+import WellingtonJighere from "../public/placeholder-user.jpg";
+import DavidEldar from "../public/images/DAVID ELDAR #2 Australia.jpg";
+import AlecSjoholm from "../public/images/Alec Sjoholm - #4 United States.jpg";
+import KomolPanyasoponlert from "../public/images/Komol Panyasoponlert  - #5 Thailand.jpg";
+import PanupolSujjayakorn from "../public/images/Panupol Sujjayakorn - #6 Thailand.jpeg";
+import ThachaKoowirat from "../public/images/Thacha Koowirat - #9 Thailand.jpg";
+import TohWeibin from "../public/images/Toh Weibin - #8 Singapore.jpg";
+import HubertWee from "../public/images/Hubert Wee - #3 Singapore.jpeg";
+import JakobTeitelbaum from "../public/images/Jakob Teiltelbaum - #10 Australia.jpeg";
+import MadhavKamath from "../public/images/Madhav Kamath - #7 India.jpg";
 
 
 
 export {
-    chris_lipe,ike_obidike,karen_richards,limo_kipkemol,lukeman_owolabi,olobatoke_aka,ravee_jorado,sudhir_kamath,tariq_pervez,tony_leah,wayne_kelly
+    chris_lipe,ike_obidike,karen_richards,limo_kipkemol,lukeman_owolabi,olobatoke_aka,ravee_jorado,sudhir_kamath,tariq_pervez,tony_leah,wayne_kelly,
+    NigelRichards,WellingtonJighere,DavidEldar,AlecSjoholm,KomolPanyasoponlert,PanupolSujjayakorn,ThachaKoowirat,TohWeibin,HubertWee,JakobTeitelbaum,MadhavKamath
 }

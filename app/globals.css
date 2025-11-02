@@ -40,6 +40,7 @@
   --primary: #46B0E1;
   --hover:#3A95BF;
   --primary-foreground: oklch(1 0 0);
+  --date-blue: #1E90FF; /* Custom blue for the date */
 
   --secondary: oklch(0.62 0.1 225);
   --secondary-foreground: oklch(1 0 0);
