@@ -1,6 +1,7 @@
-import { RankingsTable } from "@/components/rankings-table"
-import { RankingsFilters } from "@/components/rankings-filters"
-import DarkHero from "@/components/DarkHero"
+import  RankingsTable  from "@/components/rankings-table";
+import { RankingsFilters } from "@/components/rankings-filters";
+import DarkHero from "@/components/DarkHero";
+import { ratings } from "@/lib/dummyData";
 
 const links =[
   {name:"Home",href:"/"},
@@ -17,7 +18,7 @@ export default function RankingsPage() {
       <section className="section-spacing">
         <div className="container-width">
           <RankingsFilters />
-          <RankingsTable />
+          <RankingsTable rankings={ratings} />
         </div>
       </section>
     </main>

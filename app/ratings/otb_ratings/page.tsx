@@ -1,6 +1,6 @@
 import DarkHero  from "@/components/DarkHero";
 import React from "react";
-import { rankings } from "@/lib/dummyData"; // Import the data
+import { ratings } from "@/lib/dummyData"; // Import the data
 import RankingsTable from "@/components/rankings-table"; // Import the new table
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -40,7 +40,7 @@ export default function OTBPage() {
 
       {/* Section 2: Table & Filters */}
       <section className="container-width section-spacing">
-        <RankingsTable rankings={rankings} />
+        <RankingsTable rankings={ratings} />
         <div className="flex justify-center gap-4 mt-8">
           <Button variant="outline" className="px-6 py-3 text-[#47b2e4] border-[#47b2e4]">
             Apply for Ratings

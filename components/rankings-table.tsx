@@ -4,25 +4,27 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { TableSkeleton, EmptyState } from "@/components/loading-shimmer"
 import { PlayerModal } from "@/components/player-modal"
-import { ratings } from "@/lib/dummyData"
-import { useState } from "react"
+import { ratings } from "@/lib/dummyData";
+import { useState } from "react";
 
+interface RankingsTableProps {
+  rankings: (typeof ratings)[0][];
+}
 
-
-
-export function RankingsTable() {
-  // Pagination logic 
+export default function RankingsTable({ rankings }: RankingsTableProps) {
+  // Pagination logic
   const [currentPage, setCurrentPage] = useState(1);
-  const playersPerPage = 10
-  const totalPages = Math.ceil(ratings.length/playersPerPage)
-  const indexOfLastPlayer = currentPage * playersPerPage
-  const indexOfFirstPlayer = indexOfLastPlayer - playersPerPage
-  const currentPlayers = ratings.slice(indexOfFirstPlayer, indexOfLastPlayer)
+  const playersPerPage = 10;
+  const totalPages = Math.ceil(rankings.length / playersPerPage);
+  const indexOfLastPlayer = currentPage * playersPerPage;
+  const indexOfFirstPlayer = indexOfLastPlayer - playersPerPage;
+  const currentPlayers = rankings.slice(indexOfFirstPlayer, indexOfLastPlayer);
 
-
-  const [loading, setLoading] = useState(false)
-  const [players, setPlayers] = useState(ratings)
-  const [selectedPlayer, setSelectedPlayer] = useState<(typeof ratings)[0] | null>(null)
+  const [loading, setLoading] = useState(false);
+  const [players, setPlayers] = useState(rankings);
+  const [selectedPlayer, setSelectedPlayer] = useState<
+    (typeof rankings)[0] | null
+  >(null);
 
  
    const handleNext = () => {
