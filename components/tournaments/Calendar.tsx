@@ -88,7 +88,7 @@ function Calendar() {
               {
                 filteredData.map((event,idx)=>{
                   return(
-                    <TableRow className={` ${idx%2===0?"bg-white":"bg-primary/5"}`}>
+                    <TableRow key={event.id} className={` ${idx%2===0?"bg-white":"bg-primary/5"}`}>
                       <TableCell className={` font-semibold py-5  px-5`}>{event.startDate}</TableCell>
                       <TableCell className={` font-semibold py-5  px-5`}>{event.endDate}</TableCell>
                       <TableCell className={` font-semibold py-5  px-5`}>{event.country}</TableCell>
